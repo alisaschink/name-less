@@ -87,6 +87,10 @@ Inbox
 
 ![](https://github.com/KristenManning/lama-forsaken/blob/readme/Screen%20Shot%202017-04-22%20at%202.03.26%20AM.png "")
 
+## Database Architecture 
+
+![](https://github.com/KristenManning/lama-forsaken/blob/readme/as_km_erd.png "")
+
 ## User Acquisition 
 
 ### User Personas: 
