@@ -86,3 +86,23 @@ Applicant Profiles
 Inbox 
 
 ![](https://github.com/KristenManning/lama-forsaken/blob/readme/Screen%20Shot%202017-04-22%20at%202.03.26%20AM.png "")
+
+## User Acquisition 
+
+### User Personas: 
+https://docs.google.com/spreadsheets/d/17NBUpfZpVohGdOxx3vGBAbEHSdvbNhYDrTTxgH1aYcc/edit#gid=0 
+
+### First 50 Users 
+
+We will search existing jobs forums (r/jobs, LinkedIn groups) for specific applicants and companies who are dissatisfied with the hiring tools and practices that are currently the norm. These users will be site evangelists who give the site momentum, especially in terms of news feed content, and spread the word to their friends. We expect that the applicants who join early on will be people who have experienced discrimination in the hiring process or in the work place, and the employers who join early will be companies that understand our mission and already strive for a diverse workplace, but need better tools to eliminate unconcious bias. 
+
+### Next 1000 users 
+
+We will partner with universities, continuing education programs, etc. to ensure that there is always an influx of new candidates, and partner with rapidly growing companies to ensure that there are always new jobs posted. 
+
+### Channels of Acquisiton 
+
+Early on, we will focus on direct partnerships (with schools, companies) for acquisition in order to ensure that we have a sufficient number of users at all times, and that we are building a community that understands our mission and respects the site rules. 
+
+Later on, we hope that site evangelists will be a main channel of acquisition as they will discuss their experiences on the site in existing communities, both online (such as r/jobs) and locally. 
+
