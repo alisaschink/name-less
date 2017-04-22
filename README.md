@@ -18,3 +18,31 @@ A 2015 survey Pew Research Center found that 79% of Americans who'd looked for w
 - 9% of computer science graduates from the top 25 programs, but only 5% of employees at top tech companies, are African American, Latino, or Native American. This trend appears in law as well, with 16% of law school graduates, but only 8% of newly hired associates, coming from underrepresented minorities. 
 - In 2015, there were more C.E.O.s named David than there were C.E.O.s who were women. 
 
+## Key Features 
+
+- Anonymous applicant profiles (no names or headshots!) 
+- Completely customizable profiles with no required sections, allowing applicants to describe their skills and experience in any way that suits them, and giving them the freedom to omit details at their own discretion 
+- Chat feature connecting employers and applicants, with a file sharing option for exchanging work samples or skills assessments 
+- Newsfeed where applicants can post questions and thoughts about navigating the application process, with the option to post anonymously or with their real name 
+
+## Competitors 
+
+#### Similar Sites 
+- Whitetruffle (uses a matching algorithm and profiles are anonymous until both parties accept a "match") 
+- GapJumpers ("blind auditions") 
+
+#### Job Boards and Professional Social Networks 
+- LinkedIn
+- Glassdoor
+- ZipRecruiter 
+
+#### Anonymous Hiring Software 
+- Many companies use 3rd party hiring software, and some of these tools can anonymize resumes 
+
+#### Forums 
+- r/jobs 
+
+#### Hacks 
+- e.g. choosing to submit a resume with a fake name 
+
+
