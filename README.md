@@ -45,4 +45,44 @@ A 2015 survey Pew Research Center found that 79% of Americans who'd looked for w
 #### Hacks 
 - e.g. choosing to submit a resume with a fake name 
 
+## Wire Framing
+Landing Page 
+![](https://github.com/KristenManning/lama-forsaken/blob/readme/Screen%20Shot%202017-04-22%20at%202.01.48%20AM.png "Home")
+### Applicant Experience 
+![](https://github.com/KristenManning/lama-forsaken/blob/readme/Screen%20Shot%202017-04-22%20at%202.01.57%20AM.png "")
 
+Signup Form 
+
+![](https://github.com/KristenManning/lama-forsaken/blob/readme/Screen%20Shot%202017-04-22%20at%202.02.05%20AM.png "")
+
+Homepage / Profile Edit Page
+
+![](https://github.com/KristenManning/lama-forsaken/blob/readme/Screen%20Shot%202017-04-22%20at%202.02.14%20AM.png "")
+
+Job Listings 
+
+![](https://github.com/KristenManning/lama-forsaken/blob/readme/Screen%20Shot%202017-04-22%20at%202.02.24%20AM.png "")
+
+Inbox
+
+![](https://github.com/KristenManning/lama-forsaken/blob/readme/Screen%20Shot%202017-04-22%20at%202.02.32%20AM.png "")
+
+### Employer Experience
+
+![](https://github.com/KristenManning/lama-forsaken/blob/readme/Screen%20Shot%202017-04-22%20at%202.02.44%20AM.png "")
+
+Signup Form 
+
+![](https://github.com/KristenManning/lama-forsaken/blob/readme/Screen%20Shot%202017-04-22%20at%202.02.51%20AM.png "")
+
+Homepage / Job Listings Edit Page 
+
+![](https://github.com/KristenManning/lama-forsaken/blob/readme/Screen%20Shot%202017-04-22%20at%202.02.58%20AM.png "")
+
+Applicant Profiles 
+
+![](https://github.com/KristenManning/lama-forsaken/blob/readme/Screen%20Shot%202017-04-22%20at%202.03.12%20AM.png "")
+
+Inbox 
+
+![](https://github.com/KristenManning/lama-forsaken/blob/readme/Screen%20Shot%202017-04-22%20at%202.03.26%20AM.png "")
