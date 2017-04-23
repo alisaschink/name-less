@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
+var passport = require("./config/passport");
 const path = require('path');
 const multer = require('multer');
 var exphbs = require('express-handlebars');
@@ -39,15 +40,24 @@ app.use(function(req, res, next) {
   next(null, req, res);
 });
 
-// Passport
-// app.use(passport.initialize());
-// app.use(passport.session());
-
 app.use(express.static(path.join(process.cwd(), '/public')));
 // app.use(bodyParser.urlencoded({ extended: false }));
 app.use(methodOverride('_method'));
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 // Routers
+
+// We need to use sessions to keep track of our user's login status
+app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true }));
+app.use(passport.initialize());
+app.use(passport.session());
+
+
+// Requiring our routes
+require("./routes/html-routes.js")(app);
+require("./routes/api-routes.js")(app);
+
 
 
 // Create Server
