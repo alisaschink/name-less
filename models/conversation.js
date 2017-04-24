@@ -1,3 +1,7 @@
+module.exports = function(sequelize, DataTypes) {
+  var Conversation = sequelize.define("Conversation",{});
+  return Conversation;
+};
 // module.exports = function(sequelize, DataTypes) {
 //   var Conversation = sequelize.define('User',
 //     // columns of table
