@@ -1,58 +1,19 @@
 module.exports = function(sequelize, DataTypes) {
-  var Company = sequelize.define("Company",{});
+  var Company = sequelize.define("Company",{
+    name: {
+      type: DataTypes.STRING,
+    }
+   } ,
+   // options
+  {
+   underscored: true,
+   freezeTableName: true,
+   classMethods: {
+     associate: function(models) {
+      
+     }
+   }, // end of classMethods
+  });
   return Company;
 };
 
-// module.exports = function(sequelize, DataTypes) {
-//   var Company = sequelize.define("Company", 
-//   //   {
-//   //     name: {
-//   //       type: DataTypes.STRING,
-//   //     },
-//   //     email: {
-//   //       type: DataTypes.STRING,
-//   //     },
-//   //     password_hash: {
-//   //       type: DataTypes.STRING,
-//   //       allowNull: false,
-//   //     },
-//   //     is_employer: {
-//   //       type: DataTypes.BOOLEAN,
-//   //       defaultValue: false,
-//   //     },
-//   //     img: {
-//   //       type: DataTypes.STRING,
-//   //     },
-//   //     location: {
-//   //       type: DataTypes.STRING,
-//   //     },
-//   //   },
-
-//   //   {
-// 	 //  underscored: true,
-// 	 //  freezeTableName: true,
-// 	 //  classMethods: {
-// 	 //    associate: function(models) {
-// 	 //      User.belongsTo(models.Industry);
-// 	 //      User.belongsTo(models.Company);
-// 	 //    }
-// 	 //  }, // end of classMethods
-//   //   // Creating a custom method for our User model. This will check if an unhashed password entered by
-//   //   // The user can be compared to the hashed password stored in our database
-//   //   instanceMethods: {
-//   //     validPassword: function(password) {
-//   //       return bcrypt.compareSync(password, this.password);
-//   //     }
-//   //   },
-//   //   // Hooks are automatic methods that run during various phases of the User Model lifecycle
-//   //   // In this case, before a User is created, we will automatically hash their password
-//   //   hooks: {
-//   //     beforeCreate: function(user, options, cb) {
-//   //       user.password = bcrypt.hashSync(user.password, bcrypt.genSaltSync(10), null);
-//   //       cb(null, options);
-//   //     }
-//   //   }
-//   // });
-//   return Company;
-
-// };
