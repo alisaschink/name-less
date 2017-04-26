@@ -17,7 +17,18 @@ module.exports = function(sequelize, DataTypes) {
     freezeTableName: true,
     classMethods: {
       associate: function(models) {
-
+        Message.belongsTo(models.User,
+          {
+            foreignKey: {
+              allowNull: false,
+            }
+          });
+        Message.belongsTo(models.Conversation, 
+          {
+            foreignKey: {
+              allowNull: false,
+            }
+          });
       }
     } // end of classMethods
   });

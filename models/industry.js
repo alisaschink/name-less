@@ -11,11 +11,7 @@ module.exports = function(sequelize, DataTypes) {
   // options
   {
     underscored: true,
-    freezeTableName: true,
-    classMethods: {
-      associate: function(models) {
-      }
-    } // end of classMethods
+    freezeTableName: true
   });
   return Industry;
 };
