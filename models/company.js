@@ -16,6 +16,8 @@ module.exports = function(sequelize, DataTypes) {
             allowNull: false,
           }
         });
+        Company.hasMany(models.User);
+        Company.hasMany(models.Job);
       }
    }, // end of classMethods
   });

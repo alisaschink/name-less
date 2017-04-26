@@ -10,6 +10,11 @@ module.exports = function(sequelize, DataTypes) {
   {
     underscored: true,
     freezeTableName: true,
+    classMethods: {
+      associate: function(models) {
+        Conversation.hasMany(models.Message);
+      }
+    } // end of classMethods
   });
   return Conversation;
 };
