@@ -44,6 +44,10 @@ module.exports = function(sequelize, DataTypes) {
               allowNull: false,
             }
           });
+        User.hasMany(models.Message);
+        User.hasMany(models.Job);
+        User.hasMany(models.Newsfeed);
+        User.hasMany(models.Credential);
 	    }
 	  }, // end of classMethods
     // Creating a custom method for our User model. This will check if an unhashed password entered by
