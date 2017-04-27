@@ -50,4 +50,12 @@ module.exports = function(app) {
     }
   });
 
+  app.get("/api/all-users", function(req, res) {
+    db.User.findAll({
+      }).then(function(result) {
+    console.log(result)
+    res.json(result)
+  
+    });
+  });
 };

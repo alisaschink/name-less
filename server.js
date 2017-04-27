@@ -52,10 +52,13 @@ app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true 
 app.use(passport.initialize());
 app.use(passport.session());
 
-
 // Requiring our routes
-require("./routes/html-routes.js")(app);
 require("./routes/api-routes.js")(app);
+require("./routes/html-routes.js")(app);
+
+var ApplicantRoutes = require("./routes/ApplicantController.js");
+app.use("/applicant", ApplicantRoutes);
+
 
 
 // Create Server
