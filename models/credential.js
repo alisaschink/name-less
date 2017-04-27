@@ -19,6 +19,12 @@ module.exports = function(sequelize, DataTypes) {
     freezeTableName: true,
     classMethods: {
       associate: function(models) {
+        Credential.belongsTo(models.User,
+        {
+          foreignKey: {
+            allowNull: false,
+          }
+        });
       }
     } // end of classMethods
   });

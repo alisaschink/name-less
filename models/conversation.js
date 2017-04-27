@@ -12,7 +12,7 @@ module.exports = function(sequelize, DataTypes) {
     freezeTableName: true,
     classMethods: {
       associate: function(models) {
-        
+        Conversation.hasMany(models.Message);
       }
     } // end of classMethods
   });

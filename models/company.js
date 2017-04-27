@@ -9,9 +9,16 @@ module.exports = function(sequelize, DataTypes) {
    underscored: true,
    freezeTableName: true,
    classMethods: {
-     associate: function(models) {
-      
-     }
+      associate: function(models) {
+        Company.belongsTo(models.Industry,
+        {
+          foreignKey: {
+            allowNull: false,
+          }
+        });
+        Company.hasMany(models.User);
+        Company.hasMany(models.Job);
+      }
    }, // end of classMethods
   });
   return Company;

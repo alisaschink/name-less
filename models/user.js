@@ -5,9 +5,9 @@ var bcrypt = require("bcrypt-nodejs");
 module.exports = function(sequelize, DataTypes) {
   var User = sequelize.define("User", 
     {
-      // name: {
-      //   type: DataTypes.STRING,
-      // },
+      name: {
+        type: DataTypes.STRING,
+      },
       email: {
         type: DataTypes.STRING,
       },
@@ -15,17 +15,16 @@ module.exports = function(sequelize, DataTypes) {
         type: DataTypes.STRING,
         // allowNull: false,
       },
-      
-      // is_employer: {
-      //   type: DataTypes.BOOLEAN,
-      //   defaultValue: false,
-      // },
-      // img: {
-      //   type: DataTypes.STRING,
-      // },
-      // location: {
-      //   type: DataTypes.STRING,
-      // },
+      is_employer: {
+        type: DataTypes.BOOLEAN,
+        defaultValue: false,
+      },
+      img: {
+        type: DataTypes.STRING,
+      },
+      location: {
+        type: DataTypes.STRING,
+      },
     },
 
     {
@@ -33,8 +32,22 @@ module.exports = function(sequelize, DataTypes) {
 	  freezeTableName: true,
 	  classMethods: {
 	    associate: function(models) {
-	      User.belongsTo(models.Industry);
-	      User.belongsTo(models.Company);
+	      User.belongsTo(models.Industry,
+          {
+            foreignKey: {
+              allowNull: false,
+            }
+          });
+	      User.belongsTo(models.Company,
+          {
+            foreignKey: {
+              allowNull: false,
+            }
+          });
+        User.hasMany(models.Message);
+        User.hasMany(models.Job);
+        User.hasMany(models.Newsfeed);
+        User.hasMany(models.Credential);
 	    }
 	  }, // end of classMethods
     // Creating a custom method for our User model. This will check if an unhashed password entered by

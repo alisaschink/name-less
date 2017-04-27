@@ -22,7 +22,21 @@ module.exports = function(sequelize, DataTypes) {
     freezeTableName: true,
     classMethods: {
       associate: function(models) {
-
+        Job.belongsTo(models.Industry,{
+          foreignKey: {
+            allowNull: false,
+          }
+        });
+        Job.belongsTo(models.Company, {
+          foreignKey: {
+            allowNull: false,
+          }
+        });
+        Job.belongsTo(models.User, {
+          foreignKey: {
+            allowNull: false,
+          }
+        });
       }
     } // end of classMethods
   });
