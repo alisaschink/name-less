@@ -3,3 +3,18 @@ img{
 	width: auto;
 	border: solid;
 }
+
+h4{
+	font-style: italic;
+}
+
+.detail{
+	font-size: 10px;
+	font-style: italic;
+	font-color: grey;
+}
+
+.basic-info-form{
+	border: solid;
+	border-color: grey;
+}
