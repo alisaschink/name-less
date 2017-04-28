@@ -1,11 +1,11 @@
 
 
 -- 1
-INSERT INTO Industry (name, img) VALUES ('Industry 1','Industry 1 Image');
+INSERT INTO Industry (name, img) VALUES ('Industry 1','https://s-media-cache-ak0.pinimg.com/originals/30/dc/3a/30dc3afd1e8f395af2996217f1710bc9.jpg');
 
 INSERT INTO Company (name, industry_id) VALUES ('Company 1', 1);
 
-INSERT INTO User (name, email, password, img, is_employer, location, industry_id, company_id) VALUES ('User Name 1','User1@gmail.com', '$2a$10$6dXauFqPyY2/dQEN3ubuP.9hGfwoPaaLqtJ35DNi07TWjtyR1i9EO', 'User 1 Image', false, 'User 1 Location', 1, 1);
+INSERT INTO User (name, email, password, img, is_employer, location, industry_id, company_id) VALUES ('User Name 1','User1@gmail.com', '$2a$10$6dXauFqPyY2/dQEN3ubuP.9hGfwoPaaLqtJ35DNi07TWjtyR1i9EO', 'http://www.motherearthnews.com/-/media/Images/MEN/Editorial/Articles/Magazine-Articles/2001/06-01/All-About-Raising-Llamas/Llama-jpg.jpg', false, 'User 1 Location', 1, 1);
 
 INSERT INTO Conversation (is_employer) VALUES (false);
 
@@ -18,11 +18,11 @@ INSERT INTO Credential (heading, subheading, details, section_name, user_id) VAL
 INSERT INTO Job (title, location, description, responsibilities, qualifications, industry_id, company_id, user_id) VALUES ('Title 1','Location 1','Description 1', 'Responsibilities 1','Qualifications 1',1,1,1);
 
 --  2 
-INSERT INTO Industry (name, img) VALUES ('Industry 2','Industry 2 Image');
+INSERT INTO Industry (name, img) VALUES ('Industry 2','http://www.motherearthnews.com/-/media/Images/MEN/Editorial/Articles/Magazine-Articles/2001/06-01/All-About-Raising-Llamas/Llama-jpg.jpg');
 
 INSERT INTO Company (name, industry_id) VALUES ('Company 2', 2);
 
-INSERT INTO User (name, email, password, img, is_employer, location, industry_id, company_id) VALUES ('User Name 2','User2@gmail.com', 'password', 'User 2 Image', false, 'User 2 Location', 2, 2);
+INSERT INTO User (name, email, password, img, is_employer, location, industry_id, company_id) VALUES ('User Name 2','User2@gmail.com', 'password', 'http://www.motherearthnews.com/-/media/Images/MEN/Editorial/Articles/Magazine-Articles/2001/06-01/All-About-Raising-Llamas/Llama-jpg.jpg', false, 'User 2 Location', 2, 2);
 
 INSERT INTO Conversation (is_employer) VALUES (false);
 
@@ -35,11 +35,11 @@ INSERT INTO Credential (heading, subheading, details, section_name, user_id) VAL
 INSERT INTO Job (title, location, description, responsibilities, qualifications, industry_id, company_id, user_id) VALUES ('Title 2','Location 2','Description 2', 'Responsibilities 2','Qualifications 2',2,2,2);
 
 -- 3 
-INSERT INTO Industry (name, img) VALUES ('Industry 3','Industry 3 Image');
+INSERT INTO Industry (name, img) VALUES ('Industry 3','http://www.motherearthnews.com/-/media/Images/MEN/Editorial/Articles/Magazine-Articles/2001/06-01/All-About-Raising-Llamas/Llama-jpg.jpg');
 
 INSERT INTO Company (name, industry_id) VALUES ('Company 3', 3);
 
-INSERT INTO User (name, email, password, img, is_employer, location, industry_id, company_id) VALUES ('User Name 3','User3@gmail.com', 'password', 'User 3 Image', false, 'User 3 Location', 3, 3);
+INSERT INTO User (name, email, password, img, is_employer, location, industry_id, company_id) VALUES ('User Name 3','User3@gmail.com', 'password', 'http://www.motherearthnews.com/-/media/Images/MEN/Editorial/Articles/Magazine-Articles/2001/06-01/All-About-Raising-Llamas/Llama-jpg.jpg', false, 'User 3 Location', 3, 3);
 
 INSERT INTO Conversation (is_employer) VALUES (false);
 

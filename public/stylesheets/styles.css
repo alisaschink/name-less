@@ -1,0 +1,22 @@
+img{
+	height: 200px;
+	width: auto;
+	border: solid;
+}
+
+h4{
+	color:#69c8d3;
+}
+
+.detail{
+	font-size: 10px;
+	font-style: italic;
+	font-color: grey;
+}
+
+.basic-info-form, .placeholder{
+	border: solid;
+	border-color: white;
+	padding: 2%;
+}
+

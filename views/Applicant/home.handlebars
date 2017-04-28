@@ -1,0 +1,35 @@
+
+<div class = "container">
+	<h1>Welcome, {{name}}</h1>
+	<div class = "row">
+		<div class = "col-md-4">
+			<div class = "basic-info-form">
+				<form action="/applicant/update-basic-info" method="POST">
+				<h4>Update Basic Information: </h4>
+				<h5> User Name: <input type="text" name="name" value="{{name}}"> </h5>
+				<p class = "detail"> Don't use your real name or other identifying information!</p>
+				<h5> Email: <input type="text" name="email" value="{{email}}"> </h5>
+				<h5> Input: <input type="text" name="location" value="{{location}}"> </h5>
+				<button type="submit" class="btn-danger">UPDATE</button>
+
+				</form>
+			</div>
+		</div>
+		<div class = "col-md-3">
+			<div>
+				<img src="{{img}}">
+			</div>
+		</div>
+
+		<div class = "col-md-5 placeholder">
+			<div>
+				Something here?? 
+			</div>
+		</div>
+
+
+
+	</div>
+
+</div>
+

@@ -13,13 +13,46 @@ var mysql = require('mysql')
 // router.get('/home', isAuthenticated, function(req,res){
 router.get('/home', function(req,res){
 
-	db.User.findAll({
+	db.User.findOne({
+		where: {
+      id: 1,
+    },
+    include: [db.Credential]
       }).then(function(result) {
-    console.log(result)
-    res.render("index", {data: result})
+
+    var possible_headings = []
+
+    for (c in result.Credentials){
+    	cred = result.Credentials[c].toJSON()
+    	if (possible_headings.indexOf(cred.heading) < 0){
+    		possible_headings.push(cred.heading)
+    	}
+    }
+
+    // var hbs_obj = {data: result.toJSON,
+    // 			}
+    console.log("possible headings = " + possible_headings)
+    // console.log(result.toJSON())
+    res.render("Applicant/home", result.toJSON())
   
     });
 	// res.render("index",{data : router.get("/api/all-users")})
+});
+
+router.post('/update-basic-info', function(req,res){
+	var changes = {
+		name: req.body.name, 
+		email: req.body.email,
+		location: req.body.location
+	}
+	db.User.update(changes, {
+		where: {
+      		id: 1,
+    	},
+      }).then(function(result) {
+    res.redirect("/applicant/home")
+  
+    });
 });
 
 module.exports = router;
