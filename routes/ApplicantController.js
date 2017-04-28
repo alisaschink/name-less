@@ -13,10 +13,14 @@ var mysql = require('mysql')
 // router.get('/home', isAuthenticated, function(req,res){
 router.get('/home', function(req,res){
 
-	db.User.findAll({
+	db.User.findOne({
+		where: {
+      id: 1,
+    },
+    include: [db.Credential]
       }).then(function(result) {
-    console.log(result)
-    res.render("index", {data: result})
+    console.log(result.toJSON())
+    res.render("Applicant/home", result.toJSON())
   
     });
 	// res.render("index",{data : router.get("/api/all-users")})
