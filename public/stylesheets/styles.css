@@ -5,7 +5,7 @@ img{
 }
 
 h4{
-	font-style: italic;
+	color:#69c8d3;
 }
 
 .detail{
@@ -14,7 +14,9 @@ h4{
 	font-color: grey;
 }
 
-.basic-info-form{
+.basic-info-form, .placeholder{
 	border: solid;
-	border-color: grey;
+	border-color: white;
+	padding: 2%;
 }
+

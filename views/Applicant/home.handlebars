@@ -2,9 +2,9 @@
 <div class = "container">
 	<h1>Welcome, {{name}}</h1>
 	<div class = "row">
-		<div class = "col-md-5">
+		<div class = "col-md-4">
 			<div class = "basic-info-form">
-				<form>
+				<form action="/applicant/update-basic-info" method="POST">
 				<h4>Update Basic Information: </h4>
 				<h5> User Name: <input type="text" name="name" value="{{name}}"> </h5>
 				<p class = "detail"> Don't use your real name or other identifying information!</p>
@@ -15,11 +15,19 @@
 				</form>
 			</div>
 		</div>
-		<div class = "col-md-5">
+		<div class = "col-md-3">
 			<div>
 				<img src="{{img}}">
 			</div>
 		</div>
+
+		<div class = "col-md-5 placeholder">
+			<div>
+				Something here?? 
+			</div>
+		</div>
+
+
 
 	</div>
 
