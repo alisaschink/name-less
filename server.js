@@ -59,6 +59,9 @@ require("./routes/html-routes.js")(app);
 var ApplicantRoutes = require("./routes/ApplicantController.js");
 app.use("/applicant", ApplicantRoutes);
 
+var CredentialRoutes = require("./routes/CredentialController.js");
+app.use("/credential", CredentialRoutes);
+
 
 
 // Create Server

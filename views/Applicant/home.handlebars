@@ -9,7 +9,7 @@
 				<h5> User Name: <input type="text" name="name" value="{{data.name}}"> </h5>
 				<p class = "detail"> Don't use your real name or other identifying information!</p>
 				<h5> Email: <input type="text" name="email" value="{{data.email}}"> </h5>
-				<h5> Input: <input type="text" name="location" value="{{data.location}}"> </h5>
+				<h5> Location: <input type="text" name="location" value="{{data.location}}"> </h5>
 				<button type="submit" class="btn-danger">UPDATE</button>
 
 				</form>
@@ -42,10 +42,13 @@
 		{{#each creds}}
 
 		<div class = "col-md-3 credential-tile" id="ct{{id}}">
-			<h3>{{heading}}</h3>
+			<h4>{{heading}}</h4>
 			<h5>{{subheading}}</h5>
-			{{details}}
-		<button type="button" class="btn btn-success" data-toggle="modal" data-target="#credModal{{id}}">Edit</button>
+
+		<div type="button" data-toggle="modal" data-target="#credModal{{id}}">
+		
+		<span class="corner-icon glyphicon glyphicon-pencil"></span>
+		</div>
 		</div>
 
 		<div id="credModal{{id}}" class="modal fade" role="dialog">
@@ -54,14 +57,15 @@
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
-      <form>
+      <form action="/credential/update" method="POST">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-				<input class = "heading-input" type="text" name = "subheading" value="{{heading}}">
+				<input class = "heading-input" type="text" name = "heading" value="{{heading}}">
 				<br>
 				<input class = "subheading-input" type="text" name = "subheading" value="{{subheading}}">
+				<input type="hidden" name = "id" value="{{id}}">
 	      </div>
 	      <div class="modal-body">
-	      <textarea>{{details}}</textarea>
+	      <textarea name="details">{{details}}</textarea>
 	      </div>
 	    
       <div class="modal-footer">

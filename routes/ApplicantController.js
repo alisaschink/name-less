@@ -44,6 +44,7 @@ router.get('/home', function(req,res){
 			}
     	
     }}
+    console.log(result)
     // for (i in hbs_obj.section_creds){
     // 	console.log(hbs_obj.section_creds[i].creds)}
     res.render("Applicant/home", hbs_obj)
