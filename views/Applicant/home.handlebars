@@ -1,35 +1,85 @@
 
 <div class = "container">
-	<h1>Welcome, {{name}}</h1>
+	<h1>Welcome, {{data.name}}</h1>
 	<div class = "row">
 		<div class = "col-md-4">
 			<div class = "basic-info-form">
 				<form action="/applicant/update-basic-info" method="POST">
 				<h4>Update Basic Information: </h4>
-				<h5> User Name: <input type="text" name="name" value="{{name}}"> </h5>
+				<h5> User Name: <input type="text" name="name" value="{{data.name}}"> </h5>
 				<p class = "detail"> Don't use your real name or other identifying information!</p>
-				<h5> Email: <input type="text" name="email" value="{{email}}"> </h5>
-				<h5> Input: <input type="text" name="location" value="{{location}}"> </h5>
+				<h5> Email: <input type="text" name="email" value="{{data.email}}"> </h5>
+				<h5> Input: <input type="text" name="location" value="{{data.location}}"> </h5>
 				<button type="submit" class="btn-danger">UPDATE</button>
 
 				</form>
 			</div>
 		</div>
+
 		<div class = "col-md-3">
 			<div>
-				<img src="{{img}}">
+				<img src="{{data.img}}">
 			</div>
 		</div>
 
 		<div class = "col-md-5 placeholder">
 			<div>
-				Something here?? 
+				Notifications? 
 			</div>
 		</div>
-
-
-
 	</div>
+
+
+
+	{{#each section_creds}}
+
+	<div class = "row section-title">
+		<h2>{{section_name}}</h2>
+	</div>
+
+	<div class = "row credential-tiles-container">
+		
+		{{#each creds}}
+
+		<div class = "col-md-3 credential-tile" id="ct{{id}}">
+			<h3>{{heading}}</h3>
+			<h5>{{subheading}}</h5>
+			{{details}}
+		<button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">Edit</button>
+		</div>
+
+		<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+      <form>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+				<input class = "heading-input" type="text" name = "subheading" value="{{heading}}">
+				<br>
+				<input class = "subheading-input" type="text" name = "subheading" value="{{subheading}}">
+	      </div>
+	      <div class="modal-body">
+	      <textarea>{{details}}</textarea>
+	      </div>
+	    
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-danger">Save</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </form>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+		{{/each}}
+		
+	</div>
+	{{/each}}
+	</div>
+
 
 </div>
 
