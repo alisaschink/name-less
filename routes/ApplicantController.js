@@ -20,7 +20,7 @@ router.get('/home', function(req,res){
     include: [db.Credential]
       }).then(function(result) {
     var hbs_obj = {data: result,
-    			  section_names: []}
+    			  section_creds: []}
     var possible_section_names = []
     // loop over all credentials 
     for (c in result.Credentials){
@@ -30,15 +30,22 @@ router.get('/home', function(req,res){
     	if (possible_section_names.indexOf(cred.section_name) < 0){
     		// if not, add it to the list of section_names 
     		possible_section_names.push(cred.section_name)
-    		// then add the whole credential to the handlebars obj 
-    		hbs_obj.section_names[cred.section_name] = {name: cred.section_name,
-    										 creds: [cred]}
-    	}else{
-			hbs_obj.section_names[cred.section_name.creds].push(cred)
+    		// then add the whole credential to the handlebars obj
+    		var cred_obj = {section_name: cred.section_name,
+    						creds: [cred]} 
+    		hbs_obj.section_creds.push(cred_obj)
     	}
-    }
-
-    res.render("Applicant/home", result.toJSON())
+    	else{
+    		for (s in hbs_obj.section_creds){
+    			if (hbs_obj.section_creds[s].section_name == cred.section_name){
+					var current_section = hbs_obj.section_creds[s]
+					current_section.creds.push(cred)
+    		}
+			}
+    	
+    }}
+    console.log(hbs_obj)
+    res.render("Applicant/home", hbs_obj)
   
     });
 	

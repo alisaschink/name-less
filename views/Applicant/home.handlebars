@@ -15,9 +15,10 @@
 				</form>
 			</div>
 		</div>
+
 		<div class = "col-md-3">
 			<div>
-				<img src="{{img}}">
+				<img src="{{data.img}}">
 			</div>
 		</div>
 
@@ -29,8 +30,22 @@
 	</div>
 
 
-	<div class = "row">
-	{{#each }}
+
+	{{#each section_creds}}
+
+	<div class = "row section-title">
+		<h2>{{section_name}}</h2>
+	</div>
+
+	<div class = "row credential-tiles-container">
+		
+		{{#each creds}}<div class = "col-md-3 credential-tile">
+			<h3>{{heading}}</h3>
+			<h5>{{subheading}}</h5>
+		</div>{{/each}}
+		
+	</div>
+	{{/each}}
 	</div>
 
 
