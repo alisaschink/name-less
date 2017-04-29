@@ -13,7 +13,12 @@ INSERT INTO Message (subject, text, attachment, conversation_id, user_id) VALUES
 
 INSERT INTO Newsfeed (content, user_id) VALUES ('Content 1', 1);
 
-INSERT INTO Credential (heading, subheading, details, section_name, user_id) VALUES ('Heading 1 ','Subheading 1','Details 1', 'Section Name 1', 1);
+INSERT INTO Credential (heading, subheading, details, section_name, user_id) VALUES ('S.B. in Chemical Engineering','Rutgers University','Relevant Courses: Chemistry, Engineering 101. GPA: 3.5. Tutor and undergraduate researcher', 'Education', 1);
+INSERT INTO Credential (heading, subheading, details, section_name, user_id) VALUES ('Full Stack Coding Bootcamp','Rutgers','Knowledge of JavaScript, HTML, CSS, Bootstrap, MySQL and React.', 'Education', 1);
+INSERT INTO Credential (heading, subheading, details, section_name, user_id) VALUES ('SAT Tutor','Kaplan','I tutor high school juniors for the SAT math exam.', 'Experience', 1);
+INSERT INTO Credential (heading, subheading, details, section_name, user_id) VALUES ('Lab Technician','NJIT','I conduct chemistry experiments', 'Experience', 1);
+INSERT INTO Credential (heading, subheading, details, section_name, user_id) VALUES ('The Acidity of Acids','Published in Science','Cited in a NYT pop science article: https://www.nytimes.com/ . Abstract: Lorem ipsum is an acid. Lorem ipsum is not a base. Lorem ipsum is an acid. Lorem ipsum is not a base. Lorem ipsum is an acid. Lorem ipsum is not a base. ', 'Accomplishments', 1);
+INSERT INTO Credential (heading, subheading, details, section_name, user_id) VALUES ('Chemistry Club President','Rutgers University','4 year member and 2 year president of the Rugters Chemistry Club.', 'Leadership', 1);
 
 INSERT INTO Job (title, location, description, responsibilities, qualifications, industry_id, company_id, user_id) VALUES ('Title 1','Location 1','Description 1', 'Responsibilities 1','Qualifications 1',1,1,1);
 

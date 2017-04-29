@@ -19,24 +19,37 @@ router.get('/home', function(req,res){
     },
     include: [db.Credential]
       }).then(function(result) {
-
-    var possible_headings = []
-
+    var hbs_obj = {data: result,
+    			  section_creds: []}
+    var possible_section_names = []
+    // loop over all credentials 
     for (c in result.Credentials){
+    	// reformat as json
     	cred = result.Credentials[c].toJSON()
-    	if (possible_headings.indexOf(cred.heading) < 0){
-    		possible_headings.push(cred.heading)
+    	// check whether the section_name is already registered 
+    	if (possible_section_names.indexOf(cred.section_name) < 0){
+    		// if not, add it to the list of section_names 
+    		possible_section_names.push(cred.section_name)
+    		// then add the whole credential to the handlebars obj
+    		var cred_obj = {section_name: cred.section_name,
+    						creds: [cred]} 
+    		hbs_obj.section_creds.push(cred_obj)
     	}
-    }
-
-    // var hbs_obj = {data: result.toJSON,
-    // 			}
-    console.log("possible headings = " + possible_headings)
-    // console.log(result.toJSON())
-    res.render("Applicant/home", result.toJSON())
+    	else{
+    		for (s in hbs_obj.section_creds){
+    			if (hbs_obj.section_creds[s].section_name == cred.section_name){
+					var current_section = hbs_obj.section_creds[s]
+					current_section.creds.push(cred)
+    		}
+			}
+    	
+    }}
+    // for (i in hbs_obj.section_creds){
+    // 	console.log(hbs_obj.section_creds[i].creds)}
+    res.render("Applicant/home", hbs_obj)
   
     });
-	// res.render("index",{data : router.get("/api/all-users")})
+	
 });
 
 router.post('/update-basic-info', function(req,res){

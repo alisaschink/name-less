@@ -8,15 +8,56 @@ h4{
 	color:#69c8d3;
 }
 
+textarea{
+	height: 100%;
+	width: 100%;
+	opacity: 0.8;
+	color: black;
+}
+
 .detail{
 	font-size: 10px;
 	font-style: italic;
 	font-color: grey;
 }
 
-.basic-info-form, .placeholder{
+.basic-info-form, .placeholder, .credential-tile{
 	border: solid;
 	border-color: white;
 	padding: 2%;
 }
+
+.credential-tile{
+	margin: 2%;
+	border-color: #69c8d3;
+	background-color: white;
+	opacity: 0.7;
+	color: black;
+}
+
+.heading-input{
+	color: white;
+	background: transparent;
+    border: none;
+    font-size: 18px;
+    width: 275px;
+    outline: none;
+    padding: 0px 0px 0px 0px;
+
+}
+
+.subheading-input{
+	color: #69c8d3;
+	background: transparent;
+    border: none;
+    width: 275px;
+    outline: none;
+    padding: 0px 0px 0px 0px;
+    font-style: italic;
+	
+}
+
+
+
+
 
