@@ -20,21 +20,21 @@ router.get('/home', function(req,res){
     include: [db.Credential]
       }).then(function(result) {
     var hbs_obj = {data: result,
-    			  headings: []}
-    var possible_headings = []
+    			  section_names: []}
+    var possible_section_names = []
     // loop over all credentials 
     for (c in result.Credentials){
     	// reformat as json
     	cred = result.Credentials[c].toJSON()
-    	// check whether the heading is already registered 
-    	if (possible_headings.indexOf(cred.heading) < 0){
-    		// if not, add it to the list of headings 
-    		possible_headings.push(cred.heading)
+    	// check whether the section_name is already registered 
+    	if (possible_section_names.indexOf(cred.section_name) < 0){
+    		// if not, add it to the list of section_names 
+    		possible_section_names.push(cred.section_name)
     		// then add the whole credential to the handlebars obj 
-    		hbs_obj.headings[cred.heading] = {name: cred.heading,
+    		hbs_obj.section_names[cred.section_name] = {name: cred.section_name,
     										 creds: [cred]}
     	}else{
-			hbs_obj.headings[cred.heading.creds].push(cred)
+			hbs_obj.section_names[cred.section_name.creds].push(cred)
     	}
     }
 
