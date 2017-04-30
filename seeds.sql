@@ -5,7 +5,7 @@ INSERT INTO Industry (name, img) VALUES ('Industry 1','https://s-media-cache-ak0
 
 INSERT INTO Company (name, industry_id) VALUES ('Company 1', 1);
 
-INSERT INTO User (name, email, password, img, is_employer, location, industry_id, company_id) VALUES ('User Name 1','User1@gmail.com', '$2a$10$6dXauFqPyY2/dQEN3ubuP.9hGfwoPaaLqtJ35DNi07TWjtyR1i9EO', 'http://www.motherearthnews.com/-/media/Images/MEN/Editorial/Articles/Magazine-Articles/2001/06-01/All-About-Raising-Llamas/Llama-jpg.jpg', false, 'User 1 Location', 1, 1);
+INSERT INTO User (name, email, password, img, is_employer, location, industry_id, company_id) VALUES ('UserName1','User1@gmail.com', '$2a$10$6dXauFqPyY2/dQEN3ubuP.9hGfwoPaaLqtJ35DNi07TWjtyR1i9EO', 'http://www.motherearthnews.com/-/media/Images/MEN/Editorial/Articles/Magazine-Articles/2001/06-01/All-About-Raising-Llamas/Llama-jpg.jpg', false, 'User 1 Location', 1, 1);
 
 INSERT INTO Conversation (is_employer) VALUES (false);
 
@@ -27,7 +27,7 @@ INSERT INTO Industry (name, img) VALUES ('Industry 2','http://www.motherearthnew
 
 INSERT INTO Company (name, industry_id) VALUES ('Company 2', 2);
 
-INSERT INTO User (name, email, password, img, is_employer, location, industry_id, company_id) VALUES ('User Name 2','User2@gmail.com', 'password', 'http://www.motherearthnews.com/-/media/Images/MEN/Editorial/Articles/Magazine-Articles/2001/06-01/All-About-Raising-Llamas/Llama-jpg.jpg', false, 'User 2 Location', 2, 2);
+INSERT INTO User (name, email, password, img, is_employer, location, industry_id, company_id) VALUES ('UserName2','User2@gmail.com', 'password', 'http://www.motherearthnews.com/-/media/Images/MEN/Editorial/Articles/Magazine-Articles/2001/06-01/All-About-Raising-Llamas/Llama-jpg.jpg', false, 'User 2 Location', 2, 2);
 
 INSERT INTO Conversation (is_employer) VALUES (false);
 
@@ -44,7 +44,7 @@ INSERT INTO Industry (name, img) VALUES ('Industry 3','http://www.motherearthnew
 
 INSERT INTO Company (name, industry_id) VALUES ('Company 3', 3);
 
-INSERT INTO User (name, email, password, img, is_employer, location, industry_id, company_id) VALUES ('User Name 3','User3@gmail.com', 'password', 'http://www.motherearthnews.com/-/media/Images/MEN/Editorial/Articles/Magazine-Articles/2001/06-01/All-About-Raising-Llamas/Llama-jpg.jpg', false, 'User 3 Location', 3, 3);
+INSERT INTO User (name, email, password, img, is_employer, location, industry_id, company_id) VALUES ('UserName3','User3@gmail.com', 'password', 'http://www.motherearthnews.com/-/media/Images/MEN/Editorial/Articles/Magazine-Articles/2001/06-01/All-About-Raising-Llamas/Llama-jpg.jpg', false, 'User 3 Location', 3, 3);
 
 INSERT INTO Conversation (is_employer) VALUES (false);
 

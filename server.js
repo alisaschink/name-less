@@ -62,6 +62,8 @@ app.use("/applicant", ApplicantRoutes);
 var CredentialRoutes = require("./routes/CredentialController.js");
 app.use("/credential", CredentialRoutes);
 
+var EmployerRoutes = require("./routes/EmployerController.js");
+app.use("/employer", EmployerRoutes);
 
 
 // Create Server

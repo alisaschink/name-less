@@ -3,6 +3,10 @@ img{
 	width: auto;
 	border: solid;
 }
+h1{
+	font-family: 'Lobster Two', cursive;
+
+}
 
 h4{
 	color:#69c8d3;
@@ -13,6 +17,20 @@ textarea{
 	width: 100%;
 	opacity: 0.8;
 	color: black;
+}
+
+.navbar, .nav, .navbar-default{
+	background-color: #781A28;
+}
+
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus{
+	background-color: #781A28;
+}
+
+.sr-only{
+	border-color: #781A28;
+	background-color: #781A28;
+
 }
 
 .detail{
