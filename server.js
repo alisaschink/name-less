@@ -17,7 +17,17 @@ var app = express();
 var PORT = process.env.PORT || 3000;
 
 // Set up view w. Handlebars
-app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
+app.engine('handlebars', exphbs({ 
+    defaultLayout: 'main',   
+    helpers: {
+      findLineBreaks: function (text_block) {
+        text_block = text_block.replace(/(\r\n|\n|\r)/gm, '<br>');
+        return text_block;
+      },
+    }
+  })
+);
+
 app.set('view engine', 'handlebars');
 
 // Middleware

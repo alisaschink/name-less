@@ -20,7 +20,10 @@ router.get('/home', function(req,res){
     include: [db.Credential]
       }).then(function(result) {
     var hbs_obj = {data: result,
-    			  section_creds: []}
+    			  section_creds: [],
+    			  helpers: {
+            		foo: function () { return 'foo.'; }
+        			}}
     var possible_section_names = []
     // loop over all credentials 
     for (c in result.Credentials){
