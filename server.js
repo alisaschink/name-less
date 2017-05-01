@@ -75,6 +75,9 @@ app.use("/credential", CredentialRoutes);
 var EmployerRoutes = require("./routes/EmployerController.js");
 app.use("/employer", EmployerRoutes);
 
+var JobRoutes = require("./routes/JobController.js");
+app.use("/job", JobRoutes);
+
 
 // Create Server
 Models.sequelize.sync({ force: false }).then(function() {
