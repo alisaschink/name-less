@@ -8,6 +8,8 @@ var passport = require("./config/passport");
 const path = require('path');
 const multer = require('multer');
 var exphbs = require('express-handlebars');
+var http = require('http').Server(express);
+var io = require('socket.io')(http);
 
 // Library
 var Models = require('./models');
