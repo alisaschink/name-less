@@ -63,10 +63,13 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // Socket.io
-var http = require('http').Server(app);
-var io = require('socket.io')(http);
+var server = require('http').Server(app);
+var io = require('socket.io')(server);
 io.on('connection', function(socket){
   console.log('a user connected');
+  socket.on('chat message', function(msg){
+    io.emit('chat message', msg);
+  });
   socket.on('disconnect', function(){
     console.log('user disconnected');
   });
@@ -89,11 +92,11 @@ var JobRoutes = require("./routes/JobController.js");
 app.use("/job", JobRoutes);
 
 // var MessageRoutes = require("./routes/MessageController.js");
-// app.use("/message", MessageRoutes);
+// app.use("/messaging", MessageRoutes);
 
 // Create Server
 Models.sequelize.sync({ force: false }).then(function() {
-  app.listen(PORT, function() {
+  server.listen(PORT, function() {
     console.log(`Listening on PORT: ${PORT}`);
   });
 });
