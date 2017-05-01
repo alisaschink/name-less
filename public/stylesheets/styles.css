@@ -3,6 +3,10 @@ img{
 	width: auto;
 	border: solid;
 }
+h1{
+	font-family: 'Lobster Two', cursive;
+
+}
 
 h4{
 	color:#69c8d3;
@@ -15,19 +19,33 @@ textarea{
 	color: black;
 }
 
+.navbar, .nav, .navbar-default{
+	background-color: #781A28;
+}
+
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus{
+	background-color: #781A28;
+}
+
+.sr-only{
+	border-color: #781A28;
+	background-color: #781A28;
+
+}
+
 .detail{
 	font-size: 10px;
 	font-style: italic;
 	font-color: grey;
 }
 
-.basic-info-form, .placeholder, .credential-tile{
+.basic-info-form, .placeholder, .credential-tile, .job-tile{
 	border: solid;
 	border-color: white;
 	padding: 2%;
 }
 
-.credential-tile{
+.credential-tile, .job-tile{
 	margin: 2%;
 	border-color: #69c8d3;
 	background-color: white;
@@ -35,7 +53,7 @@ textarea{
 	color: black;
 }
 
-.heading-input{
+.heading-input, .title-input{
 	color: white;
 	background: transparent;
     border: none;
@@ -46,7 +64,7 @@ textarea{
 
 }
 
-.subheading-input{
+.subheading-input, .location-input{
 	color: #69c8d3;
 	background: transparent;
     border: none;
@@ -55,6 +73,11 @@ textarea{
     padding: 0px 0px 0px 0px;
     font-style: italic;
 	
+
+}
+
+.corner-icon{
+	float: right;
 }
 
 
