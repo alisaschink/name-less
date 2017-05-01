@@ -18,18 +18,22 @@
   </nav>
   <div class="container">
     <div class="row">
-      <div class="col-md-6 col-md-offset-3">
-        <h2>Chat</h2>
-        <ul id="messages"></ul>
+      <div>
+        <h2>Messages</h2>
+        <div id="messages"></div>
+        <h2>New Message</h2>
         <form id="chat-form" action="">
-          <textarea id="message" autocomplete="off"></textarea> 
-          <button class="btn btn-sm">Send</button>
+          <div class="form-group">
+            <textarea id="message" autocomplete="off"></textarea> 
+            <br>
+            <button class="btn btn-sm">Send</button>
+          </div>
         </form>
         <br />
       </div>
     </div>
   </div>
-
+  <script src="/socket.io/socket.io.js"></script>
   <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
   <script type="text/javascript" src="javascript/message.js"></script>
 
