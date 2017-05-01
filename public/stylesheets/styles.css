@@ -39,13 +39,13 @@ textarea{
 	font-color: grey;
 }
 
-.basic-info-form, .placeholder, .credential-tile{
+.basic-info-form, .placeholder, .credential-tile, .job-tile{
 	border: solid;
 	border-color: white;
 	padding: 2%;
 }
 
-.credential-tile{
+.credential-tile, .job-tile{
 	margin: 2%;
 	border-color: #69c8d3;
 	background-color: white;
@@ -53,7 +53,7 @@ textarea{
 	color: black;
 }
 
-.heading-input{
+.heading-input, .title-input{
 	color: white;
 	background: transparent;
     border: none;
@@ -64,7 +64,7 @@ textarea{
 
 }
 
-.subheading-input{
+.subheading-input, .location-input{
 	color: #69c8d3;
 	background: transparent;
     border: none;
