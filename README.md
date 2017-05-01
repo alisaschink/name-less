@@ -110,3 +110,8 @@ Early on, we will focus on direct partnerships (with schools, companies) for acq
 
 Later on, we hope that site evangelists will be a main channel of acquisition as they will discuss their experiences on the site in existing communities, both online (such as r/jobs) and locally. 
 
+### Contributors
+* **Alisa Schick** [github](https://github.com/alisaschink)
+* **Kristen Manning** [github](https://github.com/KristenManning)
+
+
