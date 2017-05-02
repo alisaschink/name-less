@@ -32,11 +32,6 @@ module.exports = function(sequelize, DataTypes) {
             allowNull: false,
           }
         });
-        Job.belongsTo(models.User, {
-          foreignKey: {
-            allowNull: false,
-          }
-        });
       }
     } // end of classMethods
   });
