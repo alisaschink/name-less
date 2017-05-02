@@ -1,0 +1,25 @@
+
+<div class="container col-md-4">
+  <h2>Conversations</h2>
+  <div id="conversations">
+  </div>
+</div>
+
+<div class="container col-md-8">
+  {{#each conversations}}
+  <div>
+  </div>
+  {{/each}}
+  <div>
+    <h2>Messages</h2>
+    <div id="messages"></div>
+    <h2>New Message</h2>
+    <form id="chat-form" action="">
+      <div class="form-group">
+        <textarea id="message" autocomplete="off"></textarea> 
+        <br />
+        <button class="btn btn-sm">Send</button>
+      </div>
+    </form>
+  </div>
+</div>
