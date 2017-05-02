@@ -5,7 +5,15 @@ var bcrypt = require("bcrypt-nodejs");
 module.exports = function(sequelize, DataTypes) {
   var User = sequelize.define("User", 
     {
+      uuid: {
+        type: DataTypes.UUID,
+        defaultValue: DataTypes.UUIDV1,
+        primaryKey: true
+      },
       name: {
+        type: DataTypes.STRING,
+      },
+      username: {
         type: DataTypes.STRING,
       },
       email: {
@@ -45,7 +53,6 @@ module.exports = function(sequelize, DataTypes) {
             }
           });
         User.hasMany(models.Message);
-        User.hasMany(models.Job);
         User.hasMany(models.Newsfeed);
         User.hasMany(models.Credential);
 	    }
