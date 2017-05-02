@@ -3,93 +3,135 @@
 
 <div class = "container">
 
-<div class="row"> 
-	<h1>Welcome, {{data.name}}</h1>
-	<div class = "row">
-		<div class = "col-md-4">
-			<div class = "basic-info-form">
-				<form action="/applicant/update-basic-info" method="POST">
-				<h4>Update Basic Information: </h4>
-				<h5> User Name: <input type="text" name="name" value="{{data.name}}"> </h5>
-				<p class = "detail"> Don't use your real name or other identifying information!</p>
-				<h5> Email: <input type="text" name="email" value="{{data.email}}"> </h5>
-				<h5> Location: <input type="text" name="location" value="{{data.location}}"> </h5>
-				<button type="submit" class="btn-danger">UPDATE</button>
+	<div class="row"> 
+		<h1>Welcome, {{data.name}}</h1>
+		<div class = "row">
+			<div class = "col-md-4">
+				<div class = "basic-info-form">
+					<form action="/applicant/update-basic-info" method="POST">
+					<h4>Update Basic Information: </h4>
+					<h5> User Name: <input type="text" name="name" value="{{data.name}}"> </h5>
+					<p class = "detail"> Don't use your real name or other identifying information!</p>
+					<h5> Email: <input type="text" name="email" value="{{data.email}}"> </h5>
+					<h5> Location: <input type="text" name="location" value="{{data.location}}"> </h5>
+					<button type="submit" class="btn-danger">UPDATE</button>
 
-				</form>
+					</form>
+				</div>
+			</div>
+
+			<div class = "col-md-3">
+				<div>
+					<img src="{{data.img}}">
+				</div>
+			</div>
+
+			<div class = "col-md-5 placeholder">
+				<div>
+					Notifications? 
+				</div>
 			</div>
 		</div>
 
-		<div class = "col-md-3">
-			<div>
-				<img src="{{data.img}}">
-			</div>
+
+
+		{{#each section_creds}}
+
+		<div class = "row section-title">
+			<h2>{{section_name}}</h2>
 		</div>
 
-		<div class = "col-md-5 placeholder">
-			<div>
-				Notifications? 
+		<div class = "row credential-tiles-container">
+			
+			{{#each creds}}
+
+			<div class = "col-md-3 credential-tile" id="ct{{id}}">
+				<h4>{{heading}}</h4>
+				<h5>{{subheading}}</h5>
+
+			<div type="button" data-toggle="modal" data-target="#credModal{{id}}">
+			
+			<span class="corner-icon glyphicon glyphicon-pencil"></span>
 			</div>
-		</div>
-	</div>
+			</div>
 
-
-
-	{{#each section_creds}}
-
-	<div class = "row section-title">
-		<h2>{{section_name}}</h2>
-	</div>
-
-	<div class = "row credential-tiles-container">
 		
-		{{#each creds}}
 
-		<div class = "col-md-3 credential-tile" id="ct{{id}}">
-			<h4>{{heading}}</h4>
-			<h5>{{subheading}}</h5>
-
-		<div type="button" data-toggle="modal" data-target="#credModal{{id}}">
+			{{/each}}
 		
-		<span class="corner-icon glyphicon glyphicon-pencil"></span>
+			<div class = "col-md-3 credential-tile">
+				<div type="button" data-toggle="modal" data-target="#ModalNew{{section_name}}">
+					<span class="giant-icon glyphicon glyphicon-plus-sign"></span>
+				</div>
+			</div>
+			
 		</div>
-		</div>
-
-		<div id="credModal{{id}}" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-      <form action="/job/update" method="POST">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-				<input class = "heading-input" type="text" name = "heading" value="{{heading}}">
-				<br>
-				<input class = "subheading-input" type="text" name = "subheading" value="{{subheading}}">
-				<input type="hidden" name = "id" value="{{id}}">
-	      </div>
-	      <div class="modal-body">
-	      <textarea name="details">{{{details }}}
-	      </textarea>
-	      </div>
-	    
-      <div class="modal-footer">
-        <button type="submit" class="btn btn-danger">Save</button>
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </form>
-      </div>
-    </div>
-
-  </div>
-</div>
-
 		{{/each}}
-		
+
 	</div>
+
+	<!-- MODALS -->
+{{#each section_creds}}
+	{{#each creds}}
+		<div id="credModal{{id}}" class="modal fade" role="dialog">
+		  <div class="modal-dialog">
+
+		    <!-- Modal content-->
+		    <div class="modal-content">
+		      <div class="modal-header">
+		      <form action="/credential/update" method="POST">
+		        <button type="button" class="close" data-dismiss="modal">&times;</button>
+						<input class = "heading-input" type="text" name = "heading" value="{{heading}}">
+						<br>
+						<input class = "subheading-input" type="text" name = "subheading" value="{{subheading}}">
+						<input type="hidden" name = "id" value="{{id}}">
+			      </div>
+			      <div class="modal-body">
+			      <textarea name="details">{{{details }}}
+			      </textarea>
+			      </div>
+			    
+		      <div class="modal-footer">
+		        <button type="submit" class="btn btn-danger">Save</button>
+		        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		      </form>
+		      </div>
+		    </div>
+
+		  </div>
+		</div>
 	{{/each}}
-	</div>
+{{/each}}
 
+{{#each section_creds}}
+<div id="ModalNew{{section_name}}" class="modal fade" role="dialog">
+		  <div class="modal-dialog">
 
-</div>
+		    <!-- Modal content-->
+		    <div class="modal-content">
+		      <div class="modal-header">
+		      <form action="/credential/new" method="POST">
+		        <button type="button" class="close" data-dismiss="modal">&times;</button>
+						<input class = "heading-input" type="text" name = "heading" value="Your {{section_name}} Credential Here">
+						<br>
+						<input class = "subheading-input" type="text" name = "subheading" value="Role, Title, Company, Project, School, etc Here">
+			      </div>
+			      <div class="modal-body">
+			      <textarea name="details">Resume-style bullets, excerpts of your work, links to projects, publications or awards, etc 
+			      </textarea>
+			      <input type="hidden" name = "section_name" value="{{section_name}}">
+			      <input type="hidden" name = "user_id" value="{{../data.id}}">
+			      </div>
+			    
+		      <div class="modal-footer">
+		        <button type="submit" class="btn btn-danger">Save</button>
+		        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		      </form>
+		      </div>
+		    </div>
+
+		  </div>
+		</div>
+{{/each}}
 
 
