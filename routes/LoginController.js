@@ -10,8 +10,18 @@ var mysql = require('mysql')
 router.get('/', function(req,res){
 	if (req.user) {
       res.redirect("/applicant/home");
-    }
+    }else{
+    res.render("signup", {})
+	}
+ 
+});
+
+router.get('/login', function(req,res){
+	if (req.user) {
+      res.redirect("/applicant/home");
+    }else{
     res.render("login", {})
+	}
  
 });
 
