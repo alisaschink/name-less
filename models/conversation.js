@@ -1,7 +1,7 @@
 module.exports = function(sequelize, DataTypes) {
   var Conversation = sequelize.define("Conversation",
   {
-    is_employer: {
+    is_anonymous: {
       type: DataTypes.BOOLEAN,
       defaultValue: false,
     }
