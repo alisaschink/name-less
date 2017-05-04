@@ -9,14 +9,16 @@ var mysql = require('mysql')
 
 router.get('/home', isAuthenticated, function(req,res){
     if (req.user.is_employer == true){
-        db.User.findOne({
+        db.Company.findOne({
             where: {
-          id: req.user.id,
+          user_id: req.user.id,
         },
-        include: [db.Company]
+        include: [db.Job]
           }).then(function(result) {
-        console.log(result.toJSON())
-        var hbs_obj = result.toJSON()
+        var hbs_obj = {
+                        user: req.user,
+                        data: result.toJSON()
+                      }
         res.render("Employer/home", hbs_obj)
       
         });
