@@ -50,6 +50,15 @@
 		</div>
 		</div>
 		{{/each}}
+
+		<div class = "col-md-3 job-tile" id="new-job-tile">
+				<div class = "col-md-3 credential-tile">
+					<div type="button" data-toggle="modal" data-target="#ModalNew{{section_name}}">
+						<span class="giant-icon glyphicon glyphicon-plus-sign"></span>
+				</div>
+			</div>
+		</div>
+	</div>
 	</div>
 </div>
 
@@ -68,7 +77,7 @@
 				<input type="hidden" name = "id" value="{{id}}">
 	      </div>
 	      <div class="modal-body">
-	      Description: <textarea name="description">{{{description }}}
+	      Description: <textarea name="description">{{{description}}}
 	      </textarea>
 	      Responsibilities: <textarea name="responsibilities">{{{responsibilities }}}
 	      </textarea>
@@ -87,5 +96,38 @@
 </div>
 		
 {{/each}}
+
+<div id="jobModalNew" class="modal fade" role="dialog">
+		  <div class="modal-dialog">
+
+		    <!-- Modal content-->
+		    <div class="modal-content">
+		      <div class="modal-header">
+		      <form action="/credential/new" method="POST">
+		        <button type="button" class="close" data-dismiss="modal">&times;</button>
+						<input class = "title-input" type="text" name = "title" value="Role Here">
+						<br>
+						<input class = "location-input" type="text" name = "location" value="Location Here">
+			      </div>
+			      <div class="modal-body">
+			   	<textarea name="description">Role description here
+			    </textarea>
+		        <textarea name="responsibilities">Role responsibilities here 
+			    </textarea>
+		        <textarea name="qualifications">Role qualifications here 
+			    </textarea>
+			    <input type="hidden" name = "company_id" value="{{company_id}}">
+			    <input type="hidden" name = "industry_id" value="{{industry_id}}">
+			    </div>
+			    
+		      <div class="modal-footer">
+		        <button type="submit" class="btn btn-danger">Save</button>
+		        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		      </form>
+		      </div>
+		    </div>
+
+		  </div>
+		</div>
 
 

@@ -32,4 +32,21 @@ router.post('/update', function(req,res){
 
 });
 
+router.post('/new', function(req,res){
+	console.log(req.body)
+	var changes = {
+		section_name: req.body.section_name,
+		user_id: req.body.user_id,
+		heading: req.body.heading, 
+		subheading: req.body.subheading,
+		details: req.body.details
+	}
+	console.log(changes)
+	db.Credential.create(changes).then(function(result) {
+  	console.log(result)
+    res.redirect("/applicant/home")
+    });
+
+});
+
 module.exports = router;
