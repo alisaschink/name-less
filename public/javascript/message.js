@@ -19,7 +19,7 @@
         // sends message object to newmessage post route
        $.post('/messaging/newcomment', messageObj).then(function(results) {
         console.log(results);
-        displayResults();
+        //displayResults function here
       })
 
       // emits message object using socket.io
