@@ -94,8 +94,8 @@ app.use("/employer", EmployerRoutes);
 var JobRoutes = require("./routes/JobController.js");
 app.use("/job", JobRoutes);
 
-// var MessageRoutes = require("./routes/MessageController.js");
-// app.use("/messaging", MessageRoutes);
+var MessageRoutes = require("./routes/MessageController.js");
+app.use("/messaging", MessageRoutes);
 
 // Create Server
 Models.sequelize.sync({ force: false }).then(function() {

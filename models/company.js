@@ -16,7 +16,12 @@ module.exports = function(sequelize, DataTypes) {
             allowNull: false,
           }
         });
-        Company.hasOne(models.User);
+        Company.belongsTo(models.User,
+        {
+          foreignKey: {
+            allowNull: false,
+          }
+        });
         Company.hasMany(models.Job);
       }
    }, // end of classMethods

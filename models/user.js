@@ -5,11 +5,11 @@ var bcrypt = require("bcrypt-nodejs");
 module.exports = function(sequelize, DataTypes) {
   var User = sequelize.define("User", 
     {
-      uuid: {
-        type: DataTypes.UUID,
-        defaultValue: DataTypes.UUIDV1,
-        primaryKey: false
-      },
+      // uuid: {
+      //   type: DataTypes.UUID,
+      //   defaultValue: DataTypes.UUIDV1,
+      //   primaryKey: true
+      // },
       name: {
         type: DataTypes.STRING,
       },
@@ -41,12 +41,6 @@ module.exports = function(sequelize, DataTypes) {
 	  classMethods: {
 	    associate: function(models) {
 	      User.belongsTo(models.Industry,
-          {
-            foreignKey: {
-              allowNull: false,
-            }
-          });
-	      User.belongsTo(models.Company,
           {
             foreignKey: {
               allowNull: false,
