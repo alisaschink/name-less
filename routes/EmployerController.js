@@ -34,7 +34,7 @@ router.get('/applicant/:user_name', function(req,res){
 
 	db.User.findOne({
 		where: {
-      name: req.params.user_name,
+      username: req.params.user_name,
     },
     include: [db.Credential]
       }).then(function(result) {
