@@ -4,10 +4,14 @@ var express = require('express');
 var router  = express.Router();
 var mysql = require('mysql');
 
+var userId;
+
 // get route to display all conversations for user
 router.get('/', function(req, res){
-  var userId = req.user ? req.user.id : "1";
-  db.Conversation.findAll().then(function(dbConversation){
+  if(req.user){
+    userId = req.user.id
+  }
+  db.Conversation.findAll({where: {user_id: userId}}).then(function(dbConversation){
     res.render('messaging/index', {conversations: dbConversation})
   })
 });
@@ -16,7 +20,9 @@ router.get('/', function(req, res){
  router.get('/conversation/:id/messages', function(req, res) {
   var conversationId = req.params.id;
   console.log('conversation ID' + conversationId);
-  var userId = req.user ? req.user.id : "1";
+  if(req.user){
+    userId = req.user.id
+  }
   var convoResults;
   Models.Conversation.findOne({
     where: { id: conversationId },
@@ -41,7 +47,9 @@ router.get('/', function(req, res){
 
 // post route for a new message
 router.post('/newmessage', function(req, res){
-  var userId = req.user ? req.user.id : "1"
+  if(req.user){
+    userId = req.user.id
+  }
   db.Message.create({
     subject: req.body.subject,
     text: req.body.text,
