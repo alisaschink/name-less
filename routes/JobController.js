@@ -6,6 +6,24 @@ var express = require('express');
 var router  = express.Router();
 var mysql = require('mysql')
 
+router.get('/company/:company_id', isAuthenticated, function(req,res){
+    if (req.user){
+        db.Company.findOne({
+            where: {
+          id: req.params.company_id,
+        },
+        include: [db.Job]
+          }).then(function(result) {
+        var hbs_obj = {
+                        data: result.toJSON()
+                      }
+        res.render("company-profile", hbs_obj)
+      
+        });
+    }
+    
+});
+
 router.post('/update', function(req,res){
 	var changes = {
 		title: req.body.title, 
