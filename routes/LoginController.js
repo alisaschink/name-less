@@ -16,6 +16,24 @@ router.get('/', function(req,res){
  
 });
 
+router.get('/employerSignup', function(req,res){
+  if (req.user) {
+      res.redirect("/employer/home");
+    }else{
+    res.render("employerSignup", {})
+  }
+ 
+});
+
+router.get('/applicantSignup', function(req,res){
+  if (req.user) {
+      res.redirect("/applicant/home");
+    }else{
+    res.render("applicantSignup", {})
+  }
+ 
+});
+
 router.get('/login', function(req,res){
 	if (req.user) {
       res.redirect("/applicant/home");

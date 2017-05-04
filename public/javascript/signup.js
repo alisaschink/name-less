@@ -8,6 +8,7 @@ $(document).ready(function() {
   var isEmployerInput = $("#isEmployer-input");
   var locationInput = $("#location-input");
 
+
   // When the signup button is clicked, we validate the email and password are not blank
   signUpForm.on("submit", function(event) {
     event.preventDefault();
@@ -33,6 +34,8 @@ $(document).ready(function() {
   // Does a post to the signup route. If succesful, we are redirected to the members page
   // Otherwise we log any errors
   function signUpUser(email, password, realName, userName, isEmployer, location) {
+
+
     $.post("/api/signup", {
       email: email,
       password: password,
