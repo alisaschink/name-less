@@ -11,7 +11,16 @@ router.get('/', function(req, res){
   if(req.user){
     userId = req.user.id
   }
-  db.Conversation.findAll({where: {user_id: userId}}).then(function(dbConversation){
+  db.Conversation.findAll({
+    where: {user_id: userId},
+    include: [{
+      model: Models.User
+    }]
+  }).then(function(results){
+    userResults = {
+      a: results
+    }
+  }).then(function(dbConversation){
     res.render('messaging/index', {conversations: dbConversation})
   })
 });

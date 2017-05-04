@@ -6,10 +6,16 @@
 </div>
 
 <div class="container col-md-8">
-  {{#each conversations}}
+  {{#each conversations}}{{if this.is_anonymous}}
   <div class="row convos" convo-id="{{this.id}}"">
+    <h4>{{this.user.id}}</h4>
   </div>
-  {{/each}}
+  {{/each}}{{/if}}
+  {{#each conversations}}{{unless this.is_anonymous}}
+  <div class="row convos" convo-id="{{this.id}}"">
+    <h4>{{this.user.username}}</h4>
+  </div>
+  {{/each}}{{/unless}}
   <div>
     <h2>Messages</h2>
     <div id="messages"></div>
