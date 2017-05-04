@@ -11,7 +11,7 @@ INSERT INTO Industry (name, img) VALUES ('Retail','https://s-media-cache-ak0.pin
 
 -- Applicant 1
 INSERT INTO User (name, username, email, password, img, is_employer, location, industry_id, company_id) VALUES ('User Full Name', 'UserName1','User1@gmail.com', '$2a$10$6dXauFqPyY2/dQEN3ubuP.9hGfwoPaaLqtJ35DNi07TWjtyR1i9EO', 'http://www.motherearthnews.com/-/media/Images/MEN/Editorial/Articles/Magazine-Articles/2001/06-01/All-About-Raising-Llamas/Llama-jpg.jpg', false, 'User 1 Location', 1);
-INSERT INTO Conversation (is_employer) VALUES (false);
+INSERT INTO Conversation (is_anonymous) VALUES (false);
 INSERT INTO Message (subject, text, attachment, conversation_id, user_id) VALUES ('Message 1 Subject','Message 1 Text','Message 1 Attachment',1,1);
 INSERT INTO Newsfeed (content, user_id) VALUES ('Content 1', 1);
 INSERT INTO Credential (heading, subheading, details, section_name, user_id) VALUES ('S.B. in Chemical Engineering','Rutgers University','Relevant Courses: Chemistry, Engineering 101. GPA: 3.5. Tutor and undergraduate researcher', 'Education', 1);
@@ -23,14 +23,14 @@ INSERT INTO Credential (heading, subheading, details, section_name, user_id) VAL
 
 --  Appliant 2 
 INSERT INTO User (name, username, email, password, img, is_employer, location, industry_id, company_id) VALUES ('User Full Name', 'UserName2','User2@gmail.com', 'password', 'http://www.motherearthnews.com/-/media/Images/MEN/Editorial/Articles/Magazine-Articles/2001/06-01/All-About-Raising-Llamas/Llama-jpg.jpg', true, 'User 2 Location', 2);
-INSERT INTO Conversation (is_employer) VALUES (false);
+INSERT INTO Conversation (is_anonymous) VALUES (false);
 INSERT INTO Message (subject, text, attachment, conversation_id, user_id) VALUES ('Message 2 Subject','Message 2 Text','Message 2 Attachment',2,2);
 INSERT INTO Newsfeed (content, user_id) VALUES ('Content 2', 2);
 INSERT INTO Credential (heading, subheading, details, section_name, user_id) VALUES ('Heading 2 ','Subheading 2','Details 2', 'Section Name 2', 2);
 
 -- Applicant 3 
 INSERT INTO User (name, username, email, password, img, is_employer, location, industry_id, company_id) VALUES ('User Full Name', 'UserName3','User3@gmail.com', 'password', 'http://www.motherearthnews.com/-/media/Images/MEN/Editorial/Articles/Magazine-Articles/2001/06-01/All-About-Raising-Llamas/Llama-jpg.jpg', true, 'User 3 Location', 3);
-INSERT INTO Conversation (is_employer) VALUES (false);
+INSERT INTO Conversation (is_anonymous) VALUES (false);
 INSERT INTO Message (subject, text, attachment, conversation_id, user_id) VALUES ('Message 3 Subject','Message 3 Text','Message 3 Attachment',3,3);
 INSERT INTO Newsfeed (content, user_id) VALUES ('Content 3', 3);
 INSERT INTO Credential (heading, subheading, details, section_name, user_id) VALUES ('Heading 3 ','Subheading 3','Details 3', 'Section Name 3', 3);
@@ -40,7 +40,7 @@ INSERT INTO Credential (heading, subheading, details, section_name, user_id) VAL
 -- Employer 1
 
 INSERT INTO User (name, username, email, password, img, is_employer, location, industry_id, company_id) VALUES ('Employer Full Name', 'Employer1User4','employer1@gmail.com', 'password', 'https://s-media-cache-ak0.pinimg.com/originals/47/34/e9/4734e94c777828ca15bf65f77eec0d3c.jpg', true, 'User 4 Location', 3);
-INSERT INTO Conversation (is_employer) VALUES (false);
+INSERT INTO Conversation (is_anonymous) VALUES (false);
 INSERT INTO Message (subject, text, attachment, conversation_id, user_id) VALUES ('Message 3 Subject','Message 3 Text','Message 3 Attachment',3,3);
 INSERT INTO Newsfeed (content, user_id) VALUES ('Content 3', 3);
 INSERT INTO Credential (heading, subheading, details, section_name, user_id) VALUES ('Heading 3 ','Subheading 3','Details 3', 'Section Name 3', 3);
