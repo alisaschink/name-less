@@ -11,18 +11,38 @@ router.get('/', function(req, res){
   if(req.user){
     userId = req.user.id
   }
-  db.Conversation.findAll({
-    where: {user_id: userId},
-    include: [{
-      model: Models.User
-    }]
-  }).then(function(results){
-    userResults = {
-      a: results
-    }
-  }).then(function(dbConversation){
-    res.render('messaging/index', {conversations: dbConversation})
-  })
+  var userResults;
+  // db.Conversation.findAll({
+  //   where: {user_id: userId}
+  // }).then((results) => {
+  //   // save results for a given conversation to a convoResults object
+  //   userResults = {
+  //     a: results,
+  //   };
+  //   // find all the messages for that conversation and include user data
+  //   db.Message.findAll({
+  //     include: {
+  //       model: db.User
+  //     }
+  //   }).then(function(messageResults) {
+  //     // save messages and user data to a new key within the convoResults object
+  //     userResults.b = messageResults;
+  //     // res.json(userResults);
+  //   })}).then(function(dbConversation){
+  //   res.render('messaging/index', {conversations: dbConversation})
+  // })
+  // db.User.findOne({
+  //   where: {user_id: userId},
+  //   include: {
+  //     model: db.Conversation,
+  //     through: db.Message
+  //   }
+  // }).then((results) => {
+  //   userResults = {
+  //     r: results
+  //   };
+  //   console.log(userResults);
+  // })
 });
 
 // route to get messages for a given conversation
@@ -33,7 +53,7 @@ router.get('/', function(req, res){
     userId = req.user.id
   }
   var convoResults;
-  Models.Conversation.findOne({
+  db.Conversation.findOne({
     where: { id: conversationId },
   }).then((results) => {
     // save results for a given conversation to a convoResults object
@@ -41,10 +61,10 @@ router.get('/', function(req, res){
       a: results,
     };
     // find all the messages for that conversation and include user data
-    Models.Message.findAll({
+    db.Message.findAll({
       where: { conversation_id: conversationId },
       include: {
-        model: Models.User
+        model: db.User
       }
     }).then(function(messageResults) {
       // save messages and user data to a new key within the convoResults object

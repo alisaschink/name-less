@@ -1,14 +1,9 @@
 
 <div class="container col-md-4">
   <h2>Conversations</h2>
-  <div id="conversations">
-  </div>
-</div>
-
-<div class="container col-md-8">
   {{#each conversations}}{{if this.is_anonymous}}
   <div class="row convos" convo-id="{{this.id}}"">
-    <h4>{{this.user.id}}</h4>
+    <h4>{{this.id}}</h4>
   </div>
   {{/each}}{{/if}}
   {{#each conversations}}{{unless this.is_anonymous}}
@@ -16,6 +11,9 @@
     <h4>{{this.user.username}}</h4>
   </div>
   {{/each}}{{/unless}}
+</div>
+
+<div class="container col-md-8">
   <div>
     <h2>Messages</h2>
     <div id="messages"></div>
