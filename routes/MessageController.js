@@ -12,37 +12,11 @@ router.get('/', function(req, res){
     userId = req.user.id
   }
   var userResults;
-  // db.Conversation.findAll({
-  //   where: {user_id: userId}
-  // }).then((results) => {
-  //   // save results for a given conversation to a convoResults object
-  //   userResults = {
-  //     a: results,
-  //   };
-  //   // find all the messages for that conversation and include user data
-  //   db.Message.findAll({
-  //     include: {
-  //       model: db.User
-  //     }
-  //   }).then(function(messageResults) {
-  //     // save messages and user data to a new key within the convoResults object
-  //     userResults.b = messageResults;
-  //     // res.json(userResults);
-  //   })}).then(function(dbConversation){
-  //   res.render('messaging/index', {conversations: dbConversation})
-  // })
-  // db.User.findOne({
-  //   where: {user_id: userId},
-  //   include: {
-  //     model: db.Conversation,
-  //     through: db.Message
-  //   }
-  // }).then((results) => {
-  //   userResults = {
-  //     r: results
-  //   };
-  //   console.log(userResults);
-  // })
+  db.Conversation.findAll({
+    where: [{user_1: userId}, {user_2: userId}]
+  }).then(function(dbConversation){
+    res.render('messaging/index', {conversations: dbConversation})
+  })
 });
 
 // route to get messages for a given conversation
