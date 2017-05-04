@@ -77,7 +77,10 @@ io.on('connection', function(socket){
 
 // Requiring our routes
 require("./routes/api-routes.js")(app);
-require("./routes/html-routes.js")(app);
+// require("./routes/html-routes.js")(app);
+
+var LoginRoutes = require("./routes/LoginController.js");
+app.use("/", LoginRoutes);
 
 var ApplicantRoutes = require("./routes/ApplicantController.js");
 app.use("/applicant", ApplicantRoutes);
