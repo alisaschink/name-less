@@ -5,13 +5,8 @@ var db = require("../models");
 var express = require('express');
 var router  = express.Router();
 var mysql = require('mysql')
-// var connection = require('../config/connection.js')
 
-// Student's home view 
-// Get announcements from student's teacher(s) and project(s) student is working on 
-
-// router.get('/home', isAuthenticated, function(req,res){
-router.get('/home', function(req,res){
+router.get('/home', isAuthenticated, function(req,res){
     if (req.user.is_employer == false){
         db.User.findOne({
             where: {
@@ -45,22 +40,17 @@ router.get('/home', function(req,res){
                 }
             
         }}
-        console.log(result)
-        // for (i in hbs_obj.section_creds){
-        //  console.log(hbs_obj.section_creds[i].creds)}
+
         res.render("Applicant/home", hbs_obj)
       
     });
         
     }else if (req.user.is_employer == true) {
-        res.redirect("employer/home")
+        res.redirect("/employer/home")
     }
     else{
-        console.log("ERROR - user is not an employer or an applicant")
+        res.redirect("/")
     }
-
-
-	
 });
 
 router.post('/update-basic-info', function(req,res){

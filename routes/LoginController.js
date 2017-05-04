@@ -9,7 +9,7 @@ var mysql = require('mysql')
 
 router.get('/', function(req,res){
 	if (req.user) {
-      res.redirect("/applicant/home");
+      res.redirect("/members");
     }else{
     res.render("signup", {})
 	}
@@ -44,7 +44,13 @@ router.get('/login', function(req,res){
 });
 
 router.get('/members', isAuthenticated, function(req,res){
+  if (req.user.is_employer == false){
+    console.log(req.user.is_employer)
     res.redirect("/applicant/home");
+  }
+  else if (req.user.is_employer == true){
+    res.redirect("/employer/home")
+  }
 });
 
 module.exports = router;
