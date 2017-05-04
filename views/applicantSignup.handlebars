@@ -1,0 +1,30 @@
+<form class="signup" action = "/api/signup" method = "POST">
+            <div class="form-group">
+              <label for="exampleInputEmail1">Email address</label>
+              <input type="email" class="form-control" id="email-input" placeholder="Email">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Password</label>
+              <input type="password" class="form-control" id="password-input" placeholder="Password">
+            </div>
+            <div class="form-group">
+              <label>Full Name</label>
+              <input name = "name" type="text" class="form-control" id="realName-input" placeholder="Your Real Name">
+            </div>
+            <div class="form-group">
+              <label>User Name</label>
+              <input name = "username" type="text" class="form-control" id="userName-input" placeholder="User Name (Don't include your real name!)">
+            </div>
+            <div class="form-group">
+              <label>Location</label>
+              <input name = "location" type="text" class="form-control" id="location-input" placeholder="Location">
+            </div>
+           <input id="isEmployer-input" value="0">
+
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-danger">Sign Me Up!</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal">Nevermind</button>
+          </form>
+
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+  <script type="text/javascript" src="javascript/signup.js"></script>

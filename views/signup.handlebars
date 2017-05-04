@@ -1,39 +1,12 @@
-<div class="container">
-    <div class="row">
-      <div class="col-md-6 col-md-offset-3">
-        <h2>Sign Up Form</h2>
-        <form class="signup" action = "/api/signup" method = "POST">
-          <div class="form-group">
-            <label for="exampleInputEmail1">Email address</label>
-            <input type="email" class="form-control" id="email-input" placeholder="Email">
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input type="password" class="form-control" id="password-input" placeholder="Password">
-          </div>
-          <div class="form-group">
-            <label>Full Name</label>
-            <input name = "name" type="text" class="form-control" id="realName-input" placeholder="Your Real Name">
-          </div>
-          <div class="form-group">
-            <label>User Name</label>
-            <input name = "username" type="text" class="form-control" id="userName-input" placeholder="User Name (Don't include your real name!)">
-          </div>
-          <div class="form-group">
-            <label>Location</label>
-            <input name = "location" type="text" class="form-control" id="location-input" placeholder="Location">
-          </div>
-          <div class="form-group">
-          	<input type="radio" name="is_employer" value="0" checked> Applicant<br>
-  			<input type="radio" name="is_employer" value="1"> Employer
-          </div>
-          <button type="submit" class="btn btn-default">Sign Up</button>
-        </form>
-        <br />
-        <p>Or log in <a href="/login">here</a></p>
-      </div>
-    </div>
-  </div>
+<h3> Sign Up </h3>
+
+I am an
+
+<a href="/employerSignUp"><button> Employer </button> </a>
+
+<a href="/applicantSignUp"><button> Applicant/Networker </button> </a>
 
   <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
   <script type="text/javascript" src="javascript/signup.js"></script>
+<br><br><br>
+<a href="/login">Or Log In </a>

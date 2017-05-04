@@ -28,7 +28,25 @@ passport.use(new LocalStrategy(
           message: "Incorrect password."
         });
       }
-      // If none of the above, return the user
+      // var userData = {
+      //   id: dbUser.id,
+      //   name: dbUser.name, 
+      //   username: dbUser.username,
+      //   email: dbUser.email,
+
+
+      // }
+      // if (dbUser.is_employer){
+      //   userData.role = "E"
+      // }
+      // // if ()
+      // // userData = {
+      // //   role: "Educator",
+      // //   id: dbUser.id,
+      // //   user: dbUser.username,
+      // //   email: dbUser.email,
+      // // }
+      // // If none of the above, return the user
       return done(null, dbUser);
     });
   }
@@ -47,3 +65,5 @@ passport.deserializeUser(function(obj, cb) {
 
 // Exporting our configured passport
 module.exports = passport;
+
+
