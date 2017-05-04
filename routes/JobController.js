@@ -31,7 +31,7 @@ router.post('/new', function(req,res){
 		location: req.body.location,
 		description: req.body.description,
 		responsibilities: req.body.responsibilities,
-		qualifications: req.body.qualifications
+		qualifications: req.body.qualifications,
 		company_id: req.body.company_id,
 		// user_id: req.body.user_id,
 		industry_id: req.body.industry_id,
