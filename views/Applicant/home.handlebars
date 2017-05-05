@@ -10,8 +10,9 @@
 				<div class = "basic-info-form">
 					<form action="/applicant/update-basic-info" method="POST">
 					<h4>Update Basic Information: </h4>
-					<h5> User Name: <input type="text" name="name" value="{{data.name}}"> </h5>
+					<h5> Anonymous Username: <input type="text" name="username" value="{{data.username}}"> </h5>
 					<p class = "detail"> Don't use your real name or other identifying information!</p>
+					<h5> Public Bio: <input type="text" name="name" value="{{data.name}}"> </h5>
 					<h5> Email: <input type="text" name="email" value="{{data.email}}"> </h5>
 					<h5> Location: <input type="text" name="location" value="{{data.location}}"> </h5>
 					<button type="submit" class="btn-danger">UPDATE</button>
@@ -28,8 +29,12 @@
 
 			<div class = "col-md-5 placeholder">
 				<div>
-					<h3>Public Profile Blurb:</h3>
-
+					<h3>Public Bio:</h3>
+					<form action="/applicant/update-public-bio" method="POST">
+					<textarea name = "info">{{{data.info}}}
+					</textarea>
+					<button type="submit">UPDATE</button>
+					</form>
 				</div>
 			</div>
 		</div>
@@ -62,7 +67,7 @@
 
 			{{/each}}
 		
-			<div class = "col-md-3 credential-tile">
+			<div class = "col-md-3">
 				<div type="button" data-toggle="modal" data-target="#ModalNew{{section_name}}">
 					<span class="giant-icon glyphicon glyphicon-plus-sign"></span>
 				</div>

@@ -53,16 +53,31 @@ router.get('/home', isAuthenticated, function(req,res){
     }
 });
 
-router.post('/update-basic-info', function(req,res){
+router.post('/update-basic-info', isAuthenticated, function(req,res){
 	var changes = {
+        username: req.body.username,
 		name: req.body.name, 
 		email: req.body.email,
 		location: req.body.location
 	}
 	db.User.update(changes, {
 		where: {
-      		id: 1,
+      		id: req.user.id,
     	},
+      }).then(function(result) {
+    res.redirect("/applicant/home")
+  
+    });
+});
+
+router.post('/update-public-bio', isAuthenticated, function(req,res){
+    var changes = {
+        info: req.body.info
+    }
+    db.User.update(changes, {
+        where: {
+            id: req.user.id,
+        },
       }).then(function(result) {
     res.redirect("/applicant/home")
   
