@@ -1,0 +1,61 @@
+<div class = "container">
+
+	<div class="row">
+		<div class = "col-md-4">
+			<h1>{{data.username}}</h1>
+		</div>
+	</div>
+<!-- 	<div class="row">  -->
+<div class = "row job-tiles-container">
+		
+		{{#each data.Jobs}}
+
+		<div class = "col-md-3 job-tile" id="jt{{id}}">
+			<h4>{{title}}</h4>
+			<h5>{{location}}</h5>
+
+			<div type="button" data-toggle="modal" data-target="#jobModal{{id}}">
+		
+			<span class="corner-icon glyphicon glyphicon-resize-full"></span>
+		</div>
+		</div>
+		{{/each}}
+
+	</div>
+	<!-- </div> -->
+	
+</div>
+	
+
+	{{#each data.Jobs}}
+		<div id="jobModal{{id}}" class="modal fade" role="dialog">
+
+		  <div class="modal-dialog">
+
+		    <!-- Modal content-->
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal">&times;</button>
+						<h3>{{title}}</h3>
+						<h4>{{location}}</h4>
+			   </div>
+			   <div class="modal-body">
+	      Description: {{{findLineBreaks description}}}
+	      
+	      Responsibilities: {{{findLineBreaks responsibilities}}}
+	      
+	      Qualifications: {{{findLineBreaks qualifications}}}
+	      
+	      </div>
+			
+
+		    <div class="modal-footer">
+		        <button type="submit" class="btn btn-danger">Save</button>
+		        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		      	</form>
+		    </div>
+			</div>
+		  </div>
+
+		</div>
+	{{/each}}

@@ -1,16 +1,16 @@
 <div class = "container">
  	<div class="row"> 
-		<h1>Welcome, {{name}}</h1>
+		<h1>Welcome, {{user.username}}</h1>
 	</div>
 	<div class = "row">
 		<div class = "col-md-4">
 			<div class = "basic-info-form">
 				<form action="/applicant/update-basic-info" method="POST">
 					<h4>Update Basic Information: </h4>
-					<h5> User Name: <input type="text" name="name" value="{{name}}"> </h5>
-					<p class = "detail"> Don't use your real name or other identifying information!</p>
-					<h5> Email: <input type="text" name="email" value="{{email}}"> </h5>
-					<h5> Location: <input type="text" name="location" value="{{location}}"> </h5>
+					<h5> Account Owner Name: <input type="text" name="name" value="{{user.name}}"> </h5>
+					<h5> Company User Name: <input type="text" name="name" value="{{user.username}}"> </h5>
+					<h5> Email: <input type="text" name="email" value="{{user.email}}"> </h5>
+					<h5> Location: <input type="text" name="location" value="{{user.location}}"> </h5>
 					<button type="submit" class="btn-danger">UPDATE</button>
 				</form>
 			</div>
@@ -18,7 +18,7 @@
 
 		<div class = "col-md-3">
 			<div>
-				<img src="{{img}}">
+				<img src="{{user.img}}">
 			</div>
 		</div>
 
@@ -38,7 +38,7 @@
 	</div>
 	<div class = "row job-tiles-container">
 		
-		{{#each Jobs}}
+		{{#each data.Jobs}}
 
 		<div class = "col-md-3 job-tile" id="jt{{id}}">
 			<h4>{{title}}</h4>
@@ -53,7 +53,7 @@
 
 		<div class = "col-md-3 job-tile" id="new-job-tile">
 				<div class = "col-md-3 credential-tile">
-					<div type="button" data-toggle="modal" data-target="#ModalNew{{section_name}}">
+					<div type="button" data-toggle="modal" data-target="#jobModalNew">
 						<span class="giant-icon glyphicon glyphicon-plus-sign"></span>
 				</div>
 			</div>
@@ -62,7 +62,7 @@
 	</div>
 </div>
 
-{{#each Jobs}}
+{{#each data.Jobs}}
 <div id="jobModal{{id}}" class="modal fade" role="dialog">
   <div class="modal-dialog">
 
@@ -79,15 +79,15 @@
 	      <div class="modal-body">
 	      Description: <textarea name="description">{{{description}}}
 	      </textarea>
-	      Responsibilities: <textarea name="responsibilities">{{{responsibilities }}}
+	      Responsibilities: <textarea name="responsibilities">{{{responsibilities}}}
 	      </textarea>
-	      Qualifications: <textarea name="qualifications">{{{qualifications }}}
+	      Qualifications: <textarea name="qualifications">{{{qualifications}}}
 	      </textarea>
 	      </div>
 	    
       <div class="modal-footer">
         <button type="submit" class="btn btn-danger">Save</button>
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
       </form>
       </div>
     </div>
@@ -122,7 +122,7 @@
 			    
 		      <div class="modal-footer">
 		        <button type="submit" class="btn btn-danger">Save</button>
-		        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
 		      </form>
 		      </div>
 		    </div>

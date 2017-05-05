@@ -32,7 +32,9 @@
 				</div>
 			</div>
 		</div>
-
+	<br>
+	
+	<button data-toggle="modal" data-target="#NewSection"> Add A New Section </button>
 
 
 		{{#each section_creds}}
@@ -134,4 +136,33 @@
 		</div>
 {{/each}}
 
+<div id="NewSection" class="modal fade" role="dialog">
+		  <div class="modal-dialog">
+
+		    <!-- Modal content-->
+		    <div class="modal-content">
+		      <div class="modal-header">
+		      <form action="/credential/new" method="POST">
+		        <button type="button" class="close" data-dismiss="modal">&times;</button>
+		        		Section Name: <input name = "section_name" value="{{section_name}}">
+		        		<br>
+						<input class = "heading-input" type="text" name = "heading" value="Your {{section_name}} Credential Here">
+						<br>
+						<input class = "subheading-input" type="text" name = "subheading" value="Role, Title, Company, Project, School, etc Here">
+			      </div>
+			      <div class="modal-body">
+			      <textarea name="details">Resume-style bullets, excerpts of your work, links to projects, publications or awards, etc 
+			      </textarea>
+			      <input type="hidden" name = "user_id" value="{{data.id}}">
+			      </div>
+			    
+		      <div class="modal-footer">
+		        <button type="submit" class="btn btn-danger">Save</button>
+		        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		      </form>
+		      </div>
+		    </div>
+
+		  </div>
+		</div>
 

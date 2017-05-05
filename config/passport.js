@@ -28,25 +28,6 @@ passport.use(new LocalStrategy(
           message: "Incorrect password."
         });
       }
-      // var userData = {
-      //   id: dbUser.id,
-      //   name: dbUser.name, 
-      //   username: dbUser.username,
-      //   email: dbUser.email,
-
-
-      // }
-      // if (dbUser.is_employer){
-      //   userData.role = "E"
-      // }
-      // // if ()
-      // // userData = {
-      // //   role: "Educator",
-      // //   id: dbUser.id,
-      // //   user: dbUser.username,
-      // //   email: dbUser.email,
-      // // }
-      // // If none of the above, return the user
       return done(null, dbUser);
     });
   }
