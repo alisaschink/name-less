@@ -1,10 +1,27 @@
+ $(document).ready(function() {
+
  var conversationId;
 
+$('.start-convo').on('click', function() {
+    // e.preventDefault();
+    // grabs user_id for recipient
+    // var recipientId = $('.start-convo').attr('recipient-id');
+    // var is_anonymous = $('.start-convo').attr('is-anonymous');
+    // var convoObj = {
+    //   is_anonymous: is_anonymous
+    // }
+
+    // $.post("/messaging/new/conversation/applicant/" + recipientId, convoObj).then(function(results) {
+    //   console.log(results);
+    // });
+    console.log("hi");
+  });
+ 
  $('.convos').on('click', function(e) {
     e.preventDefault();
     // displays messages for associated conversation when conversation div is clicked
     conversationId = $('.convos').attr('convo-id');
-    $.get("/conversation/" + conversationId + "/messages", function(results) {
+    $.get("/messaging/conversation/" + conversationId + "/messages", function(results) {
       displayMessages(results);
     });
   });
@@ -28,7 +45,7 @@
       }
 
         // sends message object to newmessage post route
-       $.post('/messaging/newcomment', messageObj).then(function(results) {
+       $.post('/messaging/new/message', messageObj).then(function(results) {
         console.log(results);
         //display function here?
       })
@@ -44,7 +61,7 @@
     socket.on('chat message', function(msg){
       // $('#messages').append($('<div>').text(msg));
       console.log(msg);
-      $.get("/conversation/" + conversationId + "/messages", function(results) {
+      $.get("/messaging/conversation/" + conversationId + "/messages", function(results) {
         displayMessages(results);
       });
     });
@@ -70,4 +87,7 @@ function displayMessages(r) {
     // append messages to message div
     $('#messages').append(userDiv);
   }
+}
+
+
 }
