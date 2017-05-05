@@ -53,16 +53,48 @@ router.get('/home', isAuthenticated, function(req,res){
     }
 });
 
-router.post('/update-basic-info', function(req,res){
+router.get('/public/:user_id', isAuthenticated, function(req,res){
+  if (req.user){
+    db.User.findOne({
+      where: {
+          id: req.params.user_id,
+      }
+    }).then(function(result) {
+      var hbs_obj = {
+                      data: result.toJSON()
+                    }
+      res.render("Applicant/public-bio", hbs_obj)
+    
+    });
+  }
+    
+});
+
+router.post('/update-basic-info', isAuthenticated, function(req,res){
 	var changes = {
+      username: req.body.username,
 		name: req.body.name, 
 		email: req.body.email,
 		location: req.body.location
 	}
 	db.User.update(changes, {
 		where: {
-      		id: 1,
+      		id: req.user.id,
     	},
+      }).then(function(result) {
+    res.redirect("/applicant/home")
+  
+    });
+});
+
+router.post('/update-public-bio', isAuthenticated, function(req,res){
+    var changes = {
+        info: req.body.info
+    }
+    db.User.update(changes, {
+        where: {
+            id: req.user.id,
+        },
       }).then(function(result) {
     res.redirect("/applicant/home")
   
