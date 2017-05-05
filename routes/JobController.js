@@ -12,11 +12,12 @@ router.get('/company/:company_id', isAuthenticated, function(req,res){
             where: {
           id: req.params.company_id,
         },
-        include: [db.Job]
+        include: [db.Job, db.User]
           }).then(function(result) {
         var hbs_obj = {
                         data: result.toJSON()
                       }
+        console.log()
         res.render("company-profile", hbs_obj)
       
         });

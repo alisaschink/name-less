@@ -2,7 +2,7 @@
 
 	<div class="row">
 		<div class = "col-md-4">
-			<h1>{{data.username}}</h1>
+			<h1>Open Positions At {{data.name}}</h1>
 		</div>
 	</div>
 <!-- 	<div class="row">  -->
@@ -40,19 +40,21 @@
 						<h4>{{location}}</h4>
 			   </div>
 			   <div class="modal-body">
-	      Description: {{{findLineBreaks description}}}
-	      
-	      Responsibilities: {{{findLineBreaks responsibilities}}}
-	      
-	      Qualifications: {{{findLineBreaks qualifications}}}
-	      
+	      <h6>Description:</h6>
+	      <div>{{{findLineBreaks description}}} </div>
+	      <br>
+	      <h6>Responsibilities:</h6>
+	      <div> {{{findLineBreaks responsibilities}}} </div>
+	      <br>
+	      <h6>Qualifications: </h6>
+	      <div>{{{findLineBreaks qualifications}}} </div>
+	      <br>
 	      </div>
 			
 
 		    <div class="modal-footer">
-		        <button type="submit" class="btn btn-danger">Save</button>
+		        <button type="submit" class="btn btn-danger">Contact {{../data.name}} About This Position</button>
 		        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-		      	</form>
 		    </div>
 			</div>
 		  </div>

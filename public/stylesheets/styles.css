@@ -12,6 +12,11 @@ h4{
 	color:#69c8d3;
 }
 
+h6{
+	font-style: bold;
+	color: pink;
+}
+
 textarea{
 	height: 200px;
 	width: 100%;
