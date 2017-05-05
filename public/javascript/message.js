@@ -18,7 +18,7 @@ $('.start-convo').on('click', function() {
  
  $('.convos').on('click', function() {
     // displays messages for associated conversation when conversation div is clicked
-    conversationId = $('.convos').attr('convo-id');
+    conversationId = $(this).attr('convo-id');
     $.get("/messaging/conversation/" + conversationId + "/messages", function(results) {
       displayMessages(results);
     });
@@ -71,18 +71,20 @@ function displayMessages(r) {
   $('#messages').empty();
   // for each message, create a set of divs
   for (var i = 0; i < r.b.length; i++) {
-    var user = r.b[i].User.id + " Posted At " + moment(r.b[i].created_at).format("dddd, MMMM Do YYYY, h:mm a");
-    var subjects = r.b[i].subject
+    var user = r.b[i].User.username + " Posted At "
+     // + moment(r.b[i].created_at).format("dddd, MMMM Do YYYY, h:mm a");
+    var subject = r.b[i].subject
     var text = r.b[i].text;
     var attachment = r.b[i].attachment;
     var userDiv = $('<div>').addClass('user-div').append(user);
     var subjectDiv = $('<div>').addClass('subject-div').append(subject);
-    var messageDiv = $('<div>').addClass('message-div').append(comments);
+    var messageDiv = $('<div>').addClass('message-div').append(text);
     var attachmentDiv = $('<div>').addClass('attachment-div').append(attachment);
     userDiv.append(subjectDiv);
     userDiv.append(messageDiv);
     userDiv.append(attachmentDiv);
     // append messages to message div
+    console.log(userDiv)
     $('#messages').append(userDiv);
   }
 }
