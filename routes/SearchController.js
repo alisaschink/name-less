@@ -7,26 +7,25 @@ var router  = express.Router();
 var mysql = require('mysql')
 
 router.get('/', isAuthenticated, function(req,res){
-    if (req.user.is_employer == false){
-
-        db.Job.findAll({
+				console.log(req.body)
+        db.Credential.findAll({
             where: {
-          // $or: [
-          // 			heading: {like: '%' + keyword + '%'},
-          // 			subheading: {like: '%' + keyword + '%'},
-          // 			details:{like: '%' + keyword + '%'}
-          // 			]
+          $or: [
+          			{heading: {like: '%' + req.query.keyword + '%'}},
+          			{subheading: {like: '%' + req.query.keyword + '%'}},
+          			{details:{like: '%' + req.query.keyword + '%'}}
+          			]
         		}
           }).then(function(result) {
           	var users = []
           	for (cred in result){
           		if (users.indexOf(result[cred].user_id) < 0){
-          		user.push(result[cred].user_id)
+          		users.push(result[cred].user_id)
           		}
           	}
           	console.log(users)
 
-        		db.Users.findAll({
+        		db.User.findAll({
 		            where: {
 				          id: users
 				        }
@@ -35,6 +34,5 @@ router.get('/', isAuthenticated, function(req,res){
         				res.json(hbs_obj)
         			});
    				});
-				}
 			});
 module.exports = router;
