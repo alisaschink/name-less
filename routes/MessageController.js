@@ -49,7 +49,7 @@ router.get('/', function(req, res){
 });
 
 // post route for a new message
-router.post('/newmessage', function(req, res){
+router.post('/new/message', function(req, res){
   if(req.user){
     userId = req.user.id
   }
@@ -61,6 +61,21 @@ router.post('/newmessage', function(req, res){
     user_id: userId
   }).then(function(dbMessage){
     res.json(dbMessage);
+  });
+});
+
+//post route for a new conversation
+router.post('/new/conversation/applicant/:id', function(req, res){
+  if(req.user){
+    userId = req.user.id
+  }
+  db.Conversation.create({
+    is_anonymous: req.body.is_anonymous,
+    user_1: userId,
+ //user_2 comes from req.params? --> add user-id attribute to convo button
+    user_2: req.params.id
+  }).then(function(dbConversation){
+    res.json(dbConversation);
   });
 });
 
