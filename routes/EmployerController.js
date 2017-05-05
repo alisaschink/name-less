@@ -15,12 +15,14 @@ router.get('/home', isAuthenticated, function(req,res){
         },
         include: [db.Job]
           }).then(function(result) {
+        if (result){
         var hbs_obj = {
                         user: req.user,
                         data: result.toJSON()
                       }
+        }
         res.render("Employer/home", hbs_obj)
-      
+        
         });
     }else if (req.user.is_employer == false){
         res.redirect("/applicant/home")
