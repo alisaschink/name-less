@@ -32,4 +32,5 @@ router.get('/home', isAuthenticated, function(req,res){
     
 });
 
+
 module.exports = router;
