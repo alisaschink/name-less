@@ -3,7 +3,6 @@
  var conversationId;
 
 $('.start-convo').on('click', function() {
-    // e.preventDefault();
     // grabs user_id for recipient
     // var recipientId = $('.start-convo').attr('recipient-id');
     // var is_anonymous = $('.start-convo').attr('is-anonymous');
@@ -17,8 +16,7 @@ $('.start-convo').on('click', function() {
     console.log("hi");
   });
  
- $('.convos').on('click', function(e) {
-    e.preventDefault();
+ $('.convos').on('click', function() {
     // displays messages for associated conversation when conversation div is clicked
     conversationId = $('.convos').attr('convo-id');
     $.get("/messaging/conversation/" + conversationId + "/messages", function(results) {
@@ -90,4 +88,4 @@ function displayMessages(r) {
 }
 
 
-}
+})

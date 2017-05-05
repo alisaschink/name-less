@@ -3,13 +3,13 @@ module.exports = function(sequelize, DataTypes) {
   {
     is_anonymous: {
       type: DataTypes.BOOLEAN,
-      defaultValue: false,
     },
     user_1: {
-      type: DataTypes.STRING
+      // needs to chance back to string when using uuid?
+      type: DataTypes.INTEGER
     },
     user_2: {
-      type: DataTypes.STRING
+      type: DataTypes.INTEGER
     }
   },
   // options
