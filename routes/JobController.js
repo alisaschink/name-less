@@ -18,7 +18,7 @@ router.get('/company/:company_id', isAuthenticated, function(req,res){
                         data: result.toJSON()
                       }
         console.log()
-        res.render("company-profile", hbs_obj)
+        res.render("Employer/job-listings", hbs_obj)
       
         });
     }
