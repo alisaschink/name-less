@@ -32,6 +32,10 @@ textarea{
 	color: black;
 }
 
+button{
+  margin: 5px;
+}
+
 .navbar, .nav, .navbar-default{
 	background-color: #333333;
 }
@@ -110,10 +114,30 @@ margin: 20px;
  margin-right: .5%; 
 }
 
+#subject{
+  margin: 2px;
+}
+
+#message{
+  margin: 2px;
+}
+
+#attachment{
+  margin: 2px;
+}
+
+
 .giant-icon{
 	font-size: 50px;
 	text-align: center;
 }
 
+#welcome-heading{
+  font-size: 60px;
+}
 
+.signup{
+  padding: 20px;
+  margin: 5px;
+}
 
