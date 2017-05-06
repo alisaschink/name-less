@@ -52,16 +52,22 @@
 						<h4>{{location}}</h4>
 			   </div>
 			   <div class="modal-body">
-	      <h6>Description:</h6>
-	      <div>{{{findLineBreaks description}}} </div>
-	      <br>
-	      <h6>Responsibilities:</h6>
-	      <div> {{{findLineBreaks responsibilities}}} </div>
-	      <br>
-	      <h6>Qualifications: </h6>
-	      <div>{{{findLineBreaks qualifications}}} </div>
-	      <br>
-	      </div>
+			        <h6>Description:</h6>
+			        {{#if description}}
+			        <div>{{{findLineBreaks description}}} </div>
+			        {{/if}}
+			        <br>
+			        <h6>Responsibilities:</h6>
+			        {{#if description}}
+			        <div> {{{findLineBreaks responsibilities}}} </div>
+			        {{/if}}
+			        <br>
+			        <h6>Qualifications: </h6>
+			        {{#if qualifications}}
+			        <div>{{{findLineBreaks qualifications}}} </div>
+			        {{/if}}
+			        <br>
+			        </div>
 			
 
 		    <div class="modal-footer">

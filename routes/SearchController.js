@@ -16,6 +16,7 @@ var searchAnonProfiles = function(req,res){
 	  			{details:{like: '%' + req.query.keyword + '%'}}
 	  			]
 				}
+
   }).then(function(result) {
   	var users = []
   	for (cred in result){
@@ -61,7 +62,8 @@ var searchJobs = function(req,res){
 	  			{qualifications: {like: '%' + req.query.keyword + '%'}},
 	  			{responsibilities: {like: '%' + req.query.keyword + '%'}},
 	  			]
-				}
+				},
+			include: [db.Company]
   }).then(function(result) {
 				var hbs_obj = {result: result,
 											originalQuery: req.query}
