@@ -14,7 +14,6 @@ $('.start-convo').on('click', function() {
       window.location.replace("/messaging")
       console.log(results);
     });
-
   });
  
  $('.convos').on('click', function() {
