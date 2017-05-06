@@ -1,5 +1,6 @@
 <h1>{{data.name}}</h1>
 <img src="{{data.img}}"> 
+{{#if data.info}}
 <h4>{{{findLineBreaks data.info}}}</h4>
-
-<button>Start A Conversation</button>
+{{/if}}
+<button class="start-convo btn btn-large btn-danger">Start A Conversation</button>
