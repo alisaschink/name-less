@@ -38,7 +38,7 @@ $('.start-convo').on('click', function() {
       // saves message data to a message object
       var messageObj = {
         subject: subject,
-        message: message,
+        text: message,
         attachment: attachment,
         conversation_id: conversationId
       }
@@ -75,6 +75,7 @@ function displayMessages(r) {
     var user = r.b[i].User.username 
     // + " Posted At " + moment(r.b[i].created_at).format("dddd, MMMM Do YYYY, h:mm a");
     var subject = r.b[i].subject
+    
     var text = r.b[i].text;
     var attachment = r.b[i].attachment;
     var userDiv = $('<div>').addClass('user-div').append(user);
