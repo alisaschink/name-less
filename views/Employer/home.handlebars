@@ -11,7 +11,7 @@
 					<h5> Company User Name: <input type="text" name="name" value="{{user.username}}"> </h5>
 					<h5> Email: <input type="text" name="email" value="{{user.email}}"> </h5>
 					<h5> Location: <input type="text" name="location" value="{{user.location}}"> </h5>
-					<button type="submit" class="btn-danger">UPDATE</button>
+					<button type="submit" class="btn btn-md btn-default">UPDATE</button>
 				</form>
 			</div>
 		</div>
@@ -23,10 +23,15 @@
 		</div>
 
 		<div class = "col-md-5 placeholder">
-			<div>
-				Notifications? 
+				<div>
+					<h3>Public Bio:</h3>
+					<form action="/applicant/update-public-bio" method="POST">
+					<textarea name = "info">{{{data.info}}}
+					</textarea>
+					<button type="submit" class="btn btn-md btn-default">UPDATE</button>
+					</form>
+				</div>
 			</div>
-		</div>
 	</div>
 
 
