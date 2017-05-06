@@ -5,11 +5,11 @@
 	<div class = "row">
 		<div class = "col-md-4">
 			<div class = "basic-info-form">
-				<form action="/applicant/update-basic-info" method="POST">
-					<h4>Update Basic Information: </h4>
+				<form action="/employer/update-basic-info" method="POST">
+					<h3>Company Account: </h4>
 					<h5> Account Owner Name: <input type="text" name="name" value="{{user.name}}"> </h5>
-					<h5> Company User Name: <input type="text" name="name" value="{{user.username}}"> </h5>
-					<h5> Email: <input type="text" name="email" value="{{user.email}}"> </h5>
+					<h5> Company Name: <input type="text" name="name" value="{{user.username}}"> </h5>
+					<h5> Account Owner Email: <input type="text" name="email" value="{{user.email}}"> </h5>
 					<h5> Location: <input type="text" name="location" value="{{user.location}}"> </h5>
 					<h5> Image: <input type="text" name="image" value="{{user.img}}"> </h5>
 					<button type="submit" class="btn btn-md btn-default">UPDATE</button>
@@ -19,14 +19,16 @@
 
 		<div class = "col-md-3">
 			<div>
+			{{#if user.img}}
 				<img src="{{user.img}}">
+			{{/if}}
 			</div>
 		</div>
 
 		<div class = "col-md-5 placeholder">
 				<div>
-					<h3>Public Bio:</h3>
-					<form action="/applicant/update-public-bio" method="POST">
+					<h3>Company Bio:</h3>
+					<form action="/employer/update-public-bio" method="POST">
 					<textarea name = "info">{{{data.info}}}
 					</textarea>
 					<button type="submit" class="btn btn-md btn-default">UPDATE</button>
@@ -40,7 +42,7 @@
 
 
 	<div class = "row section-title">
-		<h3>Your Job Listings </h3>
+		<h2>Job Listings at {{user.username}}</h2>
 	</div>
 	<div class = "row job-tiles-container">
 		
@@ -57,8 +59,8 @@
 		</div>
 		{{/each}}
 
-		<div class = "col-md-3 job-tile" id="new-job-tile">
-				<div class = "col-md-3 credential-tile">
+		<div class = "col-md-3" id="new-job-tile">
+				<div class = "col-md-3">
 					<div type="button" data-toggle="modal" data-target="#jobModalNew">
 						<span class="giant-icon glyphicon glyphicon-plus-sign"></span>
 				</div>
@@ -116,11 +118,11 @@
 						<input class = "location-input" type="text" name = "location" value="Location Here">
 			      </div>
 			      <div class="modal-body">
-			   	<textarea name="description">Role description here
+			   	<textarea name="description">Description
 			    </textarea>
-		        <textarea name="responsibilities">Role responsibilities here 
+		        <textarea name="responsibilities">Responsibilities
 			    </textarea>
-		        <textarea name="qualifications">Role qualifications here 
+		        <textarea name="qualifications">Qualifications
 			    </textarea>
 			    <input type="hidden" name = "company_id" value="{{company_id}}">
 			    <input type="hidden" name = "industry_id" value="{{industry_id}}">
