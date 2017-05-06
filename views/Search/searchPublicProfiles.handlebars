@@ -22,9 +22,11 @@
 		</div>
 	</div>
 	{{#each result}}
-	<div class = "row">
-		<a href="">{{name}}</a>
-	</div>
+    {{#unless is_employer}}
+    	<div class = "row">
+    		<a href="/applicant/public/{{id}}">{{name}}</a>
+    	</div>
+    {{/unless}}
 	{{/each}}
 
 </div>

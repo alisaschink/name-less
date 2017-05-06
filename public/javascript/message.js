@@ -4,16 +4,17 @@
 
 $('.start-convo').on('click', function() {
     // grabs user_id for recipient
-    // var recipientId = $('.start-convo').attr('recipient-id');
-    // var is_anonymous = $('.start-convo').attr('is-anonymous');
-    // var convoObj = {
-    //   is_anonymous: is_anonymous
-    // }
+    var recipientId = $('.start-convo').attr('recipient-id');
+    var is_anonymous = $('.start-convo').attr('is-anonymous');
+    var convoObj = {
+      is_anonymous: is_anonymous
+    }
 
-    // $.post("/messaging/new/conversation/applicant/" + recipientId, convoObj).then(function(results) {
-    //   console.log(results);
-    // });
-    console.log("hi");
+    $.post("/messaging/new/conversation/applicant/" + recipientId, convoObj).then(function(results) {
+      window.location.replace("/messaging")
+      console.log(results);
+    });
+
   });
  
  $('.convos').on('click', function() {
