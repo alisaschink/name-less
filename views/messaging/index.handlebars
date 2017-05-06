@@ -3,7 +3,7 @@
   <h2>Conversations</h2>
   {{#each conversations}}
   <div class="row convos" convo-id="{{this.id}}">
-    <h4>{{this.id}}</h4>
+    <h4>{{this.title}}</h4>
   </div>
   {{/each}}
 </div>
@@ -18,7 +18,7 @@
         <input id="subject" placeholder="Subject" />
         <textarea id="message" placeholder="Message" autocomplete="off" rows="8"></textarea> 
         <input id="attachment" placeholder="Attachment" />
-        <br />
+        <br/>
         <button class="btn btn-sm">Send</button>
       </div>
     </form>

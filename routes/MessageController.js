@@ -13,16 +13,6 @@ router.get('/', function(req, res){
   }
   var userResults;
   db.Conversation.findAll({
-
-    // where: {
-    //   $or: [
-    //       {heading: {like: '%' + req.query.keyword + '%'}},
-    //       {subheading: {like: '%' + req.query.keyword + '%'}},
-    //       {details:{like: '%' + req.query.keyword + '%'}}
-    //       ]
-    //     }
-
-
     where: { $or: [{user_1: userId}, {user_2: userId}] }
   }).then(function(dbConversation){
     res.render('messaging/index', {conversations: dbConversation})
@@ -85,12 +75,17 @@ router.post('/new/message', function(req, res){
 router.post('/new/conversation/applicant/:id', function(req, res){
   if(req.user){
     userId = req.user.id
+    userName = req.user.name
   }
+
+  var title_string = userName + req.body.convo_title
+
   db.Conversation.create({
     is_anonymous: req.body.is_anonymous,
     user_1: userId,
  //user_2 comes from req.params? --> add user-id attribute to convo button
-    user_2: req.params.id
+    user_2: req.params.id,
+    title: title_string
   }).then(function(dbConversation){
     res.json(dbConversation);
   });

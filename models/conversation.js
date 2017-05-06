@@ -10,6 +10,9 @@ module.exports = function(sequelize, DataTypes) {
     },
     user_2: {
       type: DataTypes.INTEGER
+    },
+    title: {
+      type: DataTypes.STRING
     }
   },
   // options
