@@ -15,7 +15,7 @@ router.get('/', function(req, res){
   db.Conversation.findAll({
     where: { $or: [{user_1: userId}, {user_2: userId}] }
   }).then(function(dbConversation){
-    res.render('messaging/index', {conversations: dbConversation})
+    res.render('Messaging/index', {conversations: dbConversation})
   })
 });
 

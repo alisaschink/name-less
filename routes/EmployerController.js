@@ -21,7 +21,7 @@ router.get('/home', isAuthenticated, function(req,res){
                         data: result.toJSON()
                       }
         }
-        res.render("employer/home", hbs_obj)
+        res.render("Employer/home", hbs_obj)
         
         });
     }else if (req.user.is_employer == false){
