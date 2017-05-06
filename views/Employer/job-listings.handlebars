@@ -6,7 +6,8 @@
 			<img src="{{data.User.img}}">
 		</div>
 		<div class = "col-md-8">
-			{{data.User.info}}
+			<div class="comp-bio">{{data.User.info}}</div>
+
 			<button is-anonymous="true" convo-title = " wants to learn more about {{data.name}}" class="start-convo btn btn-large btn-default">Contact {{data.name}}</button>
 
 		</div>
@@ -14,8 +15,8 @@
 
 
 	<div class="row">
-		<div class = "col-md-4">
-			<h1>Open Positions At {{data.name}}</h1>
+		<div class = "col-md-12">
+			<h2>Open Positions At {{data.name}}</h2>
 		</div>
 	</div>
 <!-- 	<div class="row">  -->

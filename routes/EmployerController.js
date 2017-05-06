@@ -21,7 +21,7 @@ router.get('/home', isAuthenticated, function(req,res){
                         data: result.toJSON()
                       }
         }
-        res.render("Employer/home", hbs_obj)
+        res.render("employer/home", hbs_obj)
         
         });
     }else if (req.user.is_employer == false){
@@ -30,6 +30,38 @@ router.get('/home', isAuthenticated, function(req,res){
         res.redirect("/")
     }
     
+});
+
+router.post('/update-basic-info', isAuthenticated, function(req,res){
+    var changes = {
+      username: req.body.username,
+        name: req.body.name, 
+        email: req.body.email,
+        location: req.body.location,
+        img: req.body.image
+    }
+    db.User.update(changes, {
+        where: {
+            id: req.user.id,
+        },
+      }).then(function(result) {
+    res.redirect("/employer/home")
+  
+    });
+});
+
+router.post('/update-public-bio', isAuthenticated, function(req,res){
+    var changes = {
+        info: req.body.info
+    }
+    db.User.update(changes, {
+        where: {
+            id: req.user.id,
+        },
+      }).then(function(result) {
+    res.redirect("/employer/home")
+  
+    });
 });
 
 

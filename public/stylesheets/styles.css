@@ -13,11 +13,18 @@ img{
 }
 h1{
 	font-family: 'Lobster Two', cursive;
-
+	font-size: 46px;
 }
+
+
 
 h4{
 	color:#007DD5;
+	font-style: bolder;
+}
+
+h5{
+	font-style: bolder;
 }
 
 h6{
@@ -141,7 +148,6 @@ margin: 20px;
   margin: 5px;
 }
 
-<<<<<<< HEAD
 #messages{
 	height: 250px;
 	overflow: scroll;
@@ -152,21 +158,22 @@ margin: 20px;
 }
 
 .user-div{
-	font-size: 14px;
+	font-size: 18px;
 	font-style: bold;
 }
 
 .subject-div{
-	font-size: 12px;
+	font-size: 14px;
 	font-style: italic;
 }
 
 .message-div{
+	margin: 14px;
 	font-size: 11px;
 }
 
 .attachment-div{
-	font-size: 10px;
+	font-size: 12px;
 	color: grey;
 }
 
@@ -181,10 +188,34 @@ margin: 20px;
 }
 
 hr{
-	border-color: black;
+	border-color: grey;
 }
 
 .signup-heading{
   margin: 20px;
 }
 
+.search-listing{
+	font-size: 30px;
+	margin: 15px;
+}
+
+.public-bio{
+	color: black;
+	font-size: 20px;
+	margin-top: 35px;
+}
+
+.comp-bio{
+	color: black;
+	font-size: 16px;
+
+}
+
+text-area{
+	height: 100px;
+}
+
+.start-convo-anon{
+	margin-top: 20px;
+}

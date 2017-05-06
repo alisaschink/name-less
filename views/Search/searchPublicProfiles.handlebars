@@ -18,13 +18,13 @@
 
         <button type="submit" class="btn btn-default">Search</button>
     </form>
-
+    <hr>
 		</div>
 	</div>
 	{{#each result}}
     {{#unless is_employer}}
     	<div class = "row">
-    		<a href="/applicant/public/{{id}}">{{name}}</a>
+    		<a class="search-listing" href="/applicant/public/{{id}}">{{name}}</a>
     	</div>
     {{/unless}}
 	{{/each}}

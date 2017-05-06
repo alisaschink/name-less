@@ -1,8 +1,18 @@
-<h1>{{data.name}}</h1>
-<img src="{{data.img}}"> 
-{{#if data.info}}
-<h4>{{{findLineBreaks data.info}}}</h4>
-{{/if}}
 
-<button is-anonymous="false" convo-title = " wants to learn more about {{data.name}}" class="start-convo btn btn-large btn-default">Start A Conversation</button>
+<div class="container">
+	<div class = "row"> 
+		
+		<div class="col-md-4">
+			<h1>{{data.name}}</h1>
+			{{#if data.img}}
+			<img src="{{data.img}}"> 
+			{{/if}}
+			<br>
+			<button is-anonymous="false" convo-title = " started a conversation with {{data.name}}" class="start-convo btn btn-large btn-default">Start A Conversation</button>
 
+		</div>
+		<div class="public-bio col-md-7">
+			{{#if data.info}}
+			{{{findLineBreaks data.info}}}
+			{{/if}}
+		</div>
