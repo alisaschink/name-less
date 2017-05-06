@@ -15,7 +15,7 @@
 					<h5> Public Bio: <input type="text" name="name" value="{{data.name}}"> </h5>
 					<h5> Email: <input type="text" name="email" value="{{data.email}}"> </h5>
 					<h5> Location: <input type="text" name="location" value="{{data.location}}"> </h5>
-					<button type="submit" class="btn-danger">UPDATE</button>
+					<button type="submit" class="btn btn-md btn-default">UPDATE</button>
 
 					</form>
 				</div>
@@ -33,14 +33,14 @@
 					<form action="/applicant/update-public-bio" method="POST">
 					<textarea name = "info">{{{data.info}}}
 					</textarea>
-					<button type="submit">UPDATE</button>
+					<button type="submit" class="btn btn-md btn-default">UPDATE</button>
 					</form>
 				</div>
 			</div>
 		</div>
 	<br>
 	
-	<button data-toggle="modal" data-target="#NewSection"> Add A New Section </button>
+	<button class="btn btn-md btn-default" data-toggle="modal" data-target="#NewSection"> Add A New Section </button>
 
 
 		{{#each section_creds}}
@@ -100,7 +100,7 @@
 			      </div>
 			    
 		      <div class="modal-footer">
-		        <button type="submit" class="btn btn-danger">Save</button>
+		        <button type="submit" class="btn btn-default">Save</button>
 		        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 		      </form>
 		      </div>
@@ -132,7 +132,7 @@
 			      </div>
 			    
 		      <div class="modal-footer">
-		        <button type="submit" class="btn btn-danger">Save</button>
+		        <button type="submit" class="btn btn-default">Save</button>
 		        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 		      </form>
 		      </div>
@@ -163,7 +163,7 @@
 			      </div>
 			    
 		      <div class="modal-footer">
-		        <button type="submit" class="btn btn-danger">Save</button>
+		        <button type="submit" class="btn btn-default">Save</button>
 		        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 		      </form>
 		      </div>
