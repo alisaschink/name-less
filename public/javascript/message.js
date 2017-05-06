@@ -4,15 +4,16 @@
 
 $('.start-convo').on('click', function() {
     // grabs user_id for recipient
-    var recipientId = $('.start-convo').attr('recipient-id');
-    var is_anonymous = $('.start-convo').attr('is-anonymous');
+    var recipientId = $(this).attr('recipient-id');
+    var is_anonymous = $(this).attr('is-anonymous');
+    var convo_title = $(this).attr('convo-title')
     var convoObj = {
-      is_anonymous: is_anonymous
+      is_anonymous: is_anonymous,
+      convo_title: convo_title
     }
 
     $.post("/messaging/new/conversation/applicant/" + recipientId, convoObj).then(function(results) {
       window.location.replace("/messaging")
-      console.log(results);
     });
   });
  
@@ -71,8 +72,8 @@ function displayMessages(r) {
   $('#messages').empty();
   // for each message, create a set of divs
   for (var i = 0; i < r.b.length; i++) {
-    var user = r.b[i].User.username + " Posted At "
-     // + moment(r.b[i].created_at).format("dddd, MMMM Do YYYY, h:mm a");
+    var user = r.b[i].User.username 
+    // + " Posted At " + moment(r.b[i].created_at).format("dddd, MMMM Do YYYY, h:mm a");
     var subject = r.b[i].subject
     var text = r.b[i].text;
     var attachment = r.b[i].attachment;
@@ -80,12 +81,14 @@ function displayMessages(r) {
     var subjectDiv = $('<div>').addClass('subject-div').append(subject);
     var messageDiv = $('<div>').addClass('message-div').append(text);
     var attachmentDiv = $('<div>').addClass('attachment-div').append(attachment);
+    var breakLine = $('<hr>')
     userDiv.append(subjectDiv);
     userDiv.append(messageDiv);
     userDiv.append(attachmentDiv);
     // append messages to message div
     console.log(userDiv)
     $('#messages').append(userDiv);
+    $('#messages').append(breakLine);
   }
 }
 

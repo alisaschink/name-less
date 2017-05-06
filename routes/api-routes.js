@@ -28,6 +28,12 @@ module.exports = function(app) {
 
 
     }).then(function() {
+      // if (req.body.is_employer){
+      //   db.Company.create({
+      //     name: req.body.username,
+      //     location: req.body.location
+      //   })
+      // }
       res.redirect(307, "/api/login");
     }).catch(function(err) {
       res.json(err);

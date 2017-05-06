@@ -3,4 +3,6 @@
 {{#if data.info}}
 <h4>{{{findLineBreaks data.info}}}</h4>
 {{/if}}
-<button class="start-convo btn btn-large btn-default">Start A Conversation</button>
+
+<button is-anonymous="false" convo-title = " wants to learn more about {{data.name}}" class="start-convo btn btn-large btn-default">Start A Conversation</button>
+

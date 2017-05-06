@@ -141,6 +141,50 @@ margin: 20px;
   margin: 5px;
 }
 
+<<<<<<< HEAD
+#messages{
+	height: 250px;
+	overflow: scroll;
+	background: white;
+	opacity: 0.65;
+	color: black;
+	padding: 2%;
+}
+
+.user-div{
+	font-size: 14px;
+	font-style: bold;
+}
+
+.subject-div{
+	font-size: 12px;
+	font-style: italic;
+}
+
+.message-div{
+	font-size: 11px;
+}
+
+.attachment-div{
+	font-size: 10px;
+	color: grey;
+}
+
+.convos{
+	padding: 3%;
+} 
+
+.inbox-convo{
+	font-size: 20px;
+	font-style: bold;
+	color: black;
+}
+
+hr{
+	border-color: black;
+}
+
 .signup-heading{
   margin: 20px;
 }
+

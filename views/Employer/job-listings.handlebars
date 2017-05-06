@@ -7,7 +7,8 @@
 		</div>
 		<div class = "col-md-8">
 			{{data.User.info}}
-			<button class="start-convo btn btn-large btn-default">Contact Hooli</button>
+			<button is-anonymous="true" convo-title = " wants to learn more about {{data.name}}" class="start-convo btn btn-large btn-default">Contact {{data.name}}</button>
+
 		</div>
 	</div>
 
@@ -71,7 +72,7 @@
 			
 
 		    <div class="modal-footer">
-		        <button type="submit" class="start-convo btn btn-large btn-danger">Contact {{../data.name}} About This Position</button>
+		        <button type="submit" is-anonymous="true" convo-title = " is interested in a position: {{title}}" class="start-convo btn btn-large btn-danger">Contact {{../data.name}} About This Position</button>
 		        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 		    </div>
 			</div>
