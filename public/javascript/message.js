@@ -72,8 +72,8 @@ function displayMessages(r) {
   $('#messages').empty();
   // for each message, create a set of divs
   for (var i = 0; i < r.b.length; i++) {
-    var user = r.b[i].User.username + " Posted At " + r.b[i].created_at
-     // + moment(r.b[i].created_at).format("dddd, MMMM Do YYYY, h:mm a");
+    var user = r.b[i].User.username 
+    // + " Posted At " + moment(r.b[i].created_at).format("dddd, MMMM Do YYYY, h:mm a");
     var subject = r.b[i].subject
     var text = r.b[i].text;
     var attachment = r.b[i].attachment;
