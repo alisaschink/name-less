@@ -51,10 +51,10 @@ router.get('/login', function(req,res){
 router.get('/members', isAuthenticated, function(req,res){
   if (req.user.is_employer == false){
     console.log(req.user.is_employer)
-    res.redirect("/applicant/home");
+    res.redirect("/Applicant/home");
   }
   else if (req.user.is_employer == true){
-    res.redirect("/employer/home")
+    res.redirect("/Employer/home")
   }
 });
 
