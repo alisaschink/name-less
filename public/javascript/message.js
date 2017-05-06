@@ -15,7 +15,6 @@ $('.start-convo').on('click', function() {
     $.post("/messaging/new/conversation/applicant/" + recipientId, convoObj).then(function(results) {
       window.location.replace("/messaging")
     });
-
   });
  
  $('.convos').on('click', function() {

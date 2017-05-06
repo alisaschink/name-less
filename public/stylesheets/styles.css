@@ -1,3 +1,11 @@
+body{
+  background-image: linear-gradient(60deg, #abecd6 0%, #fbed96 100%);
+  background-position: center center;
+  background-repeat:  no-repeat;
+  background-attachment: fixed;
+  background-size:  cover;
+}
+
 img{
 	height: 200px;
 	width: auto;
@@ -9,7 +17,7 @@ h1{
 }
 
 h4{
-	color:#69c8d3;
+	color:#007DD5;
 }
 
 h6{
@@ -25,11 +33,15 @@ textarea{
 }
 
 .navbar, .nav, .navbar-default{
-	background-color: #781A28;
+	background-color: #333333;
 }
 
 .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus{
-	background-color: #781A28;
+	background-color: #333333;
+}
+
+.nav navbar-nav li a{
+  color: #D2D5D4;
 }
 
 .sr-only{
@@ -46,13 +58,15 @@ textarea{
 
 .basic-info-form, .placeholder, .credential-tile, .job-tile{
 	border: solid;
-	border-color: white;
+	border-color: #575757;
+  border-radius: 3px;
 	padding: 2%;
 }
 
 .credential-tile, .job-tile{
 	margin: 2%;
-	border-color: #69c8d3;
+	border-color: #575757;
+  border-radius: 3px;
 	background-color: white;
 	opacity: 0.7;
 	color: black;
@@ -86,11 +100,7 @@ textarea{
 }
 
 #chat-form { 
-  background: #000; 
-  padding: 3px; 
-  position: fixed; 
-  bottom: 0; 
-  width: 100%; 
+margin: 20px; 
 }
 
 #chat-form input {
@@ -100,19 +110,10 @@ textarea{
  margin-right: .5%; 
 }
 
-#chat-form button {
- width: 10%; 
- background: rgb(130, 224, 255); 
- border: none; 
- padding: 10px; 
-}
-
 .giant-icon{
 	font-size: 50px;
 	text-align: center;
 }
-
-
 
 
 

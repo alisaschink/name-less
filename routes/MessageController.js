@@ -76,9 +76,15 @@ router.post('/new/conversation/applicant/:id', function(req, res){
   if(req.user){
     userId = req.user.id
     userName = req.user.name
+    userUsername = req.user.username
   }
 
-  var title_string = userName + req.body.convo_title
+  var initName = userName
+  if (req.body.is_anonymous || req.user.is_employer){
+    initName = userUsername
+  }
+
+  var title_string = initName + req.body.convo_title
 
   db.Conversation.create({
     is_anonymous: req.body.is_anonymous,
