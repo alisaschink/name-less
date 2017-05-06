@@ -75,7 +75,8 @@ router.post('/update-basic-info', isAuthenticated, function(req,res){
       username: req.body.username,
 		name: req.body.name, 
 		email: req.body.email,
-		location: req.body.location
+		location: req.body.location,
+    img: req.body.image
 	}
 	db.User.update(changes, {
 		where: {
