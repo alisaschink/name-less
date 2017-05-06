@@ -77,7 +77,7 @@ button{
 }
 
 .heading-input, .title-input{
-	color: white;
+	color: #333333;
 	background: transparent;
     border: none;
     font-size: 18px;
@@ -88,7 +88,7 @@ button{
 }
 
 .subheading-input, .location-input{
-	color: #69c8d3;
+	color: #0A86CA;
 	background: transparent;
     border: none;
     width: 275px;
@@ -141,3 +141,6 @@ margin: 20px;
   margin: 5px;
 }
 
+.signup-heading{
+  margin: 20px;
+}
