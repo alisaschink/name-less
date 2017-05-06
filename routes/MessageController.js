@@ -22,8 +22,6 @@ router.get('/', function(req, res){
 // route to get messages for a given conversation
  router.get('/conversation/:id/messages', function(req, res) {
   var conversationId = req.params.id;
-
-  console.log('conversation ID' + conversationId);
   if(req.user){
     var userId = req.user.id
   }
@@ -31,7 +29,6 @@ router.get('/', function(req, res){
   db.Conversation.findOne({
     where: { id: conversationId },
   }).then(function(results) {
-    console.log(results)
     // save results for a given conversation to a convoResults object
     convoResults = {
       a: results.dataValues
@@ -41,15 +38,16 @@ router.get('/', function(req, res){
       where: { conversation_id: conversationId },
       include: {
         model: db.User
-      }
+      },
+      order: 'created_at DESC'
     }).then(function(messageResults) {
+      console.log(messageResults)
       // save messages and user data to a new key within the convoResults object
       var message_array = []
       for (m in messageResults){
         message_array.push(messageResults[m].dataValues)
       }
       convoResults.b = message_array
-      console.log(convoResults)
       res.json(convoResults);
     });
   });

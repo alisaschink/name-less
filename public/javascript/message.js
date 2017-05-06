@@ -72,7 +72,7 @@ function displayMessages(r) {
   $('#messages').empty();
   // for each message, create a set of divs
   for (var i = 0; i < r.b.length; i++) {
-    var user = r.b[i].User.username + " Posted At "
+    var user = r.b[i].User.username + " Posted At " + r.b[i].created_at
      // + moment(r.b[i].created_at).format("dddd, MMMM Do YYYY, h:mm a");
     var subject = r.b[i].subject
     var text = r.b[i].text;
@@ -81,12 +81,14 @@ function displayMessages(r) {
     var subjectDiv = $('<div>').addClass('subject-div').append(subject);
     var messageDiv = $('<div>').addClass('message-div').append(text);
     var attachmentDiv = $('<div>').addClass('attachment-div').append(attachment);
+    var breakLine = $('<hr>')
     userDiv.append(subjectDiv);
     userDiv.append(messageDiv);
     userDiv.append(attachmentDiv);
     // append messages to message div
     console.log(userDiv)
     $('#messages').append(userDiv);
+    $('#messages').append(breakLine);
   }
 }
 
