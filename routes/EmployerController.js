@@ -33,13 +33,17 @@ router.get('/home', isAuthenticated, function(req,res){
 });
 
 router.post('/update-basic-info', isAuthenticated, function(req,res){
+    console.log("USER")
+    console.log(req.user)
     var changes = {
       username: req.body.username,
-        name: req.body.name, 
+        // name: req.body.name, 
         email: req.body.email,
         location: req.body.location,
         img: req.body.image
     }
+    console.log("CHANGES")
+    console.log(changes)
     db.User.update(changes, {
         where: {
             id: req.user.id,
