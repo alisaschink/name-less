@@ -23,7 +23,7 @@ router.get('/', function(req, res){
  router.get('/conversation/:id/messages', function(req, res) {
   var conversationId = req.params.id;
   if(req.user){
-    var userId = req.user.id
+    userId = req.user.id
   }
   var convoResults;
   db.Conversation.findOne({
@@ -73,8 +73,8 @@ router.post('/new/message', function(req, res){
 router.post('/new/conversation/applicant/:id', function(req, res){
   if(req.user){
     userId = req.user.id
-    userName = req.user.name
-    userUsername = req.user.username
+    var userName = req.user.name
+    var userUsername = req.user.username
   }
 
   var initName = userName
