@@ -100,6 +100,9 @@ app.use("/messaging", MessageRoutes);
 var SearchRoutes = require("./routes/SearchController.js");
 app.use("/search", SearchRoutes);
 
+var NewsfeedRoutes = require("./routes/NewsfeedController.js");
+app.use("/newsfeed", NewsfeedRoutes);
+
 // Create Server
 Models.sequelize.sync({ force: false }).then(function() {
   server.listen(PORT, function() {
