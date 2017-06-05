@@ -12,16 +12,19 @@ module.exports = function(sequelize, DataTypes) {
       // },
       name: {
         type: DataTypes.STRING,
+        allowNull: true,
       },
       username: {
         type: DataTypes.STRING,
+        allowNull: true,
       },
       email: {
         type: DataTypes.STRING,
+        allowNull: true,
       },
       password: {
         type: DataTypes.STRING,
-        // allowNull: false,
+        allowNull: true,
       },
       is_employer: {
         type: DataTypes.BOOLEAN,
@@ -29,12 +32,15 @@ module.exports = function(sequelize, DataTypes) {
       },
       img: {
         type: DataTypes.STRING,
+        allowNull: true,
       },
       location: {
         type: DataTypes.STRING,
+        allowNull: true,
       },
       info: {
-        type: DataTypes.TEXT
+        type: DataTypes.TEXT,
+        allowNull: true,
       }
     },
 

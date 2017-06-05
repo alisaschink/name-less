@@ -40,7 +40,6 @@ router.get('/home', isAuthenticated, function(req,res){
                 }
             
         }}
-
         res.render("Applicant/home", hbs_obj)
       
     });
