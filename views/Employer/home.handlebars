@@ -29,7 +29,7 @@
 				<div>
 					<h3>Company Bio:</h3>
 					<form action="/employer/update-public-bio" method="POST">
-					<textarea name = "info">{{{data.info}}}
+					<textarea name = "info">{{{user.info}}}
 					</textarea>
 					<button type="submit" class="btn btn-md btn-default">UPDATE</button>
 					</form>
@@ -124,8 +124,8 @@
 			    </textarea>
 		        <textarea name="qualifications">Qualifications
 			    </textarea>
-			    <input type="hidden" name = "company_id" value="{{company_id}}">
-			    <input type="hidden" name = "industry_id" value="{{industry_id}}">
+			    <input type="hidden" name = "company_id" value="{{user.company_id}}">
+			    <input type="hidden" name = "industry_id" value="{{user.industry_id}}">
 			    </div>
 			    
 		      <div class="modal-footer">
