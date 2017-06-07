@@ -14,26 +14,26 @@ var mysql = require('mysql')
 
 
 router.post('/update', function(req,res){
-	console.log(req.body)
+	console.log("REQ.BODY = " + req.body)
 	var changes = {
 		heading: req.body.heading, 
 		subheading: req.body.subheading,
 		details: req.body.details
 	}
-	console.log(changes)
+	console.log("CHANGES = " + changes)
 	db.Credential.update(changes, {
 		where: {
       		id: req.body.id,
     	},
       }).then(function(result) {
-  	console.log(result)
+  	console.log("RESULT = " + result)
     res.redirect("/applicant/home")
     });
 
 });
 
 router.post('/new', function(req,res){
-	console.log(req.body)
+	console.log("REQ.BODY = " + req.body)
 	var changes = {
 		section_name: req.body.section_name,
 		user_id: req.body.user_id,

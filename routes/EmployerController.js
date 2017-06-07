@@ -14,7 +14,8 @@ router.get('/home', isAuthenticated, function(req,res){
       db.User.findOne({
         where: {
                 id: req.user.id,
-                }
+                },
+            include: [db.Company]
       }).then(function(result1) {
             var hbs_obj = {
                 user: result1,
@@ -28,6 +29,7 @@ router.get('/home', isAuthenticated, function(req,res){
             if (result2){
               hbs_obj["data"] = result2.toJSON()
             }
+            console.log("EMPLOYER HOME OBJECT =  " + hbs_obj.user.Company)
             res.render("Employer/home", hbs_obj)
           });  
         });
