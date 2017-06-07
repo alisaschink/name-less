@@ -13,9 +13,35 @@ router.get('/', function(req, res){
         model: db.User
       }
   }).then(function(dbNewsfeed){
-    res.render('newsfeed/index', {stories: dbNewsfeed})
+    // res.json(dbNewsfeed)
+    console.log(dbNewsfeed)
+    var formatted_stories = []
+    for (s in dbNewsfeed){
+      formatted_stories.push(dbNewsfeed[s].toJSON())
+    }
+    console.log(formatted_stories)
+    res.render('newsfeed/index', {stories: formatted_stories})
   })
 });
+
+router.get('/data', function(req, res){
+  db.Newsfeed.findAll({
+    include: {
+        model: db.User
+      }
+  }).then(function(dbNewsfeed){
+    // res.json(dbNewsfeed)
+    console.log("route ran")
+    console.log(dbNewsfeed)
+    var formatted_stories = []
+    for (s in dbNewsfeed){
+      formatted_stories.push(dbNewsfeed[s].toJSON())
+    }
+    res.json(formatted_stories)
+  })
+});
+
+
 
 // post route for a new message
 router.post('/new/story', function(req, res){
