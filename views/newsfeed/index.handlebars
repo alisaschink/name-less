@@ -1,0 +1,29 @@
+<!-----------------------New Post Form----------------->
+<div class="container col-md-offset-2 col-md-8">
+  <h2>Add A Story</h2>
+  <form class="story-form">
+    <div class="form-group">
+      <p class="form-text error-text">You need to enter some text!</p>
+      <textarea placeholder="Enter text here" class="form-control story-body" rows="5" name="content"></textarea>
+      <br>
+      <button type="submit" class="btn btn-md btn-default submit story-submit">Submit</button>
+    </div>
+  </form>
+</div>
+
+<br />
+
+<!-------------Newsfeed---------------------------->
+<div class="container col-md-offset-2 col-md-8">
+  <h2>Newsfeed</h2>
+  <div class="stories-container">
+    {{#each stories}}
+    <div class="row stories" story-id="{{this.id}}">
+      <hr>
+    </div>
+    {{/each}}
+  </div>
+</div>
+
+
+
