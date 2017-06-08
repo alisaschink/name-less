@@ -70,6 +70,9 @@ io.on('connection', function(socket){
   socket.on('chat message', function(msg){
     io.emit('chat message', msg);
   });
+  socket.on('new story', function(msg){
+    io.emit('new story', msg);
+  });
   socket.on('disconnect', function(){
     console.log('user disconnected');
   });

@@ -4,7 +4,7 @@ $(document).ready(function() {
 
   $(function () {
     var socket = io();
-      $(".story-submit").on('click', function(e) {
+    $(".story-submit").on('click', function(e) {
     e.preventDefault();
     var content = $(".story-body").val().trim();
 
@@ -14,6 +14,7 @@ $(document).ready(function() {
       if (content == "") {
         validated = false;
       }
+
       return validated;
     }
 
@@ -37,10 +38,7 @@ $(document).ready(function() {
     socket.on('new story', function(story){
       // $('#messages').append($('<div>').text(story));
       console.log("hi this is the one we want");
-      $.get("/newsfeed/data", function(results) {
-      console.log(results);
-      printStories(results);
-    });
+      displayStories(story);
     });
   });
 
@@ -48,7 +46,7 @@ $(document).ready(function() {
 
   function displayStories() {
     $.get("/newsfeed/data", function(results) {
-      console.log(results);
+      console.log("GET REQUEST RUNS");
       printStories(results);
     });
   }
