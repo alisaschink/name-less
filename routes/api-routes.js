@@ -16,8 +16,32 @@ module.exports = function(app) {
   // Route for signing up a user. The user's password is automatically hashed and stored securely thanks to
   // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
   // otherwise send back an error
-  app.post("/api/signup", function(req, res) {
-    console.log(req.body);
+  // app.post("/api/signup", function(req, res) {
+  //   console.log(req.body);
+  //   db.User.create({
+  //     email: req.body.email,
+  //     password: req.body.password,
+  //     name: req.body.name, 
+  //     username: req.body.username,
+  //     location: req.body.location,
+  //     is_employer: req.body.is_employer
+
+
+  //   }).then(function() {
+  //     // if (req.body.is_employer){
+  //     //   db.Company.create({
+  //     //     name: req.body.username,
+  //     //     location: req.body.location
+  //     //   })
+  //     // }
+  //     res.redirect(307, "/api/login");
+  //   }).catch(function(err) {
+  //     res.json(err);
+  //   });
+  // });
+
+  app.post("/api/employer/signup", function(req, res) {
+    console.log("CREATING COMPANY WOOHOO");
     db.User.create({
       email: req.body.email,
       password: req.body.password,
@@ -25,20 +49,21 @@ module.exports = function(app) {
       username: req.body.username,
       location: req.body.location,
       is_employer: req.body.is_employer
+    }).then(function(result) {
+      db.Company.create({
+        name: req.body.username, 
+        industry_id: req.body.industry, 
+        user_id: result.id
+      }).then(function() {
 
-
-    }).then(function() {
-      // if (req.body.is_employer){
-      //   db.Company.create({
-      //     name: req.body.username,
-      //     location: req.body.location
-      //   })
-      // }
-      res.redirect(307, "/api/login");
-    }).catch(function(err) {
-      res.json(err);
-    });
+        console.log("COMPANY WAS CREATED")
+          res.redirect(307, "/api/login");
+        }).catch(function(err) {
+          res.json(err);
+        });
+      });
   });
+
 
   // Route for logging user out
   app.get("/logout", function(req, res) {

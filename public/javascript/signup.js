@@ -26,14 +26,36 @@ $(document).ready(function() {
       return;
     }
     // If we have an email and password, run the signUpUser function
-    signUpUser(userData.email, userData.password, userData.realName, userData.userName, userData.isEmployer, userData.location);
-    emailInput.val("");
-    passwordInput.val("");
+
+    if (isEmployer){
+      signUpEmployer(userData.email, userData.password, userData.realName, userData.userName, userData.isEmployer, userData.location);
+    }else{
+      signUpUser(userData.email, userData.password, userData.realName, userData.userName, userData.isEmployer, userData.location);
+    
+    }
   });
 
   // Does a post to the signup route. If succesful, we are redirected to the members page
   // Otherwise we log any errors
   function signUpUser(email, password, realName, userName, isEmployer, location) {
+
+
+    $.post("/api/signup", {
+      email: email,
+      password: password,
+      name: realName, 
+      username: userName,
+      is_employer: isEmployer,
+      location: location
+
+    }).then(function(data) {
+      window.location.replace(data);
+    }).catch(function(err) {
+      console.log(err);
+    });
+  }
+
+    function signUpEmployer(email, password, realName, userName, isEmployer, location) {
 
 
     $.post("/api/signup", {
