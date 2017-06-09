@@ -81,12 +81,18 @@ router.get('/public/:user_id', isAuthenticated, function(req,res){
 });
 
 router.post('/update-basic-info', isAuthenticated, upload.single('image'), function(req,res){
-	var changes = {
+	var imageName;
+  if (!req.file) {
+    imageName = "lama.jpg";
+  } else {
+    imageName = req.file.originalname;
+  }
+  var changes = {
       username: req.body.username,
 		name: req.body.name, 
 		email: req.body.email,
 		location: req.body.location,
-    img: req.file.originalname
+    img: imageName
 	}
 	db.User.update(changes, {
 		where: {
