@@ -41,7 +41,6 @@ module.exports = function(app) {
   // });
 
   app.post("/api/employer/signup", function(req, res) {
-    console.log("CREATING COMPANY WOOHOO");
     db.User.create({
       email: req.body.email,
       password: req.body.password,
@@ -50,9 +49,10 @@ module.exports = function(app) {
       location: req.body.location,
       is_employer: req.body.is_employer
     }).then(function(result) {
+      console.log("CREATING COMPANY WOOHOO");
       db.Company.create({
         name: req.body.username, 
-        industry_id: req.body.industry, 
+        industry_id: 1, 
         user_id: result.id
       }).then(function() {
 

@@ -27,7 +27,7 @@ $(document).ready(function() {
     }
     // If we have an email and password, run the signUpUser function
 
-    if (isEmployer){
+    if (isEmployerInput.val()){
       signUpEmployer(userData.email, userData.password, userData.realName, userData.userName, userData.isEmployer, userData.location);
     }else{
       signUpUser(userData.email, userData.password, userData.realName, userData.userName, userData.isEmployer, userData.location);
@@ -58,13 +58,14 @@ $(document).ready(function() {
     function signUpEmployer(email, password, realName, userName, isEmployer, location) {
 
 
-    $.post("/api/signup", {
+    $.post("/api/employer/signup", {
       email: email,
       password: password,
       name: realName, 
       username: userName,
       is_employer: isEmployer,
-      location: location
+      location: location,
+      industry_id: 1
 
     }).then(function(data) {
       window.location.replace(data);
