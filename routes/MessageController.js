@@ -1,8 +1,20 @@
 var isAuthenticated = require("../config/middleware/isAuthenticated");
+var multer = require('multer');
 var db = require("../models");
 var express = require('express');
 var router  = express.Router();
 var mysql = require('mysql');
+var storage = multer.diskStorage({
+  destination: function(req, file, cb) {
+    cb(null, 'uploads/files/')
+  },
+  filename: function(req, file, cb) {
+    cb(null, file.originalname)
+  }
+})
+
+var upload = multer({ storage: storage })
+
 
 var userId;
 
@@ -54,14 +66,15 @@ router.get('/', function(req, res){
 });
 
 // post route for a new message
-router.post('/new/message', function(req, res){
+router.post('/new/message', upload.single('attachment'), function(req, res){
   if(req.user){
     userId = req.user.id
   }
+  
   db.Message.create({
     subject: req.body.subject,
     text: req.body.text,
-    attachment: req.body.attachment,
+    attachment: req.file.originalname,
     conversation_id: req.body.conversation_id,
     user_id: userId
   }).then(function(dbMessage){

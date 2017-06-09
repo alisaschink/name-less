@@ -6,6 +6,18 @@ var express = require('express');
 var router  = express.Router();
 var mysql = require('mysql')
 // var connection = require('../config/connection.js')
+var multer = require('multer');
+var storage = multer.diskStorage({
+  destination: function(req, file, cb) {
+    cb(null, 'uploads/images/')
+  },
+  filename: function(req, file, cb) {
+    cb(null, file.originalname)
+  }
+})
+
+var upload = multer({ storage: storage })
+
 
 router.get('/home', isAuthenticated, function(req,res){
 
@@ -42,13 +54,13 @@ router.get('/home', isAuthenticated, function(req,res){
     
 });
 
-router.post('/update-basic-info', isAuthenticated, function(req,res){
+router.post('/update-basic-info', isAuthenticated, upload.single('image'), function(req,res){
     var changes = {
       username: req.body.username,
       name: req.body.name, 
       email: req.body.email,
       location: req.body.location,
-      img: req.body.image
+      img: req.file.originalname
     }
     db.User.update(changes, {
         where: {
