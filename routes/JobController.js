@@ -32,14 +32,18 @@ router.post('/update', function(req,res){
 		responsibilities: req.body.responsibilities,
 		qualifications: req.body.qualifications
 	}
+  console.log("CHANGES")
+  console.log(changes)
+  console.log("------")
 	db.Job.update(changes, {
 		where: {
       		id: req.body.id,
     	},
       }).then(function(result) {
-    console.log("CHANGES" + changes)
+      console.log("result")
+      console.log(result)
+      console.log("------")
     res.redirect("/employer/home")
-  	console.log("RESULT" + result)
     });
 });
 
@@ -54,7 +58,13 @@ router.post('/new', function(req,res){
 		company_id: req.body.company_id,
 		industry_id: req.body.industry_id,
 	}
-	db.Credential.create(changes).then(function(result) {
+  console.log("CHANGES")
+  console.log(changes)
+  console.log("------")
+	db.Job.create(changes).then(function(result) {
+      console.log("result")
+      console.log(result)
+      console.log("------")
     res.redirect("/applicant/home")
     });
 
