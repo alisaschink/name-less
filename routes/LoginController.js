@@ -50,11 +50,11 @@ router.get('/login', function(req,res){
 // Route for redirecting to either applicant or employer home page
 router.get('/members', isAuthenticated, function(req,res){
   if (req.user.is_employer == false){
-    console.log(req.user.is_employer)
-    res.redirect("/Applicant/home");
+    res.redirect("/applicant/home");
   }
   else if (req.user.is_employer == true){
-    res.redirect("/Employer/home")
+    console.log("redirectiong to employer home")
+    res.redirect("/employer/home")
   }
 });
 
