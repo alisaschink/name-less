@@ -58,8 +58,8 @@ var user_1 = {
   username: 'JerseyCoder',
   email:  'sknight@gmail.com',
   password: '$2a$10$TtXMHq5ZJVUeuASp/ZEReetxs1BdozCXv3Q/swYXOgWDJw6VnrY/O',
-  img: 'http://www.motherearthnews.com/-/media/Images/MEN/Editorial/Articles/Magazine-Articles/2001/06-01/All-About-Raising-Llamas/Llama-jpg.jpg',
   is_employer: false,
+  img: 'http://www.motherearthnews.com/-/media/Images/MEN/Editorial/Articles/Magazine-Articles/2001/06-01/All-About-Raising-Llamas/Llama-jpg.jpg',
   location: 'New Jersey',
   industry_id: 2,
   info: "User one public profile information blurb User one public profile information blurbUser one public profile information blurbUser one public profile information blurbUser one public profile information blurbUser one public profile information blurb"
@@ -72,8 +72,8 @@ var user_2 = {
   username: 'MediaCo',
   email: 'Media@gmail.com',
   password: '$2a$10$BqyTSOHIrsLjDOY9Bo9TMetmxveqeUnnCHifBTJP4etlM4SHvdC0S',
-  img: 'https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSILcFz6Y_fnk_QiXss-ydysMMJq9QExhw3SfeY9FJ35TUGYGd-2g',
   is_employer: true,
+  img: 'https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSILcFz6Y_fnk_QiXss-ydysMMJq9QExhw3SfeY9FJ35TUGYGd-2g',
   location: 'Somerset, NJ',
   industry_id: 1,
   info: "Media company short bio Media company short bio Media company short bio Media company short bioMedia company short bio Media company short bioMedia company short bio"
@@ -85,8 +85,8 @@ var user_3 = {
   username: 'HooliCo',
   email: 'Gavin@hooli.com',
   password: '$2a$10$7OCsiUzhrDnWNhZ1z2S9muqnq7mpIqxVmczYKIAvlExhUCcLnYebi',
-  img: 'https://vignette3.wikia.nocookie.net/silicon-valley/images/f/f0/Hooli.png/revision/latest?cb=20160811201728',
   is_employer: true,
+  img: 'https://vignette3.wikia.nocookie.net/silicon-valley/images/f/f0/Hooli.png/revision/latest?cb=20160811201728',
   location: 'Silicon Valley', 
   industry_id: 2,
   info: "Hooli company short bio Hooli company short bio Hooli company short bio Hooli company short bio Hooli company short bio Hooli company short bio Hooli company short bio"
@@ -97,8 +97,8 @@ var user_4 = {
   username: 'PiedPiperCo',
   email: 'e@piedpiper.com',
   password: '$2a$10$qRtLMeamR87/z.GOd/ybvOKJnuKcVjrO.MoTqGCoTluKeawdT8U/2', 
-  img: 'https://res.cloudinary.com/crunchbase-production/image/upload/v1399404021/jszf5otv3hpaeakvub8z.png',
   is_employer: true,
+  img: 'https://res.cloudinary.com/crunchbase-production/image/upload/v1399404021/jszf5otv3hpaeakvub8z.png',
   location: 'Silicon Valley',
   industry_id: 2,
   info: "Short bio section about pied piper Short bio section about pied piper Short bio section about pied piper Short bio section about pied piper Short bio section about pied piper Short bio section about pied piper "
@@ -111,8 +111,8 @@ var job_1 = {
   description: 'We are looking for a trustworthy Billing coordinator to ensure the company tracks and collects debts consistently and correctly. Your job will be important for safeguarding our revenues.',
   responsibilities: 'Collaborating with finance and sales professionals to maintain accounts receivable. Compiling and process information such as prices, discounts, shipping rates etc. Ensuring customers are billed correctly for services offered',
   qualifications: 'Proven experience as billing coordinator or similar position. Understanding of relevant laws and best practices. Proficient in MS office and data entry; working knowledge of ERP software is a plus',
-  industry_id: 3,
-  company_id: 3
+  company_id: 3,
+  industry_id: 3 
 }
 
 var job_2 = {
@@ -121,8 +121,8 @@ var job_2 = {
   description: 'We are looking for a Senior Software Engineer to produce and implement functional software solutions. You will work with upper management to define software requirements and take the lead on operational and technical projects.',
   responsibilities: 'Directing software development projects. Producing, testing and debugging code. Leading engineers and developers',
   qualifications: 'Extensive experience in software development, scripting and project management. Experience using system monitoring tools (e.g. New Relic) and automated testing frameworks. Knowledge of selected programming languages (e.g. Python, C++) and the Java/J2EE platform. In-depth knowledge of relational databases (e.g. PostgreSQL, MySQL) and NoSQL databases (e.g. MongoDB)',
-  industry_id: 2,
-  company_id: 2
+  company_id: 2,
+  industry_id: 2
 }
 
 var job_3 = {
@@ -131,8 +131,8 @@ var job_3 = {
   description: 'We are looking for a Junior Software Engineer to produce and implement functional software solutions.',
   responsibilities: 'Producing, testing and debugging code.',
   qualifications: 'Some experience in software development and scripting. Graphic design a plus. Knowledge of Javscript and frameworks. Knowledge of relational databases (e.g. PostgreSQL, MySQL) and NoSQL databases (e.g. MongoDB) a plus.',
-  industry_id: 2,
-  company_id: 2
+  company_id: 2,
+  industry_id: 2
 }
 
 var job_4 = {
@@ -141,8 +141,8 @@ var job_4 = {
   description: 'We are looking for a passionate web editor to research, plan, write and edit web content. The successful candidate should be a skilled writer and researcher, with an eye for detail and an understanding of the special requirements of web writing. The goal is to produce creative web content to appeal to our audience.',
   responsibilities: 'Producing and publishing new content in a creative way. Liaising with clients and in-house team members to decide on new posts. Overseeing layout (images, graphics, videos and artwork)',
   qualifications: 'Proven work experience as a web editor. Editing skills with a demonstrable portfolio of published work. Hands on experience with MS Office, InDesign, Photoshop or other publishing tools. In-depth knowledge of SEO',
-  industry_id: 1,
-  company_id: 1
+  company_id: 1,
+  industry_id: 1
 }
 
 //CREDENTIALS
@@ -259,33 +259,47 @@ Models.sequelize.sync({ force: true }).then(function(){
   Promise.all([
     addRow(industry_1, 'Industry'),
     addRow(industry_2, 'Industry'),
-    addRow(industry_3, 'Industry'),
+    addRow(industry_3, 'Industry')
+  ])
+  .then(Promise.all([
     addRow(company_1, 'Company'),
     addRow(company_2, 'Company'),
-    addRow(company_3, 'Company'),
+    addRow(company_3, 'Company')
+  ]))
+  .then(Promise.all([
     addRow(user_1, 'User'),
     addRow(user_2, 'User'),
     addRow(user_3, 'User'),
-    addRow(user_4, 'User'),
+    addRow(user_4, 'User') 
+  ]))
+  .then(Promise.all([
     addRow(job_1, 'Job'),
     addRow(job_2, 'Job'),
     addRow(job_3, 'Job'),
-    addRow(job_4, 'Job'),
+    addRow(job_4, 'Job')
+  ]))
+  .then(Promise.all([
     addRow(credential_1, 'Credential'),
     addRow(credential_2, 'Credential'),
     addRow(credential_3, 'Credential'),
     addRow(credential_4, 'Credential'),
     addRow(credential_5, 'Credential'),
-    addRow(credential_6, 'Credential'),
+    addRow(credential_6, 'Credential')
+  ]))
+  .then(Promise.all([
     addRow(conversation_1, 'Conversation'),
-    addRow(conversation_2, 'Conversation'),
+    addRow(conversation_2, 'Conversation')
+  ]))
+  .then(Promise.all([
     addRow(message_1, 'Message'),
     addRow(message_2, 'Message'),
-    addRow(message_3, 'Message'),
+    addRow(message_3, 'Message')
+  ]))
+  .then(Promise.all([
     addRow(newsfeed_1, 'Newsfeed'),
     addRow(newsfeed_2, 'Newsfeed'),
     addRow(newsfeed_3, 'Newsfeed')
-  ])
+  ]))
   .then(function(){
     console.log('All your queries worked! Check your database');
   }); // promise.all end
