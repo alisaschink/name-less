@@ -7,8 +7,8 @@
 			<div class = "basic-info-form">
 				<form action="/employer/update-basic-info" method="POST">
 					<h3>Company Account: </h4>
-					<h5> Account Owner Name: <input type="text" name="name" value="{{user.name}}"> </h5>
-					<h5> Company Name: <input type="text" name="username" value="{{user.username}}"> </h5>
+					<h5> Company Name: <input type="text" name="name" value="{{user.name}}"> </h5>
+					<h5> Account Owner Name: <input type="text" name="username" value="{{user.username}}"> </h5>
 					<h5> Account Owner Email: <input type="text" name="email" value="{{user.email}}"> </h5>
 					<h5> Location: <input type="text" name="location" value="{{user.location}}"> </h5>
 					<h5> Image: <input type="file" name="image" value="{{user.img}}"> </h5>
@@ -28,9 +28,7 @@
 		<div class = "col-md-5 placeholder">
 				<div>
 					<h3>Company Bio:</h3>
-					<form action="/employer/update-public-bio" method="POST">
-					<textarea name = "info">{{{user.info}}}
-					</textarea>
+					<form action="/employer/update-public-bio" method="POST"><textarea name = "info">{{#if user.info}}{{{user.info}}}{{else}}Share a short blurb about {{user.name}}...{{/if}}</textarea>
 					<button type="submit" class="btn btn-md btn-default">UPDATE</button>
 					</form>
 				</div>
