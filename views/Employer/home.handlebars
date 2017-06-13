@@ -7,8 +7,8 @@
 			<div class = "basic-info-form">
 				<form action="/employer/update-basic-info" method="POST">
 					<h3>Company Account: </h4>
-					<h5> Account Owner Name: <input type="text" name="name" value="{{user.name}}"> </h5>
-					<h5> Company Name: <input type="text" name="username" value="{{user.username}}"> </h5>
+					<h5> Company Name: <input type="text" name="name" value="{{user.name}}"> </h5>
+					<h5> Account Owner Name: <input type="text" name="username" value="{{user.username}}"> </h5>
 					<h5> Account Owner Email: <input type="text" name="email" value="{{user.email}}"> </h5>
 					<h5> Location: <input type="text" name="location" value="{{user.location}}"> </h5>
 					<h5> Image: <input type="file" name="image" value="{{user.img}}"> </h5>
@@ -28,9 +28,7 @@
 		<div class = "col-md-5 placeholder">
 				<div>
 					<h3>Company Bio:</h3>
-					<form action="/employer/update-public-bio" method="POST">
-					<textarea name = "info">{{{user.info}}}
-					</textarea>
+					<form action="/employer/update-public-bio" method="POST"><textarea name = "info">{{#if user.info}}{{{user.info}}}{{else}}Share a short blurb about {{user.name}}...{{/if}}</textarea>
 					<button type="submit" class="btn btn-md btn-default">UPDATE</button>
 					</form>
 				</div>
@@ -85,11 +83,11 @@
 				<input type="hidden" name = "id" value="{{id}}">
 	      </div>
 	      <div class="modal-body">
-	      Description: <textarea name="description">{{{description}}}
+	      <h4>Description: </h4><textarea name="description">{{{description}}}
 	      </textarea>
-	      Responsibilities: <textarea name="responsibilities">{{{responsibilities}}}
+	      <h4>Responsibilities:</h4> <textarea name="responsibilities">{{{responsibilities}}}
 	      </textarea>
-	      Qualifications: <textarea name="qualifications">{{{qualifications}}}
+	      <h4>Qualifications:</h4> <textarea name="qualifications">{{{qualifications}}}
 	      </textarea>
 	      </div>
 	    
@@ -118,13 +116,13 @@
 						<input class = "location-input" type="text" name = "location" value="Location Here">
 			      </div>
 			      <div class="modal-body">
-			   	<textarea name="description">Description
-			    </textarea>
-		        <textarea name="responsibilities">Responsibilities
-			    </textarea>
-		        <textarea name="qualifications">Qualifications
-			    </textarea>
-			    <input type="hidden" name = "company_id" value=1>
+				      <h4>Description: <h4><textarea name="description">{{{description}}}
+				      </textarea>
+				      <h4>Responsibilities:</h4> <textarea name="responsibilities">{{{responsibilities}}}
+				      </textarea>
+				      <h4>Qualifications:</h4> <textarea name="qualifications">{{{qualifications}}}
+				      </textarea>
+			    <input type="hidden" name = "company_id" value={{user.Company.id}}>
 			    <input type="hidden" name = "industry_id" value=1>
 			    </div>
 			    
