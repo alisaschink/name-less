@@ -8,6 +8,7 @@ var passport = require("./config/passport");
 const path = require('path');
 const multer = require('multer');
 var exphbs = require('express-handlebars');
+var moment = require('moment');
 
 // Library
 var Models = require('./models');
@@ -51,10 +52,9 @@ app.use(function(req, res, next) {
 });
 
 app.use(express.static(path.join(process.cwd(), '/public')));
-// app.use(bodyParser.urlencoded({ extended: false }));
 app.use(methodOverride('_method'));
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
+// app.use(bodyParser.urlencoded({ extended: false }));
+// app.use(bodyParser.json());
 
 
 // We need to use sessions to keep track of our user's login status
@@ -79,11 +79,12 @@ io.on('connection', function(socket){
 });
 
 // Requiring our routes
-require("./routes/api-routes.js")(app);
-// require("./routes/html-routes.js")(app);
-
 var LoginRoutes = require("./routes/LoginController.js");
 app.use("/", LoginRoutes);
+
+var ApiRoutes = require("./routes/api-routes.js");
+app.use("/api", ApiRoutes);
+// require("./routes/html-routes.js")(app);
 
 var ApplicantRoutes = require("./routes/ApplicantController.js");
 app.use("/applicant", ApplicantRoutes);

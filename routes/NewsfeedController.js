@@ -1,8 +1,15 @@
 var isAuthenticated = require("../config/middleware/isAuthenticated");
 var db = require("../models");
 var express = require('express');
-var router  = express.Router();
 var mysql = require('mysql');
+var moment = require('moment');
+
+var bodyParser = require('body-parser');
+
+// Create Router Object & middleware
+var router  = express.Router();
+var jsonParse = bodyParser.urlencoded({ extended: false });
+router.use(jsonParse);
 
 var userId;
 
