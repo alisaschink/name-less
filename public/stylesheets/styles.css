@@ -149,7 +149,7 @@ margin: 20px;
 }
 
 #messages{
-	height: 250px;
+	height: 200px;
 	overflow: scroll;
 	background: white;
 	opacity: 0.65;
@@ -184,7 +184,19 @@ margin: 20px;
 .inbox-convo{
 	font-size: 20px;
 	font-style: bold;
-	color: black;
+	color: white;
+	background-color: #333333;
+	padding: 5%;
+}
+
+.inbox-convo:hover{
+	background-color: #375a7f;
+
+}
+
+.convo-sidebar{
+	height: 600px;
+	overflow: scroll;
 }
 
 hr{

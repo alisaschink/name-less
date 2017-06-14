@@ -1,19 +1,18 @@
 
-<div class="container col-md-4">
+<div class="container col-md-4 convo-sidebar">
   <h2>Conversations</h2>
   {{#each conversations}}
   <div class="row convos" convo-id="{{this.id}}">
     <p class="inbox-convo">{{this.title}}</p>
-    <hr>
   </div>
   {{/each}}
 </div>
 
 <div class="container col-md-8">
   <div>
-    <h2>Messages</h2>
-    <div id="messages"></div>
-    <h2>New Message</h2>
+    <h2 class="convo-title">Messages</h2>
+    <div id="messages"><h3><i> Select a Conversation </i></h3></div>
+    <h3>New Message</h3>
     <form id="chat-form" action="">
       <div class="form-group">
         <input id="subject" placeholder="Subject" />
