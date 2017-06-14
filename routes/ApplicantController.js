@@ -83,7 +83,7 @@ router.get('/public/:user_id', isAuthenticated, function(req,res){
 router.post('/update-basic-info', isAuthenticated, upload.single('image'), function(req,res){
 	var imageName;
   if (!req.file) {
-    imageName = "https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=0ahUKEwiy95zz8LvUAhVDVT4KHd5-CnUQjRwIBw&url=http%3A%2F%2Flabaq.com%2Farchives%2F51829752.html&psig=AFQjCNETnjQyPwUhrfT5_7_gaLj1lhLHMA&ust=1497475521147121";
+    imageName = "http://www.eggental.com/fileadmin/_processed_/csm_Lama-Alpaka_Trekking_Welschnofen_Carezza_03_5176daa2b6.jpg";
   } else {
     imageName = req.file.originalname;
   }
