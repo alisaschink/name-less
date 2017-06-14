@@ -14,6 +14,7 @@ $('.start-convo').on('click', function() {
 
     $.post("/messaging/new/conversation/applicant/" + recipientId, convoObj).then(function(results) {
       window.location.replace("/messaging")
+      displayMessages(results);
     });
   });
  
@@ -69,7 +70,11 @@ $('.start-convo').on('click', function() {
 
 function displayMessages(r) {
   // empties message div before printing messages
+  $('.convo-title').empty();
   $('#messages').empty();
+  console.log("LOOKING FOR")
+  console.log(r)
+  $('.convo-title').text(r.a.title)
   // for each message, create a set of divs
   for (var i = 0; i < r.b.length; i++) {
     var user = r.b[i].User.username 
