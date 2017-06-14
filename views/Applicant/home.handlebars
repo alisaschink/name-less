@@ -8,14 +8,15 @@
 		<div class = "row">
 			<div class = "col-md-4">
 				<div class = "basic-info-form">
-					<form action="/applicant/update-basic-info" method="POST">
+					<form action="/applicant/update-basic-info" method="POST" enctype="multipart/form-data">
 					<h4>Update Basic Information: </h4>
 					<h5> Anonymous Username: <input type="text" name="username" value="{{data.username}}"> </h5>
 					<p class = "detail"> Don't use your real name or other identifying information!</p>
 					<h5> Public Bio: <input type="text" name="name" value="{{data.name}}"> </h5>
 					<h5> Email: <input type="text" name="email" value="{{data.email}}"> </h5>
 					<h5> Location: <input type="text" name="location" value="{{data.location}}"> </h5>
-					<h5> Image: <input type="file" name="img" value="{{data.img}}"> </h5>
+					<h5><label for="img">Upload an image.</label></h5>
+					<input type="file" name="img" class="img"> 
 					<button type="submit" class="btn btn-md btn-default">UPDATE</button>
 
 					</form>

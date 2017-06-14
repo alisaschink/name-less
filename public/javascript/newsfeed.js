@@ -57,8 +57,7 @@ $(document).ready(function() {
     $('.stories-container').empty();
     console.log("empty")
     for (var i = 0; i < r.length; i++) {
-      var name = r[i].User.name;
-      //+ " Posted At " + moment(r[i].created_at).format("dddd, MMMM Do YYYY, h:mm a");
+      var name = r[i].User.name + " Posted At " + moment(r[i].created_at).format("dddd, MMMM Do YYYY, h:mm a");
       var content = r[i].content;
       var nameDiv = $('<div>').addClass('name-div').append(name);
       var contentDiv = $('<div>').addClass('content-div').append(content);

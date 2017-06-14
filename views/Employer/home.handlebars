@@ -5,13 +5,14 @@
 	<div class = "row">
 		<div class = "col-md-4">
 			<div class = "basic-info-form">
-				<form action="/employer/update-basic-info" method="POST">
+				<form action="/employer/update-basic-info" method="POST" enctype="multipart/form-data">
 					<h3>Company Account: </h4>
 					<h5> Company Name: <input type="text" name="name" value="{{user.name}}"> </h5>
 					<h5> Account Owner Name: <input type="text" name="username" value="{{user.username}}"> </h5>
 					<h5> Account Owner Email: <input type="text" name="email" value="{{user.email}}"> </h5>
 					<h5> Location: <input type="text" name="location" value="{{user.location}}"> </h5>
-					<h5> Image: <input type="file" name="img" value="{{user.img}}"> </h5>
+					<h5><label for="img">Upload an image.</label></h5>
+					<input type="file" name="img" class="img"> 
 					<button type="submit" class="btn btn-md btn-default">UPDATE</button>
 				</form>
 			</div>
