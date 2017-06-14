@@ -24,7 +24,7 @@ module.exports = function(app) {
       name: req.body.name, 
       username: req.body.username,
       location: req.body.location,
-      img: "https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=0ahUKEwiy95zz8LvUAhVDVT4KHd5-CnUQjRwIBw&url=http%3A%2F%2Flabaq.com%2Farchives%2F51829752.html&psig=AFQjCNETnjQyPwUhrfT5_7_gaLj1lhLHMA&ust=1497475521147121",
+      img: "http://www.eggental.com/fileadmin/_processed_/csm_Lama-Alpaka_Trekking_Welschnofen_Carezza_03_5176daa2b6.jpg",
       is_employer: req.body.is_employer
     }).then(function() {
       res.redirect(307, "/api/login");
