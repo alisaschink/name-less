@@ -16,31 +16,24 @@ module.exports = function(app) {
   // Route for signing up a user. The user's password is automatically hashed and stored securely thanks to
   // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
   // otherwise send back an error
-  // app.post("/api/signup", function(req, res) {
-  //   console.log(req.body);
-  //   db.User.create({
-  //     email: req.body.email,
-  //     password: req.body.password,
-  //     name: req.body.name, 
-  //     username: req.body.username,
-  //     location: req.body.location,
-  //     is_employer: req.body.is_employer
+  app.post("/api/applicant-signup", function(req, res) {
+    console.log(req.body);
+    db.User.create({
+      email: req.body.email,
+      password: req.body.password,
+      name: req.body.name, 
+      username: req.body.username,
+      location: req.body.location,
+      img: "https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=0ahUKEwiy95zz8LvUAhVDVT4KHd5-CnUQjRwIBw&url=http%3A%2F%2Flabaq.com%2Farchives%2F51829752.html&psig=AFQjCNETnjQyPwUhrfT5_7_gaLj1lhLHMA&ust=1497475521147121",
+      is_employer: req.body.is_employer
+    }).then(function() {
+      res.redirect(307, "/api/login");
+    }).catch(function(err) {
+      res.json(err);
+    });
+  });
 
-
-  //   }).then(function() {
-  //     // if (req.body.is_employer){
-  //     //   db.Company.create({
-  //     //     name: req.body.username,
-  //     //     location: req.body.location
-  //     //   })
-  //     // }
-  //     res.redirect(307, "/api/login");
-  //   }).catch(function(err) {
-  //     res.json(err);
-  //   });
-  // });
-
-  app.post("/api/employer/signup", function(req, res) {
+  app.post("/api/employer-signup", function(req, res) {
     db.User.create({
       email: req.body.email,
       password: req.body.password,
@@ -50,14 +43,11 @@ module.exports = function(app) {
       img: "http://www.eggental.com/fileadmin/_processed_/csm_Lama-Alpaka_Trekking_Welschnofen_Carezza_03_5176daa2b6.jpg",
       is_employer: req.body.is_employer
     }).then(function(result) {
-      console.log("CREATING COMPANY WOOHOO");
       db.Company.create({
         name: req.body.username, 
         industry_id: 1, 
         user_id: result.id
       }).then(function() {
-
-        console.log("COMPANY WAS CREATED")
           res.redirect(307, "/api/login");
         }).catch(function(err) {
           res.json(err);
