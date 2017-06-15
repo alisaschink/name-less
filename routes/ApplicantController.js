@@ -81,11 +81,11 @@ router.get('/public/:user_id', isAuthenticated, function(req,res){
 
 router.post('/update-basic-info', isAuthenticated, upload.single('img'), function(req,res){
 	var imageName;
-  // if (!req.file) {
-  //   imageName = "http://www.eggental.com/fileadmin/_processed_/csm_Lama-Alpaka_Trekking_Welschnofen_Carezza_03_5176daa2b6.jpg";
-  // } else {
+  if (!req.file) {
+    imageName = "http://www.eggental.com/fileadmin/_processed_/csm_Lama-Alpaka_Trekking_Welschnofen_Carezza_03_5176daa2b6.jpg";
+  } else {
     imageName = req.file.originalname;
-  // }
+  }
   var changes = {
     username: req.body.username,
 		name: req.body.name, 

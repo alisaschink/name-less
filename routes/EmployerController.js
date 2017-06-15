@@ -41,8 +41,6 @@ router.get('/home', isAuthenticated, function(req,res){
             if (result2){
               hbs_obj["data"] = result2.toJSON()
             }
-            console.log("EMPLOYER HOME OBJECT =  ")
-            console.log(hbs_obj)
             res.render("Employer/home", hbs_obj)
           });  
         });
@@ -57,11 +55,11 @@ router.get('/home', isAuthenticated, function(req,res){
 
 router.post('/update-basic-info', isAuthenticated, upload.single('img'), function(req,res){
   var imageName;
-  // if (!req.file) {
-  //   imageName = "http://www.eggental.com/fileadmin/_processed_/csm_Lama-Alpaka_Trekking_Welschnofen_Carezza_03_5176daa2b6.jpg";
-  // } else {
+  if (!req.file) {
+    imageName = "http://www.eggental.com/fileadmin/_processed_/csm_Lama-Alpaka_Trekking_Welschnofen_Carezza_03_5176daa2b6.jpg";
+  } else {
     imageName = req.file.originalname;
-  // }
+  }
     var changes = {
       username: req.body.username,
       name: req.body.name, 
@@ -69,6 +67,8 @@ router.post('/update-basic-info', isAuthenticated, upload.single('img'), functio
       location: req.body.location,
       img: imageName
     }
+    console.log("REQ.FILE  = ")
+    console.log(req.file)
     db.User.update(changes, {
         where: {
             id: req.user.id,

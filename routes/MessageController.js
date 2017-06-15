@@ -33,7 +33,7 @@ router.get('/', function(req, res){
 });
 
 // route to get messages for a given conversation
- router.get('/conversation/:id/messages', function(req, res) {
+router.get('/conversation/:id/messages', function(req, res) {
   var conversationId = req.params.id;
   if(req.user){
     userId = req.user.id
@@ -71,11 +71,18 @@ router.post('/new/message', upload.single('attachment'), function(req, res){
   if(req.user){
     userId = req.user.id
   }
+
+  var fileName;
+  if (!req.file) {
+    fileName = "";
+  } else {
+    fileName = req.file.originalname;
+  }
   
   db.Message.create({
     subject: req.body.subject,
     text: req.body.text,
-    attachment: req.file.originalname,
+    attachment: fileName,
     conversation_id: req.body.conversation_id,
     user_id: userId
   }).then(function(dbMessage){
@@ -91,22 +98,27 @@ router.post('/new/conversation/applicant/:id', function(req, res){
     var userUsername = req.user.username
   }
 
-  var initName = userName
-  if (req.body.is_anonymous || req.user.is_employer){
-    initName = userUsername
+  if (userId == req.params.id){
+    res.redirect("/messaging")
+  }else{
+
+    var initName = userName
+    if (req.body.is_anonymous || req.user.is_employer){
+      initName = userUsername
+    }
+
+    var title_string = initName + req.body.convo_title
+
+    db.Conversation.create({
+      is_anonymous: req.body.is_anonymous,
+      user_1: userId,
+   //user_2 comes from req.params? --> add user-id attribute to convo button
+      user_2: req.params.id,
+      title: title_string
+    }).then(function(dbConversation){
+      res.json(dbConversation);
+    });
   }
-
-  var title_string = initName + req.body.convo_title
-
-  db.Conversation.create({
-    is_anonymous: req.body.is_anonymous,
-    user_1: userId,
- //user_2 comes from req.params? --> add user-id attribute to convo button
-    user_2: req.params.id,
-    title: title_string
-  }).then(function(dbConversation){
-    res.json(dbConversation);
-  });
 });
 
 
