@@ -44,9 +44,7 @@ router.post('/new', function(req,res){
 		subheading: req.body.subheading,
 		details: req.body.details
 	}
-	console.log(changes)
 	db.Credential.create(changes).then(function(result) {
-  	console.log(result)
     res.redirect("/applicant/home")
     });
 
