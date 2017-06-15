@@ -32,7 +32,7 @@ router.use(jsonParse);
       name: req.body.name, 
       username: req.body.username,
       location: req.body.location,
-      img: "http://www.eggental.com/fileadmin/_processed_/csm_Lama-Alpaka_Trekking_Welschnofen_Carezza_03_5176daa2b6.jpg",
+      img: "lama.jpg",
       is_employer: req.body.is_employer
     }).then(function() {
       res.redirect(307, "/api/login");
@@ -48,7 +48,7 @@ router.use(jsonParse);
       name: req.body.name, 
       username: req.body.username,
       location: req.body.location,
-      img: "http://www.eggental.com/fileadmin/_processed_/csm_Lama-Alpaka_Trekking_Welschnofen_Carezza_03_5176daa2b6.jpg",
+      img: "lama.jpg",
       is_employer: req.body.is_employer
     }).then(function(result) {
       db.Company.create({

@@ -5,14 +5,18 @@
 	<div class = "row">
 		<div class = "col-md-4">
 			<div class = "basic-info-form">
-				<form action="/employer/update-basic-info" method="POST" enctype="multipart/form-data">
+				<form action="/employer/update-basic-info" method="POST">
 					<h3>Company Account: </h4>
 					<h5> Company Name: <input type="text" name="name" value="{{user.name}}"> </h5>
 					<h5> Account Owner Name: <input type="text" name="username" value="{{user.username}}"> </h5>
 					<h5> Account Owner Email: <input type="text" name="email" value="{{user.email}}"> </h5>
 					<h5> Location: <input type="text" name="location" value="{{user.location}}"> </h5>
-					<h5><label for="img">Upload an image.</label></h5>
-					<input type="file" name="img" class="img"> 
+					<button type="submit" class="btn btn-md btn-default">UPDATE</button>
+				</form>
+
+				<form action="/employer/update-image" method="POST" enctype="multipart/form-data">
+					<h4>Upload an image</h4>
+					<input type="file" name="img" value="{{data.img}}"> 
 					<button type="submit" class="btn btn-md btn-default">UPDATE</button>
 				</form>
 			</div>
@@ -21,7 +25,7 @@
 		<div class = "col-md-3">
 			<div>
 			{{#if user.img}}
-				<img src="{{user.img}}">
+				<img src="/uploads/images/{{data.img}}">
 			{{/if}}
 			</div>
 		</div>
