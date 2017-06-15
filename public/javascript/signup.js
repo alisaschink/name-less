@@ -49,10 +49,7 @@ $(document).ready(function() {
       location: location
 
     }).then(function(data) {
-      console.log("THE DATA = ")
-      console.log(data)
-      console.log("------------")
-      window.location.replace();
+      window.location.replace(data);
     }).catch(function(err) {
       console.log(err);
     });
@@ -71,7 +68,7 @@ $(document).ready(function() {
       industry_id: 1
 
     }).then(function(data) {
-      window.location.replace("/employer/home");
+      window.location.replace(data);
     }).catch(function(err) {
       console.log(err);
     });
