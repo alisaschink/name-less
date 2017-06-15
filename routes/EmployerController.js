@@ -9,7 +9,7 @@ var mysql = require('mysql')
 var multer = require('multer');
 var storage = multer.diskStorage({
   destination: function(req, file, cb) {
-    cb(null, 'uploads/images/')
+    cb(null, 'public/uploads/images/')
   },
   filename: function(req, file, cb) {
     cb(null, file.originalname)
@@ -53,19 +53,13 @@ router.get('/home', isAuthenticated, function(req,res){
     
 });
 
-router.post('/update-basic-info', isAuthenticated, upload.single('img'), function(req,res){
-  var imageName;
-  if (!req.file) {
-    imageName = "http://www.eggental.com/fileadmin/_processed_/csm_Lama-Alpaka_Trekking_Welschnofen_Carezza_03_5176daa2b6.jpg";
-  } else {
-    imageName = req.file.originalname;
-  }
+router.post('/update-basic-info', isAuthenticated, function(req,res){
+
     var changes = {
       username: req.body.username,
       name: req.body.name, 
       email: req.body.email,
-      location: req.body.location,
-      img: imageName
+      location: req.body.location
     }
     db.User.update(changes, {
         where: {
@@ -76,6 +70,22 @@ router.post('/update-basic-info', isAuthenticated, upload.single('img'), functio
   
     });
 });
+
+router.post('/update-image', isAuthenticated, upload.single('img'), function(req,res){
+
+    var changes = {
+      img: req.file.originalname
+    }
+    db.User.update(changes, {
+        where: {
+            id: req.user.id,
+        },
+      }).then(function(result) {
+    res.redirect("/employer/home")
+  
+    });
+});
+
 
 router.post('/update-public-bio', isAuthenticated, function(req,res){
     console.log(req.body.info)

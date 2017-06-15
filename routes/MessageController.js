@@ -10,7 +10,7 @@ var storage = multer.diskStorage({
     cb(null, 'uploads/files/')
   },
   filename: function(req, file, cb) {
-    cb(null, file.originalname)
+    cb(null, file.originalname + '-' + Date.now())
   }
 })
 
@@ -20,7 +20,7 @@ var upload = multer({ storage: storage })
 var userId;
 
 // get route to display all conversations for user
-router.get('/', function(req, res){
+router.get('/', isAuthenticated, function(req, res){
   if(req.user){
     userId = req.user.id
   }
@@ -33,11 +33,11 @@ router.get('/', function(req, res){
 });
 
 // route to get messages for a given conversation
-router.get('/conversation/:id/messages', function(req, res) {
+ router.get('/conversation/:id/messages', isAuthenticated, function(req, res) {
   var conversationId = req.params.id;
   if(req.user){
     userId = req.user.id
-  }
+  }yo
   var convoResults;
   db.Conversation.findOne({
     where: { id: conversationId },
@@ -67,7 +67,7 @@ router.get('/conversation/:id/messages', function(req, res) {
 });
 
 // post route for a new message
-router.post('/new/message', upload.single('attachment'), function(req, res){
+router.post('/new/message', isAuthenticated, upload.single('attachment'), function(req, res){
   if(req.user){
     userId = req.user.id
   }
@@ -91,7 +91,7 @@ router.post('/new/message', upload.single('attachment'), function(req, res){
 });
 
 //post route for a new conversation
-router.post('/new/conversation/applicant/:id', function(req, res){
+router.post('/new/conversation/applicant/:id', isAuthenticated, function(req, res){
   if(req.user){
     userId = req.user.id
     var userName = req.user.name
