@@ -28,7 +28,7 @@ router.get('/', isAuthenticated, function(req, res){
   db.Conversation.findAll({
     where: { $or: [{user_1: userId}, {user_2: userId}] }
   }).then(function(dbConversation){
-    res.render('Messaging/index', {conversations: dbConversation})
+    res.render('messages/index', {conversations: dbConversation})
   })
 });
 
@@ -37,7 +37,7 @@ router.get('/', isAuthenticated, function(req, res){
   var conversationId = req.params.id;
   if(req.user){
     userId = req.user.id
-  }
+  }yo
   var convoResults;
   db.Conversation.findOne({
     where: { id: conversationId },
@@ -71,6 +71,7 @@ router.post('/new/message', isAuthenticated, upload.single('attachment'), functi
   if(req.user){
     userId = req.user.id
   }
+
   var fileName;
   if (!req.file) {
     fileName = "";
@@ -97,22 +98,27 @@ router.post('/new/conversation/applicant/:id', isAuthenticated, function(req, re
     var userUsername = req.user.username
   }
 
-  var initName = userName
-  if (req.body.is_anonymous || req.user.is_employer){
-    initName = userUsername
+  if (userId == req.params.id){
+    res.redirect("/messaging")
+  }else{
+
+    var initName = userName
+    if (req.body.is_anonymous || req.user.is_employer){
+      initName = userUsername
+    }
+
+    var title_string = initName + req.body.convo_title
+
+    db.Conversation.create({
+      is_anonymous: req.body.is_anonymous,
+      user_1: userId,
+   //user_2 comes from req.params? --> add user-id attribute to convo button
+      user_2: req.params.id,
+      title: title_string
+    }).then(function(dbConversation){
+      res.json(dbConversation);
+    });
   }
-
-  var title_string = initName + req.body.convo_title
-
-  db.Conversation.create({
-    is_anonymous: req.body.is_anonymous,
-    user_1: userId,
- //user_2 comes from req.params? --> add user-id attribute to convo button
-    user_2: req.params.id,
-    title: title_string
-  }).then(function(dbConversation){
-    res.json(dbConversation);
-  });
 });
 
 

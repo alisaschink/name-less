@@ -26,7 +26,7 @@ router.get('/employerSignup', function(req,res){
   if (req.user) {
       res.redirect("/members");
     }else{
-    res.render("Employer/signup", {})
+    res.render("employers/signup", {})
   }
  
 });
@@ -36,7 +36,7 @@ router.get('/applicantSignup', function(req,res){
   if (req.user) {
       res.redirect("/members");
     }else{
-    res.render("Applicant/signup", {})
+    res.render("applicants/signup", {})
   }
  
 });
@@ -51,15 +51,8 @@ router.get('/login', function(req,res){
  
 });
 
-// Route for redirecting to either applicant or employer home page
 router.get('/members', isAuthenticated, function(req,res){
-  if (req.user.is_employer == false){
-    res.redirect("/applicant/home");
-  }
-  else if (req.user.is_employer == true){
-    console.log("redirectiong to employer home")
-    res.redirect("/employer/home")
-  }
+  res.redirect("/applicant/home");
 });
 
 module.exports = router;

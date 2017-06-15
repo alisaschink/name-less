@@ -36,7 +36,7 @@ var searchAnonProfiles = function(req,res){
       }).then(function(result2) {
 				var hbs_obj = {result: result2,
 											originalQuery: req.query}
-				res.render("Search/searchAnonProfiles", hbs_obj)
+				res.render("searches/searchAnonProfiles", hbs_obj)
 			});
 		});
 }
@@ -53,7 +53,7 @@ var searchPublicProfiles = function(req,res){
   }).then(function(result) {
 				var hbs_obj = {result: result,
 											originalQuery: req.query}
-				res.render("Search/searchPublicProfiles", hbs_obj)
+				res.render("searches/searchPublicProfiles", hbs_obj)
 
 		});
 }
@@ -71,8 +71,8 @@ var searchJobs = function(req,res){
 			include: [db.Company]
   }).then(function(result) {
 				var hbs_obj = {result: result,
-											originalQuery: req.query}
-				res.render("Search/searchJobs", hbs_obj)
+							 originalQuery: req.query}
+				res.render("searches/searchJobs", hbs_obj)
 
 		});
 }
