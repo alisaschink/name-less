@@ -72,8 +72,6 @@ function displayMessages(r) {
   // empties message div before printing messages
   $('.convo-title').empty();
   $('#messages').empty();
-  console.log("LOOKING FOR")
-  console.log(r)
   $('.convo-title').text(r.a.title)
   // for each message, create a set of divs
   for (var i = 0; i < r.b.length; i++) {
