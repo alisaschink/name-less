@@ -41,7 +41,7 @@ router.get('/home', isAuthenticated, function(req,res){
             if (result2){
               hbs_obj["data"] = result2.toJSON()
             }
-            res.render("Employer/home", hbs_obj)
+            res.render("employer/home", hbs_obj)
           });  
         });
 
@@ -67,8 +67,6 @@ router.post('/update-basic-info', isAuthenticated, upload.single('img'), functio
       location: req.body.location,
       img: imageName
     }
-    console.log("REQ.FILE  = ")
-    console.log(req.file)
     db.User.update(changes, {
         where: {
             id: req.user.id,

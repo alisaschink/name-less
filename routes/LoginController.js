@@ -26,7 +26,7 @@ router.get('/employerSignup', function(req,res){
   if (req.user) {
       res.redirect("/members");
     }else{
-    res.render("Employer/signup", {})
+    res.render("employer/signup", {})
   }
  
 });
@@ -36,7 +36,7 @@ router.get('/applicantSignup', function(req,res){
   if (req.user) {
       res.redirect("/members");
     }else{
-    res.render("Applicant/signup", {})
+    res.render("applicant/signup", {})
   }
  
 });
