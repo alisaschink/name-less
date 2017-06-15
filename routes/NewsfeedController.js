@@ -51,7 +51,7 @@ router.get('/data', function(req, res){
 
 
 // post route for a new message
-router.post('/new/story', function(req, res){
+router.post('/new/story', isAuthenticated, function(req, res){
   if(req.user){
     userId = req.user.id
   }
