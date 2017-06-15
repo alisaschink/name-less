@@ -41,7 +41,7 @@ router.get('/home', isAuthenticated, function(req,res){
             if (result2){
               hbs_obj["data"] = result2.toJSON()
             }
-            res.render("employer/home", hbs_obj)
+            res.render("employers/home", hbs_obj)
           });  
         });
 

@@ -86,7 +86,7 @@ router.get('/applicant/:user_name', function(req,res){
             }
     }}
 
-    res.render("applicant/anon-profile", hbs_obj)
+    res.render("applicants/anon-profile", hbs_obj)
   
     });
 	

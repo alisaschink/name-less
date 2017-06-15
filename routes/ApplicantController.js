@@ -50,7 +50,7 @@ router.get('/home', isAuthenticated, function(req,res){
                 }
             
         }}
-        res.render("applicant/home", hbs_obj)
+        res.render("applicants/home", hbs_obj)
       
     });
         
@@ -72,7 +72,7 @@ router.get('/public/:user_id', isAuthenticated, function(req,res){
       var hbs_obj = {
                       data: result.toJSON()
                     }
-      res.render("applicant/public-bio", hbs_obj)
+      res.render("applicants/public-bio", hbs_obj)
     
     });
   }
