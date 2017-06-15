@@ -71,7 +71,7 @@ var searchJobs = function(req,res){
 			include: [db.Company]
   }).then(function(result) {
 				var hbs_obj = {result: result,
-											originalQuery: req.query}
+							 originalQuery: req.query}
 				res.render("Search/searchJobs", hbs_obj)
 
 		});
