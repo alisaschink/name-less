@@ -7,10 +7,10 @@ var mysql = require('mysql');
 var moment = require('moment');
 var storage = multer.diskStorage({
   destination: function(req, file, cb) {
-    cb(null, 'uploads/files/')
+    cb(null, 'public/uploads/files/')
   },
   filename: function(req, file, cb) {
-    cb(null, file.originalname + '-' + Date.now())
+    cb(null, file.originalname)
   }
 })
 
