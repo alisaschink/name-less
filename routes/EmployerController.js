@@ -29,7 +29,7 @@ router.get('/home', isAuthenticated, function(req,res){
         where:{
           user_id: req.user.id,
           industry_id: 1, 
-          name: req.user.username
+          name: req.user.name
         }
       }).then( function(ignoreThisResult){
     
