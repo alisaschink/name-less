@@ -21,36 +21,51 @@ var upload = multer({ storage: storage })
 
 router.get('/home', isAuthenticated, function(req,res){
 
+
+
     if (req.user.is_employer == true){
 
-      db.User.findOne({
-        where: {
-                id: req.user.id,
-                },
-            include: [db.Company]
-      }).then(function(result1) {
-            var hbs_obj = {
-                user: result1.toJSON(),
-                }
-            db.Company.findOne({
-                where: {
-              user_id: req.user.id,
-            },
-            include: [db.Job]
-              }).then(function(result2) {
-            if (result2){
-              hbs_obj["data"] = result2.toJSON()
-            }
-            res.render("employers/home", hbs_obj)
-          });  
-        });
+      db.CompanyfindOrCreate({
+        where:{
+          user_id: req.user.id,
+          industry: 1, 
+          name: req.user.username
+        }
+      }).then( function(ignoreThisResult){
+    
 
+        db.User.findOne({
+          where: {
+                  id: req.user.id,
+                  },
+              include: [db.Company]
+        }).then(function(result1) {
+          var hbs_obj = {
+              user: result1.toJSON(),
+              }
+          db.Company.findOne({
+              where: {
+            user_id: req.user.id,
+          },
+          include: [db.Job]
+            }).then(function(result2) {
+          if (result2){
+            hbs_obj["data"] = result2.toJSON()
+          }
+          res.render("employers/home", hbs_obj)
+        });  
+      });
+
+      });
+    
     }else if (req.user.is_employer == false){
         res.redirect("/applicant/home")
     }else{
         res.redirect("/")
     }
     
+
+
 });
 
 router.post('/update-basic-info', isAuthenticated, function(req,res){

@@ -51,25 +51,12 @@ router.use(jsonParse);
       img: "lama.jpg",
       is_employer: req.body.is_employer
     }).then(function(result) {
-      db.Company.create({
-        name: req.body.username, 
-        industry_id: 1, 
-        user_id: result.id
-      }).then(function(result2) {
-
-          db.User.findOne({
-            where: {
-                    id: result.id,s
-                    },
-          }).then(function(result3) {
 
 
-              res.redirect(307, "/api/login");
-              }).catch(function(err) {
-                res.json(err);
-              });
-            });
-          });
+        res.redirect(307, "/api/login");
+        }).catch(function(err) {
+          res.json(err);
+        });
       });
   // });
 
