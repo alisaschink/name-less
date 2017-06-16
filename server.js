@@ -31,7 +31,7 @@ app.engine('handlebars', exphbs({
 
 app.set('view engine', 'handlebars');
 
-Middleware
+// Middleware
 app.use(session({
   secret: 'app',
   cookie: { maxAge: 6 * 1000 * 1000 * 1000 * 1000 },
