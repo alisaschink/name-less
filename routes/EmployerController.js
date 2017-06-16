@@ -25,7 +25,7 @@ router.get('/home', isAuthenticated, function(req,res){
 
     if (req.user.is_employer == true){
 
-      db.CompanyfindOrCreate({
+      db.Company.findOrCreate({
         where:{
           user_id: req.user.id,
           industry: 1, 
