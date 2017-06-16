@@ -45,6 +45,7 @@ $(document).ready(function() {
       password: password,
       name: realName, 
       username: userName,
+      img: "lama.jpg",
       is_employer: isEmployer,
       location: location
 
@@ -63,6 +64,7 @@ $(document).ready(function() {
       password: password,
       name: realName, 
       username: userName,
+      img: "lama.jpg",
       is_employer: isEmployer,
       location: location,
       industry_id: 1
