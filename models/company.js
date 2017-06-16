@@ -13,7 +13,7 @@ module.exports = function(sequelize, DataTypes) {
         Company.belongsTo(models.Industry,
         {
           foreignKey: {
-            allowNull: false,
+            allowNull: true,
           }
         });
         Company.belongsTo(models.User,
