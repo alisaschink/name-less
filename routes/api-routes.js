@@ -18,7 +18,7 @@ router.use(jsonParse);
     // Since we're doing a POST with javascript, we can't actually redirect that post into a GET request
     // So we're sending the user back the route to the members page because the redirect will happen on the front end
     // They won't get this or even be able to access this page if they aren't authed
-    res.json("/members");
+    res.redirect("/members");
   });
 
   // Route for signing up a user. The user's password is automatically hashed and stored securely thanks to
@@ -35,7 +35,7 @@ router.use(jsonParse);
       img: "lama.jpg",
       is_employer: req.body.is_employer
     }).then(function() {
-      res.redirect("/api/login");
+      res.redirect(307, "/api/login");
     }).catch(function(err) {
       res.json(err);
     });
@@ -58,7 +58,7 @@ router.use(jsonParse);
       }).then(function(result) {
 
 
-        res.redirect("/api/login");
+        res.redirect(307, "/api/login");
         }).catch(function(err) {
           res.json(err);
         });
@@ -91,7 +91,6 @@ router.use(jsonParse);
   router.get("/all-users", function(req, res) {
     db.User.findAll({
       }).then(function(result) {
-    console.log(result)
     res.json(result)
   
     });
