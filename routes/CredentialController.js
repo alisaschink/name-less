@@ -50,6 +50,17 @@ router.post('/new', function(req,res){
 
 });
 
+router.post('/delete/:id', function(req,res){
+
+  db.Credential.destroy({    
+    where: {
+          id: req.params.id,
+    },}).then(function(result) {
+    res.redirect("/applicant/home")
+    });
+
+});
+
 router.get('/applicant/:user_name', function(req,res){
 
 	db.User.findOne({
