@@ -12,13 +12,14 @@
   <div>
     <h2 class="convo-title">Messages</h2>
     <div id="messages"><h3><i> Select a Conversation </i></h3></div>
+
     <h3>New Message</h3>
-    <form id="chat-form" action="" enctype="multipart/form-data">
+    <form id="chat-form" action="/messaging/new/message" method="POST" enctype="multipart/form-data">
       <div class="form-group">
         <input id="subject" placeholder="Subject" />
         <textarea id="message" placeholder="Message" autocomplete="off" rows="8"></textarea> 
-        <label for="attachment">Add an attachment</label>
-        <input id="attachment" type="file" placeholder="Attachment" />
+        <!--<label for="attachment">Add an attachment</label>
+        <input id="attachment" type="file" placeholder="Attachment" />-->
         <br />
         <button class="btn btn-md btn-default">Send</button>
       </div>
