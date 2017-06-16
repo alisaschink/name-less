@@ -110,6 +110,9 @@
 		    <!-- Modal content-->
 		    <div class="modal-content">
 		      <div class="modal-header">
+		        <form action="/credential/delete/{{id}}" method="POST">
+		  			<input type="submit" class= "btn btn-primary" value="Delete Credential">
+				</form>	
 		      <form action="/credential/update" method="POST">
 		        <button type="button" class="close" data-dismiss="modal">&times;</button>
 						<input class = "heading-input" type="text" name = "heading" value="{{heading}}">

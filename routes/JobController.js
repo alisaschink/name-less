@@ -59,7 +59,18 @@ router.post('/new', function(req,res){
 	}
 
 	db.Job.create(changes).then(function(result) {
-    res.redirect("/applicant/home")
+    res.redirect("/employer/home")
+    });
+
+});
+
+router.post('/delete/:id', function(req,res){
+
+  db.Job.destroy({    
+    where: {
+          id: req.params.id,
+    },}).then(function(result) {
+    res.redirect("/employer/home")
     });
 
 });

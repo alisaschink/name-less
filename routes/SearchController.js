@@ -35,7 +35,7 @@ var searchAnonProfiles = function(req,res){
         }
       }).then(function(result2) {
 				var hbs_obj = {result: result2,
-											originalQuery: req.query}
+							   originalQuery: req.query}
 				res.render("searches/searchAnonProfiles", hbs_obj)
 			});
 		});
@@ -48,8 +48,10 @@ var searchPublicProfiles = function(req,res){
 		  $or: [
 	  			{info: {like: '%' + req.query.keyword + '%'}},
 	  			{name: {like: '%' + req.query.keyword + '%'}},
-	  			]
-				}
+	  			],
+	  	  $and: {is_employer: 0}
+				
+	  	  }
   }).then(function(result) {
 				var hbs_obj = {result: result,
 											originalQuery: req.query}
