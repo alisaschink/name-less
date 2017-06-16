@@ -57,7 +57,6 @@ router.get('/members', isAuthenticated, function(req,res){
   }else{
     res.redirect("/applicant/home");
   }
-  }
 });
 
 module.exports = router;
