@@ -24,6 +24,7 @@ router.get('/', isAuthenticated, function(req, res){
   if(req.user){
     userId = req.user.id
   }
+  
   var userResults;
   db.Conversation.findAll({
     where: { $or: [{user_1: userId}, {user_2: userId}] }
@@ -38,7 +39,7 @@ router.get('/', isAuthenticated, function(req, res){
   if(req.user){
     userId = req.user.id
   }
-  
+
   var convoResults;
   db.Conversation.findOne({
     where: { id: conversationId },
