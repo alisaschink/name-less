@@ -10,12 +10,12 @@ module.exports = function(sequelize, DataTypes) {
    freezeTableName: true,
    classMethods: {
       associate: function(models) {
-        // Company.belongsTo(models.Industry,
-        // {
-        //   foreignKey: {
-        //     allowNull: true,
-        //   }
-        // });
+        Company.belongsTo(models.Industry,
+        {
+          foreignKey: {
+            allowNull: false,
+          }
+        });
         Company.belongsTo(models.User,
         {
           foreignKey: {
