@@ -28,7 +28,7 @@ router.get('/home', isAuthenticated, function(req,res){
       db.Company.findOrCreate({
         where:{
           user_id: req.user.id,
-          industry: 1, 
+          industry_id: 1, 
           name: req.user.username
         }
       }).then( function(ignoreThisResult){
