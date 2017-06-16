@@ -39,6 +39,7 @@ router.get('/', isAuthenticated, function(req, res){
   if(req.user){
     userId = req.user.id
   }
+
   var convoResults;
   db.Conversation.findOne({
     where: { id: conversationId },
