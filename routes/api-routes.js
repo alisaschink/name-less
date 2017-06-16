@@ -53,6 +53,7 @@ router.use(jsonParse);
     }).then(function(result) {
       db.Company.create({
         name: req.body.username, 
+        industry_id: 1, 
         user_id: result.id
       }).then(function(result2) {
 
