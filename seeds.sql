@@ -1,5 +1,5 @@
 -- ------------- INDUSTRIES -------------
-INSERT INTO Industry (name, img) VALUES ('Media','https://s-media-cache-ak0.pinimg.com/originals/30/dc/3a/30dc3afd1e8f395af2996217f1710bc9.jpg');
+INSERT INTO Industry (name, img, created_at, updated_at) VALUES ('Media','https://s-media-cache-ak0.pinimg.com/originals/30/dc/3a/30dc3afd1e8f395af2996217f1710bc9.jpg', 0, 0);
 INSERT INTO Industry (name, img) VALUES ('Software','https://s-media-cache-ak0.pinimg.com/originals/30/dc/3a/30dc3afd1e8f395af2996217f1710bc9.jpg');
 INSERT INTO Industry (name, img) VALUES ('Retail','https://s-media-cache-ak0.pinimg.com/originals/30/dc/3a/30dc3afd1e8f395af2996217f1710bc9.jpg');
 

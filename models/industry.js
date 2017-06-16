@@ -14,7 +14,7 @@ module.exports = function(sequelize, DataTypes) {
     freezeTableName: true,
     classMethods: {
       associate: function(models) {
-        Industry.hasMany(models.Company);
+        // Industry.hasMany(models.Company);
         Industry.hasMany(models.User);
         Industry.hasMany(models.Job);
       }

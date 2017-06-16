@@ -33,9 +33,9 @@ router.get('/employerSignup', function(req,res){
 
 // Sign up as an applicant
 router.get('/applicantSignup', function(req,res){
-  if (req.user) {
-      res.redirect("/members");
-    }else{
+  if (req.user){
+    res.redirect("/members");
+  }else{
     res.render("applicants/signup", {})
   }
  
@@ -52,7 +52,11 @@ router.get('/login', function(req,res){
 });
 
 router.get('/members', isAuthenticated, function(req,res){
-  res.redirect("/applicant/home");
+  if (req.user.is_employer == 1){
+    res.redirect("/employer/home");
+  }else{
+    res.redirect("/applicant/home");
+  }
 });
 
 module.exports = router;
