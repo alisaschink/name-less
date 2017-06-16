@@ -68,6 +68,8 @@ $(document).ready(function() {
       industry_id: 1
 
     }).then(function(data) {
+      console.log("THIS IS DATA")
+      console.log(data)
       window.location.replace(data);
     }).catch(function(err) {
       console.log(err);

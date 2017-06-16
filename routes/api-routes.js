@@ -35,7 +35,7 @@ router.use(jsonParse);
       img: "lama.jpg",
       is_employer: req.body.is_employer
     }).then(function() {
-      res.redirect(307, "/api/login");
+      res.redirect("/api/login");
     }).catch(function(err) {
       res.json(err);
     });
@@ -55,8 +55,10 @@ router.use(jsonParse);
         name: req.body.username, 
         industry_id: 1, 
         user_id: result.id
-      }).then(function() {
-          res.redirect(307, "/api/login");
+      }).then(function(result) {
+
+
+        res.redirect("/api/login");
         }).catch(function(err) {
           res.json(err);
         });

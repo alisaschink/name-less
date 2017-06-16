@@ -55,6 +55,8 @@ router.get('/home', isAuthenticated, function(req,res){
     });
         
     }else if (req.user.is_employer == true) {
+        console.log("req.user.is_employer = true")
+        console.log(req.user.is_employer == true)
         res.redirect("/employer/home")
     }
     else{
