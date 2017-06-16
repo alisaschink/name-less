@@ -52,7 +52,12 @@ router.get('/login', function(req,res){
 });
 
 router.get('/members', isAuthenticated, function(req,res){
-  res.redirect("/applicant/home");
+  if (req.user.is_employer == 1){
+    res.redirect("/employer/home");
+  }else{
+    res.redirect("/applicant/home");
+  }
+  }
 });
 
 module.exports = router;
