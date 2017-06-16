@@ -31,13 +31,13 @@ app.engine('handlebars', exphbs({
 
 app.set('view engine', 'handlebars');
 
-// Middleware
-// app.use(session({
-//   secret: 'app',
-//   cookie: { maxAge: 6 * 1000 * 1000 * 1000 * 1000 },
-//   resave: true,
-//   saveUninitialized: true,
-// }));
+Middleware
+app.use(session({
+  secret: 'app',
+  cookie: { maxAge: 6 * 1000 * 1000 * 1000 * 1000 },
+  resave: true,
+  saveUninitialized: true,
+}));
 app.use(cookieParser());
 
 // Make session available;

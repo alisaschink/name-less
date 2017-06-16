@@ -51,11 +51,11 @@ router.use(jsonParse);
       img: "lama.jpg",
       is_employer: req.body.is_employer
     }).then(function(result) {
-      db.Company.create({
-        name: req.body.username, 
-        industry_id: 1, 
-        user_id: result.id
-      }).then(function(result) {
+      // db.Company.create({
+      //   name: req.body.username, 
+      //   industry_id: 1, 
+      //   user_id: result.id
+      // }).then(function(result) {
 
 
         res.redirect(307, "/api/login");
@@ -63,7 +63,7 @@ router.use(jsonParse);
           res.json(err);
         });
       });
-  });
+  // });
 
 
   // Route for logging user out
