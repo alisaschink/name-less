@@ -31,21 +31,21 @@ $('.start-convo').on('click', function() {
     $('#chat-form').submit(function(e){
       e.preventDefault();
       // pulls message data from form
-      // conversationId = $('.convos').attr('convo-id'); //need to move to a separate onClick function?
       var subject = $('#subject').val().trim();
       var message = $('#message').val().trim();
-      var attachment = $('#attachment').val().trim();
+      // var attachment = $('#attachment').val().trim();
+    
 
       // saves message data to a message object
       var messageObj = {
         subject: subject,
         text: message,
-        attachment: attachment,
+        // attachment: attachment,
         conversation_id: conversationId
       }
 
-        // sends message object to newmessage post route
-       $.post('/messaging/new/message', messageObj).then(function(results) {
+      // sends message object to newmessage post route
+      $.post('/messaging/new/message', messageObj).then(function(results) {
         console.log(results);
         //display function here?
       })
@@ -55,7 +55,7 @@ $('.start-convo').on('click', function() {
       // empties input values
       $('#subject').val('');
       $('#message').val('');
-      $('#attachment').val('');
+      // $('#attachment').val('');
     });
 
     socket.on('chat message', function(msg){
