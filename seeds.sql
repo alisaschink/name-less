@@ -1,7 +1,5 @@
 -- ------------- INDUSTRIES -------------
-INSERT INTO Industry (name, img, created_at, updated_at) VALUES ('Media','https://s-media-cache-ak0.pinimg.com/originals/30/dc/3a/30dc3afd1e8f395af2996217f1710bc9.jpg', 0, 0);
-INSERT INTO Industry (name, img) VALUES ('Software','https://s-media-cache-ak0.pinimg.com/originals/30/dc/3a/30dc3afd1e8f395af2996217f1710bc9.jpg');
-INSERT INTO Industry (name, img) VALUES ('Retail','https://s-media-cache-ak0.pinimg.com/originals/30/dc/3a/30dc3afd1e8f395af2996217f1710bc9.jpg');
+INSERT INTO Industry (name, img, created_at, updated_at) VALUES ('None','None', 0, 0);
 
 --  ------------ USERS ------------
 
@@ -59,10 +57,6 @@ INSERT INTO Job (title, location, description, responsibilities, qualifications,
 INSERT INTO Job (title, location, description, responsibilities, qualifications, industry_id, company_id) VALUES ('Senior Software Engineer','Somerset','We are looking for a Senior Software Engineer to produce and implement functional software solutions. You will work with upper management to define software requirements and take the lead on operational and technical projects.', 'Directing software development projects. Producing, testing and debugging code. Leading engineers and developers','Extensive experience in software development, scripting and project management. Experience using system monitoring tools (e.g. New Relic) and automated testing frameworks. Knowledge of selected programming languages (e.g. Python, C++) and the Java/J2EE platform. In-depth knowledge of relational databases (e.g. PostgreSQL, MySQL) and NoSQL databases (e.g. MongoDB)',2,2);
 INSERT INTO Job (title, location, description, responsibilities, qualifications, industry_id, company_id) VALUES ('Junior Software Engineer','Somerset','We are looking for a Junior Software Engineer to produce and implement functional software solutions.', 'Producing, testing and debugging code.','Some experience in software development and scripting. Graphic design a plus. Knowledge of Javscript and frameworks. Knowledge of relational databases (e.g. PostgreSQL, MySQL) and NoSQL databases (e.g. MongoDB) a plus.',2,2);
 INSERT INTO Job (title, location, description, responsibilities, qualifications, industry_id, company_id) VALUES ('Web Editor','New Brunswick','We are looking for a passionate web editor to research, plan, write and edit web content. The successful candidate should be a skilled writer and researcher, with an eye for detail and an understanding of the special requirements of web writing. The goal is to produce creative web content to appeal to our audience.', 'Producing and publishing new content in a creative way. Liaising with clients and in-house team members to decide on new posts. Overseeing layout (images, graphics, videos and artwork)','Proven work experience as a web editor. Editing skills with a demonstrable portfolio of published work. Hands on experience with MS Office, InDesign, Photoshop or other publishing tools. In-depth knowledge of SEO',1,1);
-
-
-
-
 
 INSERT INTO Industry (name, img) VALUES ('Media','https://s-media-cache-ak0.pinimg.com/originals/30/dc/3a/30dc3afd1e8f395af2996217f1710bc9.jpg');
 INSERT INTO Industry (name, img) VALUES ('Software','https://s-media-cache-ak0.pinimg.com/originals/30/dc/3a/30dc3afd1e8f395af2996217f1710bc9.jpg');
