@@ -68,18 +68,16 @@ button{
 }
 
 .basic-info-form, .placeholder, .credential-tile, .job-tile{
-	border: solid;
-	border-color: #575757;
-  border-radius: 3px;
+    border-radius: 3px;
 	padding: 2%;
+	box-shadow: 1px 1.5px 1px #888888;
+
 }
 
 .credential-tile, .job-tile{
 	margin: 2%;
-	border-color: #575757;
-  border-radius: 3px;
-	background-color: white;
-	opacity: 0.7;
+	background-color: #FFF3D7;
+	opacity: 0.6;
 	color: black;
 }
 
@@ -234,10 +232,10 @@ text-area{
 
 .name-div{
 	background-color: #333333;
-    background: -webkit-linear-gradient(left, #333333, #6587C5); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(left, #333333, #6587C5); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(left, #333333, #6587C5); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(left, #333333, #6587C5); /* Standard syntax */
+    background: -webkit-linear-gradient(left, #333333, #C0D19C); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(left, #333333, #C0D19C); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(left, #333333, #C0D19C); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(left, #333333, #C0D19C); /* Standard syntax */
 	color: white;
 	padding: 1%;
 	width: 80%;
@@ -250,8 +248,30 @@ text-area{
 	padding: 1.5%;
 	padding-top: 1%;
 	padding-left: 1%;
-	background-color: #6587C5;
+	background-color: #C0D19C;
 	opacity: 0.8;
 	box-shadow: 1px 2px 1px #888888;
+}
+
+.tile-delete-form{
+	display: inline;
+
+
+}
+
+.tile-save, .tile-delete {
+	font-size: 20px;
+	width: 80.9px;
+	height: 50px;
+	text-align: center;
+	vertical-align: middle;
+	padding-top: 1%;
+}
+
+.tiny-text{
+	font-family: sans-serif;
+	font-size: 8px;
+	font-style: bold;
+	margin-top: 20%;
 }
 

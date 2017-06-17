@@ -11,13 +11,13 @@
 					<h5> Account Owner Name: <input type="text" name="username" value="{{user.username}}"> </h5>
 					<h5> Account Owner Email: <input type="text" name="email" value="{{user.email}}"> </h5>
 					<h5> Location: <input type="text" name="location" value="{{user.location}}"> </h5>
-					<button type="submit" class="btn btn-md btn-default">UPDATE</button>
+					<button type="submit" class="btn btn-md btn-primary">UPDATE</button>
 				</form>
 
 				<form action="/employer/update-image" method="POST" enctype="multipart/form-data">
 					<h4>Upload an image</h4>
 					<input type="file" name="img" value="{{data.img}}"> 
-					<button type="submit" class="btn btn-md btn-default">UPDATE</button>
+					<button type="submit" class="btn btn-md btn-primary">UPDATE</button>
 				</form>
 			</div>
 		</div>
@@ -34,7 +34,7 @@
 				<div>
 					<h3>Company Bio:</h3>
 					<form action="/employer/update-public-bio" method="POST"><textarea name = "info">{{#if user.info}}{{{user.info}}}{{else}}Share a short blurb about {{user.name}}...{{/if}}</textarea>
-					<button type="submit" class="btn btn-md btn-default">UPDATE</button>
+					<button type="submit" class="btn btn-md btn-primary">UPDATE</button>
 					</form>
 				</div>
 			</div>
@@ -63,7 +63,6 @@
 			<h4>{{title}}</h4>
 			<h5>{{location}}</h5>
 			
-			<a href="/"><span class="corner-icon glyphicon glyphicon-trash"></span></a>
 			<div type="button" data-toggle="modal" data-target="#jobModal{{id}}">
 			<span class="corner-icon glyphicon glyphicon-pencil"></span>
 		</div>
@@ -88,10 +87,7 @@
     <!-- Modal content -->
     <div class="modal-content">
       <div class="modal-header">
-      	<form action="/job/delete/{{id}}" method="POST">
-		  <input type="submit" class= "btn btn-primary" value="Delete Listing">
-		</form>	
-      <form action="/job/update" method="POST">
+      <form class = "tile-form" action="/job/update" method="POST">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
 				<input class = "title-input" type="text" name = "title" value="{{title}}">
 				<br>
@@ -108,9 +104,22 @@
 	      </div>
 	    
       <div class="modal-footer">
-        <button type="submit" class="btn btn-danger">Save</button>
-        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-      </form>
+      	<span>
+	  	
+		        <button class = "tile-save" type="submit">
+			        <span class= "glyphicon glyphicon-floppy-disk">
+			        	<p class="tiny-text">SAVE</p>
+			        </span>
+		        </button> 
+		    </form>
+		    	<form class = "tile-delete-form" action="/job/delete/{{id}}" method="POST">
+					<button class = "tile-delete" type="submit">
+						<span class= "glyphicon glyphicon-trash">
+							<p class="tiny-text">DELETE</p>
+						</span>
+					</button>
+				</form>
+		</span>
       </div>
     </div>
 
@@ -143,9 +152,15 @@
 			    </div>
 			    
 		      <div class="modal-footer">
-		        <button type="submit" class="btn btn-danger">Save</button>
-		        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-		      </form>
+		        	  	
+		        <button class = "tile-save" type="submit">
+			        <span class= "glyphicon glyphicon-floppy-disk">
+			        	<p class="tiny-text">SAVE</p>
+			        </span>
+		        </button> 
+		        </form>
+<!-- 		        <button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
+		       -->
 		      </div>
 		    </div>
 
