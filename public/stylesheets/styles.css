@@ -8,7 +8,7 @@ body{
 
 img{
 	height: 200px;
-	width: auto;
+	width: 200px;
 	border: solid;
 }
 h1{
@@ -16,7 +16,7 @@ h1{
 	font-size: 46px;
 }
 
-
+x
 
 h4{
 	color:#007DD5;
@@ -65,6 +65,11 @@ button{
 	font-size: 10px;
 	font-style: italic;
 	font-color: grey;
+}
+
+.basic-info-form, .placeholder{
+	background-color: #FFF3D7;
+	opacity: 0.7;
 }
 
 .basic-info-form, .placeholder, .credential-tile, .job-tile{
@@ -188,7 +193,7 @@ margin: 20px;
 }
 
 .inbox-convo:hover{
-	background-color: #BA7890;
+	background-color: grey;
 
 }
 

@@ -15,9 +15,9 @@
 				</form>
 
 				<form action="/employer/update-image" method="POST" enctype="multipart/form-data">
-					<h4>Upload an image</h4>
-					<input type="file" name="img" value="{{data.img}}"> 
-					<button type="submit" class="btn btn-md btn-primary">UPDATE</button>
+v
+					<input type="file" name="img" value="{{user.img}}"> 
+					<button type="submit" class="btn btn-md btn-default">UPDATE</button>
 				</form>
 			</div>
 		</div>
@@ -25,7 +25,7 @@
 		<div class = "col-md-3">
 			<div>
 			{{#if user.img}}
-				<img src="/uploads/images/{{data.img}}">
+				<img src="/uploads/images/{{user.img}}">
 			{{/if}}
 			</div>
 		</div>
