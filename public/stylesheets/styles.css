@@ -325,11 +325,10 @@ text-area{
   padding: 20px 
 }*/
 
-#signup-links{
-
-}
-
 .main-link{
   border-radius: 5px;
-  opacity: 0.85;
+  opacity: 0.70;
+  background-color: #69228A;
+  color: #ffffff;
+  font-size: 23px;
 }
