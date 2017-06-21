@@ -1,12 +1,12 @@
 body{
-  background-image: linear-gradient(60deg, #abecd6 0%, #fbed96 100%);
+  background-color: #f6f6f6;
   background-position: center center;
   background-repeat:  no-repeat;
   background-attachment: fixed;
   background-size:  cover;
 }
 
-img{
+.profile-img{
 	height: 200px;
 	width: 200px;
 	border: solid;
@@ -45,6 +45,7 @@ button{
 
 .navbar, .nav, .navbar-default{
 	background-color: #333333;
+  margin-bottom: 0px;
 }
 
 .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus{
@@ -53,6 +54,10 @@ button{
 
 .nav navbar-nav li a{
   color: #D2D5D4;
+}
+
+#logo{
+  font-size: 20px;
 }
 
 .sr-only{
@@ -143,7 +148,7 @@ margin: 20px;
 }
 
 #welcome-heading{
-  font-size: 60px;
+  font-size: 90px;
 }
 
 .signup{
@@ -280,3 +285,51 @@ text-area{
 	margin-top: 20%;
 }
 
+#banner-img{
+  width: 100%;
+}
+
+#main-content{
+  display: block;
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.nopadding {
+   padding: 0 !important;
+   margin: 0 !important;
+}
+
+#titles{
+  align-content: center;
+  padding-top: 40px;
+  position: absolute;
+  left: 0px;
+  bottom: 50px;
+
+}
+
+.mission-statement{
+  padding-top: 75px;
+  padding-bottom: 75px;
+  margin-bottom: 75px;
+  align-content: center;
+}
+
+/*footer{
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 20px 
+}*/
+
+#signup-links{
+
+}
+
+.main-link{
+  border-radius: 5px;
+  opacity: 0.85;
+}
