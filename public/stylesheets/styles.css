@@ -1,5 +1,6 @@
 body{
   background-color: #f6f6f6;
+  background-image: url("../images/bricks.jpg");
   background-position: center center;
   background-repeat:  no-repeat;
   background-attachment: fixed;
@@ -11,12 +12,24 @@ body{
 	width: 200px;
 	border: solid;
 }
-h1{
-	font-family: 'Lobster Two', cursive;
-	font-size: 46px;
+h1, h2, h3{
+	font-family: 'Roboto Slab', serif;
+	color: #2A3743;
 }
 
-x
+h4, h5, h6, p, a{
+	font-family: 'Raleway', sans-serif;
+	color: #AFC1C3;
+}
+
+a{
+	color: #2A3743;
+}
+
+h1{
+	font-size: 46px;
+	font-weight: bolder;
+}
 
 h4{
 	color:#007DD5;
@@ -29,7 +42,14 @@ h5{
 
 h6{
 	font-style: bold;
-	color: pink;
+	color: #2A3743;
+}
+
+input{
+	background-color: #AFC1C3;
+	border: none;
+	color: #2A3743;
+	opacity: 0.85;
 }
 
 textarea{
@@ -44,12 +64,12 @@ button{
 }
 
 .navbar, .nav, .navbar-default{
-	background-color: #333333;
+	background-color: #2A3743;
   margin-bottom: 0px;
 }
 
 .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus{
-	background-color: #333333;
+	background-color: #2A3743;
 }
 
 .nav navbar-nav li a{
@@ -72,27 +92,29 @@ button{
 	font-color: grey;
 }
 
-.basic-info-form, .placeholder{
-	background-color: #FFF3D7;
-	opacity: 0.7;
-}
+/*.basic-info-form, .placeholder{*/
+	/*background-color: #5E4F50;*/
+	/*opacity: 0.9;*/
+/*}
+*/
+/*.basic-info-form, .placeholder, */
 
-.basic-info-form, .placeholder, .credential-tile, .job-tile{
+.credential-tile, .job-tile{
     border-radius: 3px;
 	padding: 2%;
-	box-shadow: 1px 1.5px 1px #888888;
+	box-shadow: 2px 3px 2px #26100B;
 
 }
 
 .credential-tile, .job-tile{
 	margin: 2%;
-	background-color: #FFF3D7;
-	opacity: 0.6;
+	background-color: #5E4F50;
+	opacity: 0.9;
 	color: black;
 }
 
 .heading-input, .title-input{
-	color: #333333;
+	color: #2A3743;
 	background: transparent;
     border: none;
     font-size: 18px;
@@ -159,7 +181,7 @@ margin: 20px;
 #messages{
 	height: 200px;
 	overflow: scroll;
-	background: white;
+	background: #AFC1C3;
 	opacity: 0.65;
 	color: black;
 	padding: 2%;
@@ -192,8 +214,8 @@ margin: 20px;
 .inbox-convo{
 	font-size: 20px;
 	font-style: bold;
-	color: white;
-	background-color: #333333;
+	color: #AFC1C3;
+	background-color: #2A3743;
 	padding: 5%;
 }
 
@@ -241,12 +263,16 @@ text-area{
 }
 
 .name-div{
-	background-color: #333333;
-    background: -webkit-linear-gradient(left, #333333, #C0D19C); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(left, #333333, #C0D19C); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(left, #333333, #C0D19C); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(left, #333333, #C0D19C); /* Standard syntax */
-	color: white;
+	font-family: 'Roboto Slab', serif;
+	background-color: #2A3743;
+    /*background: -webkit-linear-gradient(left, #2A3743, #AFC1C3); /* For Safari 5.1 to 6.0 */
+    /*background: -o-linear-gradient(left, #2A3743, #AFC1C3); /* For Opera 11.1 to 12.0 */
+    /*background: -moz-linear-gradient(left, #2A3743, #AFC1C3); /* For Firefox 3.6 to 15 */
+    /*background: linear-gradient(left, #2A3743, #AFC1C3); /* Standard syntax */
+	border: solid;
+	border-width: 1px;
+	border-color: white;
+	color: #AFC1C3;
 	padding: 1%;
 	width: 80%;
 	margin-bottom: 1%;
@@ -254,12 +280,14 @@ text-area{
 }
 
 .content-div{
+	font-family: 'Raleway', sans-serif;
 	margin-bottom: 2%;
 	padding: 1.5%;
 	padding-top: 1%;
 	padding-left: 1%;
-	background-color: #C0D19C;
-	opacity: 0.8;
+	background-color: #AFC1C3;
+	color: #2A3743;
+	opacity: 0.85;
 	box-shadow: 1px 2px 1px #888888;
 }
 
@@ -278,7 +306,12 @@ text-area{
 	padding-top: 1%;
 }
 
+.tile-save:hover, .tile-delete:hover {
+	background-color: grey;
+}
+
 .tiny-text{
+	color: #888888;
 	font-family: sans-serif;
 	font-size: 8px;
 	font-style: bold;
@@ -320,7 +353,7 @@ text-area{
 
 /*footer{
   background-color: #333;
-  color: white;
+  color: #AFC1C3;
   text-align: center;
   padding: 20px 
 }*/
@@ -331,4 +364,20 @@ text-area{
   background-color: #69228A;
   color: #ffffff;
   font-size: 23px;
+}
+
+.modal-content{
+	background-color: #AFC1C3;
+}
+
+.home-info-bar{
+	background-color: #5E4F50;
+	opacity: 0.9;
+	padding: 1%;
+/*	position: absolute;*/
+    width: 100%;
+}
+
+.view-btn{
+	color: #5E4F50;
 }

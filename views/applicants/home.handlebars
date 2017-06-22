@@ -5,11 +5,11 @@
 
 	<div class="row"> 
 		<h1>Welcome, {{data.name}}</h1>
-		<div class = "row">
+		<div class = "row home-info-bar">
 			<div class = "col-md-4">
 				<div class = "basic-info-form">
 					<form action="/applicant/update-basic-info" method="POST">
-					<h4>Update Basic Information: </h4>
+					<h3>Update Basic Information: </h3>
 					<h5> Anonymous Username: <input type="text" name="username" value="{{data.username}}"> </h5>
 					<p class = "detail"> Don't use your real name or other identifying information!</p>
 					<h5> Public Bio: <input type="text" name="name" value="{{data.name}}"> </h5>
@@ -20,9 +20,9 @@
 					</form>
 
 					<form action="/applicant/update-image" method="POST" enctype="multipart/form-data">
-						<h4>Upload an image</h4>
+						<h3>Upload an image</h3>
 						<input type="file" name="img" value="{{data.img}}"> 
-					<button type="submit" class="btn btn-md btn-default">UPDATE</button>
+					<button type="submit" class="btn btn-md btn-default">UPLOAD</button>
 					</form>
 				</div>
 			</div>
@@ -42,7 +42,7 @@
 					<textarea name = "info">{{{data.info}}}
 					</textarea>
 					<button type="submit" class="btn btn-md btn-default">UPDATE</button>
-					<button type="submit" class="btn btn-md btn-default"><a href="/applicant/public/{{data.id}}" >View</a></button>
+					<button type="submit" class="btn btn-md btn-default"><a href="/applicant/public/{{data.id}}">View</a></button>
 					</form>
 				</div>
 			</div>
@@ -75,7 +75,7 @@
 			{{#each creds}}
 
 			<div class = "col-md-3 credential-tile" id="ct{{id}}">
-				<h4>{{heading}}</h4>
+				<h3>{{heading}}</h3>
 				<h5>{{subheading}}</h5>
 
 			<div type="button" data-toggle="modal" data-target="#credModal{{id}}">
@@ -87,19 +87,22 @@
 		
 
 			{{/each}}
+		</div>
+		<div class="row">
 		
 			<div class = "col-md-3">
 				<div type="button" data-toggle="modal" data-target="#ModalNew{{section_name}}">
 					<span class="giant-icon glyphicon glyphicon-plus-sign"></span>
 				</div>
 			</div>
-			
 		</div>
+			
 		{{/each}}
 
 	</div>
-
-	<button class="btn btn-md btn-default" data-toggle="modal" data-target="#NewSection"> Add A New Section </button>
+	<div class = "row">
+		<button class="btn btn-md btn-default" data-toggle="modal" data-target="#NewSection"> Add A New Section </button>
+	</div>
 
 	<!-- MODALS -->
 {{#each section_creds}}

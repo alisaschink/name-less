@@ -26,7 +26,7 @@
     {{#each result}}
 
     <div class = "col-md-3 job-tile" id="jt{{id}}">
-      <h4>{{title}}</h4>
+      <h3>{{title}}</h3>
       <h5>at <a href="job/company/{{Company.id}}">{{Company.name}}</a></h5>
       <h5>{{location}}</h5>
 
@@ -76,7 +76,7 @@
       
 
         <div class="modal-footer">
-            <button recipient-id="{{Company.user_id}}" is-anonymous="true" convo-title = " is interested in a position: {{title}}" class="start-convo btn btn-large btn-danger">Contact {{Company.name}} About This Position</button>
+            <button recipient-id="{{Company.user_id}}" is-anonymous="true" convo-title = " is interested in a position: {{title}}" class="start-convo btn btn-large btn-primary">Contact {{Company.name}} About This Position</button>
         </div>
       </div>
       </div>

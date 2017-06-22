@@ -2,7 +2,7 @@
  	<div class="row"> 
 		<h1>Welcome, {{user.username}}</h1>
 	</div>
-	<div class = "row">
+	<div class = "row home-info-bar">
 		<div class = "col-md-4">
 			<div class = "basic-info-form">
 				<form action="/employer/update-basic-info" method="POST">
@@ -15,9 +15,9 @@
 				</form>
 
 				<form action="/employer/update-image" method="POST" enctype="multipart/form-data">
-v
+					<h3>Upload an image</h3>
 					<input type="file" name="img" value="{{user.img}}"> 
-					<button type="submit" class="btn btn-md btn-default">UPDATE</button>
+					<button type="submit" class="btn btn-md btn-default">UPLOAD</button>
 				</form>
 			</div>
 		</div>
@@ -43,16 +43,14 @@ v
 
 
 
-
 	<div class = "row">
-		<div class = "col-md-4">
+		<div class = "col-md-7">
 			<h2>Job Listings at {{user.username}}</h2> 
 		</div>
-		<div class = "col-md-4">
-			<button class = "btn btn-lg"> <a href="/job/company/{{data.id}}">View Company Page</a> </button>
+		<div class = "col-md-5">
+			<button class = "btn btn-lg view-btn"> <a href="/job/company/{{data.id}}">View Company Page</a> </button>
 		</div>
-		<div class = "col-md-4">
-		</div>
+
 	</div>
 
 	<div class = "row job-tiles-container">
@@ -60,7 +58,7 @@ v
 		{{#each data.Jobs}}
 
 		<div class = "col-md-3 job-tile" id="jt{{id}}">
-			<h4>{{title}}</h4>
+			<h3>{{title}}</h3>
 			<h5>{{location}}</h5>
 			
 			<div type="button" data-toggle="modal" data-target="#jobModal{{id}}">
@@ -68,6 +66,8 @@ v
 		</div>
 		</div>
 		{{/each}}
+	</div>
+	<div class = "row">
 
 		<div class = "col-md-3" id="new-job-tile">
 				<div class = "col-md-3">
@@ -76,6 +76,7 @@ v
 				</div>
 			</div>
 		</div>
+	</div>
 	</div>
 	</div>
 </div>
