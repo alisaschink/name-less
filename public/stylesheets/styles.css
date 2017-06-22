@@ -119,9 +119,11 @@ button{
 
 .credential-tile, .job-tile{
 	margin: 2%;
-	background-color: #5E4F50;
+	background-color: #22014C;
+  /*background-color: #fbfbfb;*/
 	opacity: 0.9;
-	color: black;
+	/*color: #4A1264;*/
+  color: #f2f2f2;
 }
 
 .heading-input, .title-input{
@@ -378,7 +380,7 @@ text-area{
 }
 
 .modal-content{
-	background-color: #AFC1C3;
+	background-color: #e4e4e4;
 }
 
 .home-info-bar{
@@ -405,4 +407,35 @@ text-area{
 
 .update-form{
   line-height: 30px;
+}
+
+.mission-desc{
+  line-height: 25px;
+  font-size: 18px;
+}
+
+#emp-desc{
+  color: #5B157B;
+  font-size: 24px;
+  line-height: 25px;
+}
+
+.cred-heading{
+  color: #f2f2f2;
+}
+
+.cred-subheading{
+  color: #acacac;
+}
+
+.cred-subheading a{
+  color: #acacac;
+}
+
+#company-page-button{
+  background-color: #333333;
+}
+
+#company-page-button a{
+  color: #f2f2f2;
 }
