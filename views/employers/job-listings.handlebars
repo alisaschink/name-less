@@ -25,7 +25,7 @@
 		{{#each data.Jobs}}
 
 		<div class = "col-md-3 job-tile" id="jt{{id}}">
-			<h4>{{title}}</h4>
+			<h3>{{title}}</h3>
 			<h5>{{location}}</h5>
 
 			<div type="button" data-toggle="modal" data-target="#jobModal{{id}}">
@@ -73,7 +73,7 @@
 			
 
 		    <div class="modal-footer">
-		        <button recipient-id="{{../data.User.id}}" type="submit" is-anonymous="true" convo-title = " is interested in a position: {{title}}" class="start-convo btn btn-large btn-danger">Contact {{../data.User.username}} About This Position</button>
+		        <button recipient-id="{{../data.User.id}}" type="submit" is-anonymous="true" convo-title = " is interested in a position: {{title}}" class="start-convo btn btn-large btn-primary">Contact {{../data.User.username}} About This Position</button>
 		        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 		    </div>
 			</div>
