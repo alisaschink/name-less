@@ -1,6 +1,6 @@
 body{
-  background-color: #f6f6f6;
-  background-image: url("../images/bricks.jpg");
+  background-color: #e4e4e4;
+  /*background-image: url("../images/paper_1.png");*/
   background-position: center center;
   background-repeat:  no-repeat;
   background-attachment: fixed;
@@ -10,6 +10,7 @@ body{
 .profile-img{
 	height: 200px;
 	width: 200px;
+  margin: 10px;
 	border: solid;
 }
 h1, h2, h3{
@@ -46,8 +47,11 @@ h6{
 }
 
 input{
-	background-color: #AFC1C3;
-	border: none;
+	/*background-color: #AFC1C3;*/
+  background-color: #f4f4f4;
+	border: solid;
+  border-width: 1px;
+  border-color: #a6a6a6;
 	color: #2A3743;
 	opacity: 0.85;
 }
@@ -87,16 +91,19 @@ button{
 }
 
 .detail{
-	font-size: 10px;
+	font-size: 14px;
 	font-style: italic;
 	font-color: grey;
 }
 
-/*.basic-info-form, .placeholder{*/
+.basic-info-form, .placeholder{
 	/*background-color: #5E4F50;*/
-	/*opacity: 0.9;*/
-/*}
-*/
+  background-color: #f9f9f9;
+	opacity: 0.9;
+  padding: 10px;
+  border-radius: 5px;
+}
+
 /*.basic-info-form, .placeholder, */
 
 .credential-tile, .job-tile{
@@ -371,8 +378,9 @@ text-area{
 }
 
 .home-info-bar{
-	background-color: #5E4F50;
-	opacity: 0.9;
+	/*background-color: #5E4F50;*/
+  /*background-color: #FCFCFC;
+	opacity: 0.9;*/
 	padding: 1%;
 /*	position: absolute;*/
     width: 100%;
@@ -380,4 +388,17 @@ text-area{
 
 .view-btn{
 	color: #5E4F50;
+}
+
+.view-btn a{
+  color: #5E4F50;
+  text-decoration: none;
+}
+
+.main-title{
+  color: #d2d2d2;
+}
+
+.update-form{
+  line-height: 30px;
 }

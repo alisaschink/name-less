@@ -3,7 +3,7 @@
 		<h1>Welcome, {{user.username}}</h1>
 	</div>
 	<div class = "row home-info-bar">
-		<div class = "col-md-4">
+		<div class = "col-md-4 update-form">
 			<div class = "basic-info-form">
 				<form action="/employer/update-basic-info" method="POST">
 					<h3>Company Account: </h4>
@@ -14,13 +14,9 @@
 					<button type="submit" class="btn btn-md btn-primary">UPDATE</button>
 				</form>
 
-				<form action="/employer/update-image" method="POST" enctype="multipart/form-data">
-					<h3>Upload an image</h3>
-					<input type="file" name="img" value="{{user.img}}"> 
-					<button type="submit" class="btn btn-md btn-default">UPLOAD</button>
-				</form>
 			</div>
 		</div>
+	
 
 		<div class = "col-md-3">
 			<div>
@@ -28,6 +24,11 @@
 				<img class="profile-img" src="/uploads/images/{{user.img}}">
 			{{/if}}
 			</div>
+			<form action="/employer/update-image" method="POST" enctype="multipart/form-data">
+					<h3>Upload an image</h3>
+					<input type="file" name="img" value="{{user.img}}"> 
+					<button type="submit" class="btn btn-md btn-default">UPLOAD</button>
+				</form>
 		</div>
 
 		<div class = "col-md-5 placeholder">
