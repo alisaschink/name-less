@@ -51,7 +51,7 @@
 			<h2>Job Listings at {{user.username}}</h2> 
 		</div>
 		<div class = "col-md-5">
-			<button class = "btn btn-lg view-btn"> <a href="/job/company/{{data.id}}">View Company Page</a> </button>
+			<button class = "btn btn-lg view-btn" id="company-page-button"> <a href="/job/company/{{data.id}}">View Company Page</a> </button>
 		</div>
 
 	</div>
@@ -61,8 +61,8 @@
 		{{#each data.Jobs}}
 
 		<div class = "col-md-3 job-tile" id="jt{{id}}">
-			<h3>{{title}}</h3>
-			<h5>{{location}}</h5>
+			<h3 class="cred-heading">{{title}}</h3>
+			<h5 class="cred-subheading">{{location}}</h5>
 			
 			<div type="button" data-toggle="modal" data-target="#jobModal{{id}}">
 			<span class="corner-icon glyphicon glyphicon-pencil"></span>
