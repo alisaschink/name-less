@@ -15,7 +15,7 @@
 					<h5> Public Bio: <input type="text" name="name" value="{{data.name}}"> </h5>
 					<h5> Email: <input type="text" name="email" value="{{data.email}}"> </h5>
 					<h5> Location: <input type="text" name="location" value="{{data.location}}"> </h5>
-					<button type="submit" class="btn btn-md btn-default">UPDATE</button>
+					<button type="submit" class="btn btn-md btn-default">Update</button>
 
 					</form>
 
@@ -32,7 +32,7 @@
 									<form action="/applicant/update-image" method="POST" enctype="multipart/form-data">
 						<h3>Upload an image</h3>
 						<input type="file" name="img" value="{{data.img}}"> 
-					<button type="submit" class="btn btn-md btn-default">UPLOAD</button>
+					<button type="submit" class="btn btn-md btn-default">Upload</button>
 					</form>
 			</div>
 
@@ -42,8 +42,8 @@
 					<form action="/applicant/update-public-bio" method="POST">
 					<textarea name = "info">{{{data.info}}}
 					</textarea>
-					<button type="submit" class="btn btn-md btn-default">UPDATE</button>
-					<button type="submit" class="btn btn-md btn-default"><a href="/applicant/public/{{data.id}}">View</a></button>
+					<button type="submit" class="btn btn-md btn-default">Update</button>
+					<a href="/applicant/public/{{data.id}}"><button type="submit" class="btn btn-md btn-default">View</button></a>
 					</form>
 				</div>
 			</div>
@@ -60,7 +60,7 @@
 		<div class = "col-md-4"> 
 		</div>
 		<div class = "col-md-4">
-			<button class = "btn btn-default"><a href="/credential/applicant/{{data.username}}" >View</a></button>
+			<a href="/credential/applicant/{{data.username}}" ><button class = "btn btn-default">View</button></a>
 		</div>
 	</div>
 	
