@@ -11,7 +11,8 @@
 					<h5> Account Owner Name: <input type="text" name="username" value="{{user.username}}"> </h5>
 					<h5> Account Owner Email: <input type="text" name="email" value="{{user.email}}"> </h5>
 					<h5> Location: <input type="text" name="location" value="{{user.location}}"> </h5>
-					<button type="submit" class="btn btn-md btn-primary">UPDATE</button>
+					<button type="submit" class="btn btn-md btn-default
+				">Update</button>
 				</form>
 
 			</div>
@@ -27,7 +28,7 @@
 			<form action="/employer/update-image" method="POST" enctype="multipart/form-data">
 					<h3>Upload an image</h3>
 					<input type="file" name="img" value="{{user.img}}"> 
-					<button type="submit" class="btn btn-md btn-default">UPLOAD</button>
+					<button type="submit" class="btn btn-md btn-default">Upload</button>
 				</form>
 		</div>
 
@@ -35,7 +36,8 @@
 				<div>
 					<h3>Company Bio:</h3>
 					<form action="/employer/update-public-bio" method="POST"><textarea name = "info">{{#if user.info}}{{{user.info}}}{{else}}Share a short blurb about {{user.name}}...{{/if}}</textarea>
-					<button type="submit" class="btn btn-md btn-primary">UPDATE</button>
+					<button type="submit" class="btn btn-md btn-default
+				">Update</button>
 					</form>
 				</div>
 			</div>
@@ -49,7 +51,7 @@
 			<h2>Job Listings at {{user.username}}</h2> 
 		</div>
 		<div class = "col-md-5">
-			<button class = "btn btn-lg view-btn"> <a href="/job/company/{{data.id}}">View Company Page</a> </button>
+			<a href="/job/company/{{data.id}}"><button class = "btn btn-lg view-btn"> View Company Page</button></a>
 		</div>
 
 	</div>
@@ -161,7 +163,7 @@
 			        </span>
 		        </button> 
 		        </form>
-<!-- 		        <button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
+<!-- 		        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
 		       -->
 		      </div>
 		    </div>
