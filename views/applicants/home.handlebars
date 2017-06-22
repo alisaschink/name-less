@@ -6,7 +6,7 @@
 	<div class="row"> 
 		<h1>Welcome, {{data.name}}</h1>
 		<div class = "row home-info-bar">
-			<div class = "col-md-4">
+			<div class = "col-md-4 update-form">
 				<div class = "basic-info-form">
 					<form action="/applicant/update-basic-info" method="POST">
 					<h3>Update Basic Information: </h3>
@@ -19,11 +19,7 @@
 
 					</form>
 
-					<form action="/applicant/update-image" method="POST" enctype="multipart/form-data">
-						<h3>Upload an image</h3>
-						<input type="file" name="img" value="{{data.img}}"> 
-					<button type="submit" class="btn btn-md btn-default">UPLOAD</button>
-					</form>
+
 				</div>
 			</div>
 
@@ -33,6 +29,11 @@
 					<img class="profile-img" src="/uploads/images/{{data.img}}">
 				{{/if}}
 				</div>
+									<form action="/applicant/update-image" method="POST" enctype="multipart/form-data">
+						<h3>Upload an image</h3>
+						<input type="file" name="img" value="{{data.img}}"> 
+					<button type="submit" class="btn btn-md btn-default">UPLOAD</button>
+					</form>
 			</div>
 
 			<div class = "col-md-5 placeholder">
